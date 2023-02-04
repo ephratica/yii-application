@@ -300,7 +300,7 @@ function ready(error, topo) {
 		.attr("width", ls_w)
 		.attr("height", ls_h)
 		.style("fill", function(d, i) {
-            if (mode !== 0 && i === 0)
+            if (i === 0)
                 return colorScale(0);
 			return colorScale(d[0]);
 		})
