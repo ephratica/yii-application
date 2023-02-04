@@ -20,16 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="card">
             <ul class="nav nav-pills">
             <li class="nav-item">
-                <a class="nav-link active" href="#">难民地图</a>
+                <a class="nav-link" id="map-refugee" href="#">难民地图</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">制裁地图</a>
+                <a class="nav-link" id="map-sanction" href="#">制裁地图</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">援助地图</a>
+                <a class="nav-link" id="map-aid" href="#">援助地图</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">花销地图</a>
+                <a class="nav-link"id="map-cost" href="#">花销地图</a>
             </li>
             </ul>
         </div>
@@ -38,50 +38,167 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <script>
-
 const svg = d3.select("svg"),
 width = svg.attr("width"),
 height = svg.attr("height"),
-path = d3.geoPath(),
-data = d3.map(),
 worldData = [
     <?php foreach ($countries as $country): ?>
-        {'code': "<?= Html::encode("{$country->code}") ?>", 'number_of_refugees': <?= Html::encode("{$country->number_of_refugees}") ?>},
+        {'code': "<?= Html::encode("{$country->code}") ?>",
+         'number_of_refugees': <?= Html::encode("{$country->number_of_refugees}") ?>,
+         'cost': <?= Html::encode("{$country->total_cost_in_billion_euros}") ?>,
+         'aid': <?= Html::encode("{$country->aid}") ?>,
+         'sanction': <?= Html::encode("{$country->sanction}") ?>,
+        },
     <?php endforeach; ?>
 ];
 
-for (const d of worldData) {
-    data.set(d['code'], d['number_of_refugees']);
-}
-
-let centered, world;
-
 // style of geographic projection and scaling
 const projection = d3.geoRobinson()
-	.scale(130)
-	.translate([width / 2, height / 2]);
+    .scale(130)
+    .translate([width / 2, height / 2]);
 
 // Define color scale
-const colorScale = d3.scaleThreshold()
-	.domain([1000, 10000, 50000, 100000, 500000, 1000000, 2000000, 3000000])
-	.range(d3.schemeOrRd[9]);
+let colorScale;
 
 // add tooltip
 const tooltip = d3.select("body").append("div")
-	.attr("class", "tooltip")
-	.style("opacity", 0);
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+let centered, world;
+const path = d3.geoPath();
+let data = d3.map();
+let legendText = "";
+let mode = 0;
 
-// Load external data and boot
-d3.queue()
-	.defer(d3.json, "/world.geojson")
-	.await(ready);
+function refugeeWorldMap() {
+    svg.selectAll("*").remove();
+    data = d3.map();
+    legendText = "Number of Refugees";
+    mode = 0;
+    for (const d of worldData) {
+        data.set(d['code'], d['number_of_refugees']);
+    }
+    colorScale = d3.scaleThreshold()
+                   .domain([1000, 10000, 50000, 100000, 500000, 1000000, 2000000, 3000000])
+                   .range(d3.schemeOrRd[9]);
+    // Load external data and boot
+    d3.queue()
+	    .defer(d3.json, "/world.geojson")
+	    .await(ready);
 
-// Add clickable background
-svg.append("rect")
-  .attr("class", "background")
-	.attr("width", width)
-	.attr("height", height)
-	.on("click", click);
+    // Add clickable background
+    svg.append("rect")
+        .attr("class", "background")
+	    .attr("width", width)
+	    .attr("height", height)
+	    .on("click", click);
+}
+
+function costWorldMap() {
+    svg.selectAll("*").remove();
+    data = d3.map();
+    legendText = "Cost (Billion Euro)";
+    mode = 0;
+    for (const d of worldData) {
+        data.set(d['code'], d['cost']);
+    }
+    colorScale = d3.scaleThreshold()
+                   .domain([0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 1, 5, 8])
+                   .range(d3.schemeGreens[9]);
+    // Load external data and boot
+    d3.queue()
+	    .defer(d3.json, "/world.geojson")
+	    .await(ready);
+
+    // Add clickable background
+    svg.append("rect")
+        .attr("class", "background")
+	    .attr("width", width)
+	    .attr("height", height)
+	    .on("click", click);
+}
+
+function aidWorldMap() {
+    svg.selectAll("*").remove();
+    data = d3.map();
+    legendText = "Aid";
+    mode = 1;
+    for (const d of worldData) {
+        data.set(d['code'], d['aid']);
+    }
+    colorScale = d3.scaleThreshold()
+                   .domain([0.5, 1])
+                   .range(["#fde0dd", "#fa9fb5"]);
+    // Load external data and boot
+    d3.queue()
+	    .defer(d3.json, "/world.geojson")
+	    .await(ready);
+
+    // Add clickable background
+    svg.append("rect")
+        .attr("class", "background")
+	    .attr("width", width)
+	    .attr("height", height)
+	    .on("click", click);
+}
+
+function sanctionWorldMap() {
+    svg.selectAll("*").remove();
+    data = d3.map();
+    legendText = "Sanction";
+    mode = 1;
+    for (const d of worldData) {
+        data.set(d['code'], d['sanction']);
+    }
+    colorScale = d3.scaleThreshold()
+                   .domain([0.5, 1])
+                   .range(["#e0ecf4", "#8856a7"]);
+    // Load external data and boot
+    d3.queue()
+	    .defer(d3.json, "/world.geojson")
+	    .await(ready);
+
+    // Add clickable background
+    svg.append("rect")
+        .attr("class", "background")
+	    .attr("width", width)
+	    .attr("height", height)
+	    .on("click", click);
+}
+
+refugeeWorldMap();
+document.getElementById("map-refugee").className = "nav-link active";
+
+function resetMapNavStyles() {
+    document.getElementById("map-refugee").className = "nav-link";
+    document.getElementById("map-cost").className = "nav-link";
+    document.getElementById("map-aid").className = "nav-link";
+    document.getElementById("map-sanction").className = "nav-link";
+}
+
+document.getElementById("map-refugee").addEventListener("click", () => {
+    refugeeWorldMap();
+    resetMapNavStyles();
+    document.getElementById("map-refugee").className = "nav-link active";
+});
+
+document.getElementById("map-cost").addEventListener("click", () => {
+    costWorldMap();
+    resetMapNavStyles();
+    document.getElementById("map-cost").className = "nav-link active";
+});
+
+document.getElementById("map-aid").addEventListener("click", () => {
+    aidWorldMap();
+    resetMapNavStyles();
+    document.getElementById("map-aid").className = "nav-link active";
+});
+
+document.getElementById("map-sanction").addEventListener("click", () => {
+    sanctionWorldMap();
+    resetMapNavStyles();
+    document.getElementById("map-sanction").className = "nav-link active";
+});
 
 
 // ----------------------------
@@ -106,7 +223,7 @@ function ready(error, topo) {
 			.style("top", (d3.event.pageY - 28) + "px")
 			.transition().duration(400)
 			.style("opacity", 1)
-			.text(d.properties.name + ': ' + d.total);
+			.text(d.properties.name + ': ' + (mode == 0 ? d.total : (d.total > 0 ? "Yes" : "No")));
 	}
 
 	let mouseLeave = function() {
@@ -182,7 +299,9 @@ function ready(error, topo) {
 		})
 		.attr("width", ls_w)
 		.attr("height", ls_h)
-		.style("fill", function(d) {
+		.style("fill", function(d, i) {
+            if (mode !== 0 && i === 0)
+                return colorScale(0);
 			return colorScale(d[0]);
 		})
 		.style("opacity", 0.8);
@@ -193,14 +312,18 @@ function ready(error, topo) {
 			return height - (i * ls_h) - ls_h - 6;
 		})
 		.text(function(d, i) {
-			if (i === 0) return "< " + d[1];
-			if (d[1] < d[0]) return d[0];
-			return d[0] + " - " + d[1];
+			if (mode == 0) {
+                if (i === 0) return "< " + d[1];
+			    if (d[1] < d[0]) return d[0];
+			    return d[0] + " - " + d[1];
+            } else {
+                if (i === 0) return "No";
+                return "Yes";
+            }
 		});
 
-	legend.append("text").attr("x", 15).attr("y", 240).text("Refugees");
+	legend.append("text").attr("x", 15).attr("y", mode == 0 ? 240 : 380).text(legendText);
 }
-
 // Zoom functionality
 function click(d) {
   var x, y, k;
