@@ -147,6 +147,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays worldMap page.
+     *
+     * @return mixed
+     */
+    public function actionWorld()
+    {
+        return $this->render('world');
+    }
+
+    /**
      * Signs user up.
      *
      * @return mixed
