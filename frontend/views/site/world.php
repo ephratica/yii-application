@@ -11,49 +11,48 @@ $this->params['breadcrumbs'][] = $this->title;
 <script src="https://d3js.org/d3.v4.js"></script>
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<link rel="stylesheet" href="/css/world-map.css">
 
 <div class="site-world-map">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="d-flex align-items-center flex-column">
-    <svg id="my_dataviz" width="800" height="450"></svg></div>
+        <div class="card">
+            <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">难民地图</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">制裁地图</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">援助地图</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">花销地图</a>
+            </li>
+            </ul>
+        </div>
+        <svg id="my_dataviz" width="800" height="450"></svg>
+    </div>
 </div>
 
-<style>
-#legend {
-  font-size: 0.7em;
-  letter-spacing: 0.1;
-}
-
-div.tooltip {   
-  position: absolute;
-  padding: 7px;
-  font-size: 0.8em;
-  pointer-events: none;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.25);
-}  
-
-.background {
-  fill: transparent;
-  pointer-evens: all;
-}
-
-.world {
-  transform-origin: center;
-}
-</style>
-
 <script>
+
 const svg = d3.select("svg"),
 width = svg.attr("width"),
 height = svg.attr("height"),
 path = d3.geoPath(),
 data = d3.map(),
-worldmap = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson",
-worldpopulation = "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world_population.csv";
+worldData = [
+    <?php foreach ($countries as $country): ?>
+        {'code': "<?= Html::encode("{$country->code}") ?>", 'number_of_refugees': <?= Html::encode("{$country->number_of_refugees}") ?>},
+    <?php endforeach; ?>
+];
+
+for (const d of worldData) {
+    data.set(d['code'], d['number_of_refugees']);
+}
 
 let centered, world;
 
@@ -64,8 +63,8 @@ const projection = d3.geoRobinson()
 
 // Define color scale
 const colorScale = d3.scaleThreshold()
-	.domain([100000, 1000000, 10000000, 30000000, 100000000, 500000000])
-	.range(d3.schemeOrRd[7]);
+	.domain([1000, 10000, 50000, 100000, 500000, 1000000, 2000000, 3000000])
+	.range(d3.schemeOrRd[9]);
 
 // add tooltip
 const tooltip = d3.select("body").append("div")
@@ -74,10 +73,7 @@ const tooltip = d3.select("body").append("div")
 
 // Load external data and boot
 d3.queue()
-	.defer(d3.json, worldmap)
-	.defer(d3.csv, worldpopulation, function(d) {
-		data.set(d.code, +d.pop);
-	})
+	.defer(d3.json, "/world.geojson")
 	.await(ready);
 
 // Add clickable background
@@ -94,7 +90,6 @@ svg.append("rect")
 
 function ready(error, topo) {
 	// topo is the data received from the d3.queue function (the world.geojson)
-	// the data from world_population.csv (country code and country population) is saved in data variable
 
 	let mouseOver = function(d) {
 		d3.selectAll(".Country")
@@ -111,7 +106,7 @@ function ready(error, topo) {
 			.style("top", (d3.event.pageY - 28) + "px")
 			.transition().duration(400)
 			.style("opacity", 1)
-			.text(d.properties.name + ': ' + Math.round((d.total / 1000000) * 10) / 10 + ' mio.');
+			.text(d.properties.name + ': ' + d.total);
 	}
 
 	let mouseLeave = function() {
@@ -198,12 +193,12 @@ function ready(error, topo) {
 			return height - (i * ls_h) - ls_h - 6;
 		})
 		.text(function(d, i) {
-			if (i === 0) return "< " + d[1] / 1000000 + " m";
-			if (d[1] < d[0]) return d[0] / 1000000 + " m +";
-			return d[0] / 1000000 + " m - " + d[1] / 1000000 + " m";
+			if (i === 0) return "< " + d[1];
+			if (d[1] < d[0]) return d[0];
+			return d[0] + " - " + d[1];
 		});
 
-	legend.append("text").attr("x", 15).attr("y", 280).text("Population (Million)");
+	legend.append("text").attr("x", 15).attr("y", 240).text("Refugees");
 }
 
 // Zoom functionality

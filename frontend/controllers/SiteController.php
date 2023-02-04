@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Country;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -153,7 +154,11 @@ class SiteController extends Controller
      */
     public function actionWorld()
     {
-        return $this->render('world');
+        $query = Country::find()->orderBy('country');
+        $countries = $query->all();
+        return $this->render('world', [
+            'countries' => $countries
+        ]);
     }
 
     /**
