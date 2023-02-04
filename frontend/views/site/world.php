@@ -73,7 +73,7 @@ let mode = 0;
 function refugeeWorldMap() {
     svg.selectAll("*").remove();
     data = d3.map();
-    legendText = "Number of Refugees";
+    legendText = "难民数量";
     mode = 0;
     for (const d of worldData) {
         data.set(d['code'], d['number_of_refugees']);
@@ -97,7 +97,7 @@ function refugeeWorldMap() {
 function costWorldMap() {
     svg.selectAll("*").remove();
     data = d3.map();
-    legendText = "Cost (Billion Euro)";
+    legendText = "花销 （百万欧元）";
     mode = 0;
     for (const d of worldData) {
         data.set(d['code'], d['cost']);
@@ -121,7 +121,7 @@ function costWorldMap() {
 function aidWorldMap() {
     svg.selectAll("*").remove();
     data = d3.map();
-    legendText = "Aid";
+    legendText = "援助";
     mode = 1;
     for (const d of worldData) {
         data.set(d['code'], d['aid']);
@@ -145,7 +145,7 @@ function aidWorldMap() {
 function sanctionWorldMap() {
     svg.selectAll("*").remove();
     data = d3.map();
-    legendText = "Sanction";
+    legendText = "制裁";
     mode = 1;
     for (const d of worldData) {
         data.set(d['code'], d['sanction']);
@@ -223,7 +223,7 @@ function ready(error, topo) {
 			.style("top", (d3.event.pageY - 28) + "px")
 			.transition().duration(400)
 			.style("opacity", 1)
-			.text(d.properties.name + ': ' + (mode == 0 ? d.total : (d.total > 0 ? "Yes" : "No")));
+			.text(d.properties.name + ': ' + (mode == 0 ? d.total : (d.total > 0 ? "是" : "否")));
 	}
 
 	let mouseLeave = function() {
@@ -317,8 +317,8 @@ function ready(error, topo) {
 			    if (d[1] < d[0]) return d[0];
 			    return d[0] + " - " + d[1];
             } else {
-                if (i === 0) return "No";
-                return "Yes";
+                if (i === 0) return "否";
+                return "是";
             }
 		});
 
