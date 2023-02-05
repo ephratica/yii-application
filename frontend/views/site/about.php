@@ -11,9 +11,46 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
+    <div class="card bg-light border-light mt-2 mb-3">
+      <div class="card-body">
+        <h5 class="card-title">俄罗斯乌克兰战争动态新闻网</h5>
+        <p class="card-text">本网站balabalabala</p>
+      </div>
+    </div>
 
-    <p>
-        If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-    </p>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col">
+  <div class="card bg-light border-light h-100">
+      <div class="card-body">
+        <h5 class="card-title">穆禹宸</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+  <div class="card bg-light border-light h-100">
+      <div class="card-body">
+        <h5 class="card-title">陈静怡</h5>
+        <p class="card-text">负责了世界地图、新闻、主页等</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+  <div class="card bg-light border-light h-100">
+      <div class="card-body">
+        <h5 class="card-title">果丁</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card bg-light border-light h-100">
+      <div class="card-body">
+        <h5 class="card-title">林巧莹</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 </div>
