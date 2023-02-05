@@ -14,7 +14,7 @@
  Date: 05/02/2023 21:20:16
 */
 
-SET NAMES utf8mb4;
+SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
@@ -587,7 +587,7 @@ INSERT INTO `all_countries` VALUES ('Colombia', NULL, 0, 0, 0, 0, 'COL');
 INSERT INTO `all_countries` VALUES ('Comoros', NULL, 0, 0, 0, 0, 'COM');
 INSERT INTO `all_countries` VALUES ('Congo', NULL, 0, 0, 0, 0, 'COG');
 INSERT INTO `all_countries` VALUES ('Costa Rica', NULL, 0, 0, 0, 0, 'CRI');
-INSERT INTO `all_countries` VALUES ('Côte d\'Ivoire', NULL, 0, 0, 0, 0, 'CIV');
+INSERT INTO `all_countries` VALUES ('Côte d\Ivoire', NULL, 0, 0, 0, 0, 'CIV');
 INSERT INTO `all_countries` VALUES ('Croatia', 0.2229, 1, 0, 0.08, 20164, 'HRV');
 INSERT INTO `all_countries` VALUES ('Cuba', NULL, 0, 1, 0, 0, 'CUB');
 INSERT INTO `all_countries` VALUES ('Cyprus', 0.0025, 1, 0, 0.07, 15158, 'CYP');
@@ -756,14 +756,14 @@ INSERT INTO `all_countries` VALUES ('Zimbabwe', NULL, 0, 0, 0, 0, 'ZWE');
 -- ----------------------------
 DROP TABLE IF EXISTS `military_compare_total`;
 CREATE TABLE `military_compare_total`  (
-  `Type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Active military personnel` int NULL DEFAULT NULL,
   `Aircraft` int NULL DEFAULT NULL,
   `Armored vehicles` int NULL DEFAULT NULL,
   `Naval fleet` int NULL DEFAULT NULL,
   `Nuclear warheads` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of military_compare_total
@@ -777,11 +777,11 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `Indicator` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Indicator` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Russia` int NULL DEFAULT NULL,
   `Ukraine` int NULL DEFAULT NULL,
   PRIMARY KEY (`Indicator`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of r_u_military_comparison
@@ -833,7 +833,7 @@ CREATE TABLE `russia_loss`  (
   `personnel_total` int NULL DEFAULT NULL,
   `personnel_increase` int NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of russia_loss
@@ -1289,11 +1289,11 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `Killed/Injured` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Killed/Injured` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Total` int NULL DEFAULT NULL,
   `Children` int NULL DEFAULT NULL,
   PRIMARY KEY (`Killed/Injured`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_civilian_casualties
@@ -1306,10 +1306,10 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round-trip`;
 CREATE TABLE `ukraine_round-trip`  (
-  `Type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Num` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_round-trip
@@ -1326,7 +1326,7 @@ CREATE TABLE `ukraine_russia_military_expenditure`  (
   `Ukraine` double NULL DEFAULT NULL,
   `Russia` double NULL DEFAULT NULL,
   PRIMARY KEY (`Year`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_russia_military_expenditure
@@ -1350,4 +1350,27 @@ INSERT INTO `ukraine_russia_military_expenditure` VALUES (2019, 5.42, 65.2);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2020, 5.92, 61.71);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2021, 5.94, 65.91);
 
+-- ----------------------------
+-- Table structure for articles
+-- ----------------------------
+DROP TABLE IF EXISTS `articles`;
+CREATE TABLE `articles` (
+  `date` date NOT NULL,
+  `articleid` Int NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `content` text DEFAULT NULL,
+  `img_url` varchar(1000) DEFAULT NULL,
+  `summary` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`articleid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `articles` VALUES ('2022-02-24','1','俄乌冲突爆发','2月24日，普京宣布一项“以乌克兰非军事化和去纳粹化”为目标后的几分钟后，乌克兰基辅、哈尔科夫、敖德萨和顿巴斯传出炮火声。乌克兰官员说，俄罗斯在乌克兰敖德萨登陆部队，并向乌克兰基辅、哈尔科夫和第聂伯罗的机场和军事基地发射巡航导弹和弹道导弹。由于事态发展，乌克兰东部空域禁止民用航空使用，欧洲飞航安全局将整个地区划为活跃冲突区。根据乌克兰国务部长安东·格拉先科发言，在乌克兰当地时间6时30分之后，俄罗斯军队朝对乌克兰哈尔科夫进行袭击，并在乌克兰马里乌波尔和敖德萨进行了大规模的两栖登陆。乌克兰边防部队亦报告来自乌克兰卢甘斯克、苏梅、哈尔科夫、切尔尼戈夫和日托米尔以及克里米亚的袭击。乌克兰内政部表示，俄罗斯军队占领了卢甘斯克的两个村庄。乌克兰战略通信和战略安全中心表示，乌克兰军队在乌克兰夏斯季耶附近击退了俄军的一次进攻，并夺回了该地的控制权，反击使得俄罗斯方面出现近50人的伤亡。乌克兰国防部表示该国在乌克兰卢甘斯克击落了俄罗斯五架飞机和一架直升机。俄方否认这一说法。乌克兰紧急情况部称，乌克兰国民卫队司令部被摧毁。','./articlepages/1.jpg','莫斯科时间清晨6时整（乌克兰时间清晨5时整），俄罗斯总统普京宣布了一项“以乌克兰非军事化和去纳粹化”为目标，以及阻止乌克兰政府对本国人民实施种族灭绝的“特殊军事行动”');
+INSERT INTO `articles` VALUES ('2022-03-20','2','俄乌双方持续交战','2022年3月20日，据俄新社报道，俄罗斯国防部发言人科纳申科夫少将说，俄军于19日晚间和20日上午用远程精准导弹对乌克兰进行空袭。乌克兰 港口城市马里乌波尔的围城战愈演愈烈，俄乌双方爆发激烈巷战。“自黑海海域发射的海基口径巡航导弹摧毁了涅任维修厂的装甲军备维修车间”。据法新社消息，俄罗斯方面称其再次向乌克兰境内发射高超音速导弹。俄罗斯国防部表示：“搭载高超音速弹道导弹的‘匕首’防空导弹系统，摧毁了乌克兰武装部队位于尼古拉耶夫地区康斯坦丁诺夫卡定居点附近的一个大型燃料和润滑油储存点。”俄罗斯联邦国防控制中心主任米津采夫发布声明说，俄军从莫斯科时间3月21日10时起开放从马里乌波尔到东西双向的人道主义通道，并将允许乌克兰民族主义分子在莫斯科时间3月21日10时至12时离开马里乌波尔，但不得携带任何武器。夜间，乌克兰基辅市长克利奇科通过社交媒体表示，基辅波多尔区发生多起爆炸事件，引发一处购物中心起火。基辅波多尔区发生多起爆炸事件，引发一处购物中心起火。消防和医务人员正在开展救援工作，截至目前已有1人死亡。乌克兰港口城市马里乌波尔的围城战愈演愈烈，俄乌双方爆发激烈巷战。当地时间3月20日，俄军苏霍伊苏-35战机参加对乌克兰的军事行动。俄罗斯航空航天部队进行空中拦截，摧毁乌克兰军队的防空系统。','./articlepages/2.jpg','乌克兰总统泽伦斯基表示已准备与俄罗斯总统普京展开谈判，并警告如果谈判失败将可能开启第三次世界大战。');
+INSERT INTO `articles` VALUES ('2022-04-03','3','布查地区发生惨案','3月底，俄罗斯军队从布查撤军后，有证据表明，俄罗斯军队在占领该地区期间犯下了诸多暴行。据《泰晤士报》和《华盛顿邮报》报导，他们在一个地下室里发现了18具被谋杀的男人、女人和儿童的残缺不全尸体。尸体显示其生前饱受酷刑的证据；耳朵被剪，牙齿则被拔掉。其他被杀平民的尸体弃置路上，据称其中一些是俄罗斯士兵在撤退前用炸弹诱杀。大街上到处都是死去的平民，他们显然一直在过著自己的日常生活。居民和市长证实他们已被俄罗斯军队杀害。许多人似乎在进行日常工作，比如捡木材生火、遛狗或提著购物袋。尸体外观完整，表明他们是被枪杀的，而不是被炸药炸死的。影片显示平民死亡时双手被绑。乌克兰声称在俄罗斯人离开后发现了一个埋有300人的乱葬岗。布查市长阿纳托利·费多鲁克也证实，该市至少有280名遇难者必须就地埋葬在乱葬岗中。当地居民不得不将另外57具尸体埋在另一座乱葬岗里。布查的幸存平民表示，许多幸存者一直躲在地下室躲避俄罗斯人，不敢出来。他们其中的一些人数周没有灯火，也没有电力，只能用蜡烛来烧水和做饭。直到俄罗斯人明确离开后，他们才走出藏身之处，欢迎乌克兰军队的到来。与其他城镇不同，俄罗斯军队占领期间布查市长继续留任，没有被俄罗斯士兵绑架或处决。','./articlepages/3.jpg','有记者报道称至少有20名乌克兰平民因布查事件死亡。');
+INSERT INTO `articles` VALUES ('2022-05-16','4','麦当劳宣布停止在俄营业','俄乌战争仍未平息，麦当劳16日发布声明，宣布在俄罗斯结束30多年的经营; 由于公司在当地有800多家餐厅与6.2万名员工，麦当劳承诺会确保这些员工在交易完成前能继续获得报酬。麦当劳表示，多年来，麦当劳在俄罗斯投资了数十亿美元，不过俄罗斯因发动战争造成人道主义危机，以及战争所造成的经营环境的不可预测，麦当劳认为，继续在俄罗斯拥有业务已不再具有可行性，也不符合麦当劳的价值观。麦当劳指出，公司在当地有800多家餐厅与6.2万名员工，麦当劳承诺会确保这些员工在交易完成前能继续获得报酬，且在新东家的入主后能保住工作。','./articlepages/4.jpg','全球最大的速食连锁店——麦当劳宣布结束在俄罗斯30多年的经营。');
+INSERT INTO `articles` VALUES ('2022-06-03','5','俄乌冲突百日','俄乌战争即将满百日，俄罗斯总统普京近日发表电视讲话，声称期待乌克兰政权的更迭。 美国有线电视新闻《CNN》记者内森霍奇 （Nathan Hodge ） 分析，乌克兰战胜的因素是谁有的是时间。霍奇指出，俄军3月下旬陆续从基辅撤出，并声称转移部队至乌克兰东部的顿巴斯地区。 他认为俄罗斯历经3个月后，没有能力实现，也没有打算通过短时间来战胜乌克兰。 乌克兰军队以惊人速度对抗俄罗斯，面对如此顽强抵御，霍奇表示，这迫使俄罗斯当局重组作战指挥部。乌克兰东部的北顿内茨克（Sievierodonetsk）是目前俄罗斯的头号攻击目标，泽连斯基5月30日拍摄影片证实俄军正持续集结，并坦言顿巴斯地区局势相当困难。总部位于美国的一个战争研究所分析..基辅原本可以投入更多的储备和资源，为北顿涅茨克防御，但是未能做到这一点。 虽然避免投入过多资源是合理的，不过再怎么痛苦，乌克兰必须利用其有限的资源，专注于重新获得关键地形，而不是保卫无法控制局势的土地，导致战争重回爆发初期那样的严重。','./articlepages/5.jpg','俄罗斯入侵乌克兰第一百日，俄罗斯总统普京发表电视讲话，声称期待乌克兰政权的更迭。');
+INSERT INTO `articles` VALUES ('2022-08-20','6','杜金娜被刺杀身亡','俄罗斯联邦的俄罗斯政治哲学家亚历山大·杜金的女儿达莉娅·杜金娜遇刺，杜金娜于当地时间2022年8月20日大约晚上9:00（根据其他消息来源，大约晚上9:30或晚上10:00），在莫斯科大维亚焦梅莫日斯科高速公路的汽车爆炸中死亡，享年29岁。杜金娜参加一年一度的家庭文学和音乐节日“传统节”后乘丰田陆地巡洋舰普拉多回家。杜金娜的父亲亚历山大·杜金本来应该和她同车，但由于某种原因，杜金在最后一刻乘坐另一辆车。据《生意人报》报导，爆炸发生后，车辆失去控制，停下并著火。报导指，后来在车箱内发现了一具严重烧伤的尸体。杜金的朋友称爆炸的汽车属于杜金，杜金娜通常开另一辆车。然而《共青团真理报》报导指爆炸的汽车属于杜金娜。关于杜金娜之死，莫斯科牧首基里尔和俄罗斯总统弗拉基米尔·普京向杜金娜家人表示哀悼，普京称杜金娜为“一个聪明、才华横溢的人，有著一颗真正的俄罗斯之心”。俄罗斯调查委员会根据“以一般危险的方式实施谋杀”刑事条款立案调查。该部门在一份声明中表示：“正在调查所有可能的犯罪原因”。其中一个暗杀原因说法是对亚历山大·杜金的一次暗杀。莫斯科地区检察官办公室接手了此案。随后，俄罗斯联邦侦查委员会主席亚历山大·巴斯特里金指示将杜金娜谋杀案移交俄罗斯联邦侦查委员会中央办公室。调查认为，凶手是受命执行暗杀，在司机一侧的车底下安装了爆炸装置。爆炸装置的容量为400克TNT。部分炸弹残骸被送往相关部门检验。','./articlepages/6.jpg','俄罗斯“国师”女儿杜金娜遇刺身亡。');
+INSERT INTO `articles` VALUES ('2022-09-23','7','乌东地区四地举行公投','2022年9月23日至27日，俄罗斯在其于乌克兰的军事占领区就吞并乌克兰被占领土举行了公投，该公投被评论员广泛描述为虚假的公投，并受到世界各国的谴责。目前，只有朝鲜民主主义人民共和国接受了公投结果的有效性，其他主权国家均不接受。公投在乌克兰的四个地区进行——俄罗斯占领的顿涅茨克州和卢甘斯克州上的傀儡政权顿涅茨克人民共和国和卢甘斯克人民共和国，以及俄罗斯占领下的赫尔松州和扎波罗热州。公投时，四个地区均未被俄罗斯完全控制，军事敌对行动仍在进行，且自2022年俄罗斯入侵乌克兰开始以来，四地的大部分人口已经逃离。公投违反国际法，并被联合国谴责为违反《联合国宪章》。2022年9月30日，俄罗斯总统弗拉基米尔·普京在俄罗斯议会两院发表讲话，宣布吞并乌克兰的顿涅茨克州、赫尔松州、卢甘斯克州和扎波罗热州。联合国、乌克兰和许多其他国家都谴责了这一吞并行为。','./articlepages/7.jpg','俄罗斯在其于乌克兰的占领区举行的有关加入俄罗斯联邦的公投。');
+INSERT INTO `articles` VALUES ('2022-12-25','8','教皇方济各呼吁停战','法新社报导，86岁的教宗方济各（Pope Francis）今天对圣伯多禄广场数以千计的信众演说，接着发表《致全城与全球》（Urbi et Orbi）文告。 广场上有些人举着乌克兰国旗。俄罗斯2月入侵乌克兰后，教宗已多次呼吁和平、谴责战争，同时也试图小心维持与莫斯科的对话。他今天在圣伯多禄大教堂大殿中央阳台演说时表示，想起我们的乌克兰弟兄姊妹们，他们在黑暗与寒冷中、远离家园度过这个圣诞。教宗说愿天主启发我们具体展现团结，去协助那些受苦的人。 愿祂开导能使武器雷鸣平息的掌权者的心灵，立即结束这场无谓战争！教宗表示：悲惨的是，我们偏好听从其他建言、受尘世思维所支配。他带着悲伤想起凛冽的战争之风持续冲击人类。他还说在其他区域和这场第3次世界大战其他战区，我们的时代也在经历一场（缺乏）和平的严重饥荒。教宗提到这个圣诞节因为冲突或其他危机而处境艰难的多个国家，包括阿富汗、也门、叙利亚、缅甸、以色列和巴勒斯坦的冲突、黎巴嫩与海地。他也首度呼吁伊朗和解，过去3个月来，女性为首的抗议活动持续撼动伊朗。教宗也呼吁庆祝圣诞节的人们，谨记那些在每天有大量食物被丢弃、资源投入武器之际还挨饿的人。','./articlepages/8.jpg','教皇方济各在圣伯多禄大教堂发表圣诞文告，呼吁结束在乌克兰的“无谓”战争。');
+INSERT INTO `articles` VALUES ('2023-01-23','9','欧盟追加援助','据法新社布鲁塞尔1月23日报道，欧盟当天同意追加5亿欧元资金用于为乌克兰提供武装，并拨款4500万欧元用于在欧盟培训乌克兰军队。在布鲁塞尔开会的欧盟外长们在与乌克兰外长德米特里·库列巴举行视频会议后，同意发放这两笔由欧洲和平融资机制供资的拨款。报道称，这使得由欧洲和平融资机制供资的对乌克兰军事财政援助总额达到36亿欧元，此外还有成员国的双边资助。并非所有成员国都报告了供资情况。一位与会者解释说：“我们没有讨论主战坦克，因为我们没有资格这么做。”报道称，德国当局面临着交付自己的坦克并允许在部队中拥有“豹”式主战坦克的国家将坦克运往乌克兰的压力。德国外交部长安娜莱娜·贝尔伯克说：“申请应由各国提出，德国政府的决定是开放的。”','./articlepages/9.jpg','欧盟同意追加5亿欧元资金用于为乌克兰提供武装，并拨款4500万欧元用于在欧盟培训乌克兰军队。');
 SET FOREIGN_KEY_CHECKS = 1;
+
