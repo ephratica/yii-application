@@ -12,6 +12,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
 use common\models\Country;
+use common\models\Article;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -76,7 +77,11 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $query = Article::find()->orderBy('date');
+        $articles = array_reverse($query->all(), true);
+        return $this->render('index', [
+            'articles' => $articles
+        ]);
     }
 
     /**
@@ -168,6 +173,19 @@ class SiteController extends Controller
         $countries = $query->all();
         return $this->render('world', [
             'countries' => $countries
+        ]);
+    }
+
+    /**
+     * Displays article page.
+     *
+     * @return mixed
+     */
+    public function actionArticle($id = null)
+    {
+        $article = Article::findOne($id);
+        return $this->render('article', [
+            'article' => $article
         ]);
     }
 

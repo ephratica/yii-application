@@ -18,7 +18,6 @@
   background: #fff;
   color: gray;
   border-radius: 8px;
-  min-width: 100%;
 }
 
 /* Information about the timeline */
@@ -30,7 +29,6 @@
 
 /* Title of the card */
 .timeline-title {
-  color: black;
   position: relative;
 }
 
