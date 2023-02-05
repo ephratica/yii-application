@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <a class="nav-link" id="map-aid" href="#">援助地图</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link"id="map-cost" href="#">花销地图</a>
+                <a class="nav-link" id="map-cost" href="#">花销地图</a>
             </li>
             </ul>
         </div>
