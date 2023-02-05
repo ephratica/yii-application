@@ -36,20 +36,17 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
-        ['label' => '世界地图', 'url' => ['/site/world']],
-        ['label' => '图表', 'url' => ['/site/charts']],
+        ['label' => '外交地图', 'url' => ['/site/world']],
+        ['label' => '经济数据', 'url' => ['/site/charts']],
         ['label' => '关于', 'url' => ['/site/about']],
     ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
-    }
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {
-        echo Html::tag('div',Html::a('登录',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
+        echo Html::tag('div',Html::a('登录',['/site/login'],['class' => ['btn btn-success login text-decoration-none']]),['class' => ['d-flex']]);
     } else {
         echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
             . Html::submitButton(

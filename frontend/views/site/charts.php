@@ -8,7 +8,7 @@ use yii\bootstrap5\Html;
 use yii\web\JsExpression;
 use daixianceng\echarts\ECharts;
 
-$this->title = '图表';
+$this->title = '经济数据';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-charts">
