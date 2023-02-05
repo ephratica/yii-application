@@ -40,14 +40,19 @@ $this->title = '俄乌动态';
             <div class="mt-5 card bg-light border-light p-5" style="border-radius: 50px;">
                 <h2>新闻动态</h2>
 
-                <div class="timeline">
+                <div class="timeline w-100">
                     <div class="timeline-outer">
+                        <?php foreach ($articles as $article): ?>
                         <div class="timeline-card">
                             <div class="timeline-info">
-                                <h3 class="timeline-title"><a>2023/1/1</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <h3 class="timeline-title">
+                                <?= Html::a("{$article->date}  {$article->title}", ["/site/article", "id" => $article->articleid], ['class' => ['text-decoration-none text-secondary']]); ?>
+                                    
+                                </h3>
+                                <?= $article->summary ?>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
