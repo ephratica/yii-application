@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="d-flex align-items-center flex-column">
-        <div class="card">
+        <div class="card m-3">
             <ul class="nav nav-pills">
             <li class="nav-item">
                 <a class="nav-link" id="map-refugee" href="#">难民地图</a>
