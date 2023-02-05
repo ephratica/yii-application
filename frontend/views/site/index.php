@@ -20,14 +20,14 @@ $this->title = '俄乌动态';
 
     <div class="body-content m-5">
         <div class="row d-flex justify-content-between">
-            <div class="col-lg-5 card bg-light border-light p-5">
+            <div class="col-lg card bg-light border-light p-5 me-4" style="border-radius: 50px;">
                 <h2>经济数据</h2>
 
                 <p>时刻掌握战争中的经济数据，包括大宗商品价格、balabalabala。</p>
 
                 <p><?= Html::a('查看经济数据 &raquo;', ['/site/charts'],['class' => ['btn btn-outline-secondary']]); ?></p>
             </div>
-            <div class="col-lg-5 card bg-light border-light p-5">
+            <div class="col-lg card bg-light border-light p-5 ms-4" style="border-radius: 50px;">
                 <h2>外交地图</h2>
 
                 <p>在世界地图上查看外交动态，了解制裁、援助、花费数额、难民去向。</p>
@@ -37,46 +37,20 @@ $this->title = '俄乌动态';
         </div>
 
         <div class="row d-flex">
-            <div class="mt-5 card bg-light border-light p-5">
+            <div class="mt-5 card bg-light border-light p-5" style="border-radius: 50px;">
                 <h2>新闻动态</h2>
 
-<div class="timeline">
-  <div class="timeline-outer">
-    <div class="timeline-card">
-      <div class="timeline-info">
-        <h3 class="timeline-title">Title 1</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="timeline-card">
-      <div class="timeline-info">
-        <h3 class="timeline-title">Title 2</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="timeline-card">
-      <div class="timeline-info">
-        <h3 class="timeline-title">Title 3</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="timeline-card">
-      <div class="timeline-info">
-        <h3 class="timeline-title">Title 4</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-    <div class="timeline-card">
-      <div class="timeline-info">
-        <h3 class="timeline-title">Title 5</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-      </div>
-    </div>
-  </div>
-</div>
+                <div class="timeline">
+                    <div class="timeline-outer">
+                        <div class="timeline-card">
+                            <div class="timeline-info">
+                                <h3 class="timeline-title"><a>2023/1/1</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    
 </div>
