@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 02/02/2023 17:49:12
+ Date: 05/02/2023 21:20:16
 */
 
 SET NAMES utf8mb4;
@@ -30,127 +30,127 @@ CREATE TABLE `aid`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `country`(`country` ASC) USING BTREE,
   CONSTRAINT `country` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of aid
 -- ----------------------------
-INSERT INTO `aid` VALUES ('ATF1', 'Austria', '2022-03-07', 'Financial', 10000000);
-INSERT INTO `aid` VALUES ('ATH1', 'Austria', '2022-02-25', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ATH2', 'Austria', '2022-06-03', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ATH3', 'Austria', '2022-05-04', 'Humanitarian', 36900000);
-INSERT INTO `aid` VALUES ('ATH4', 'Austria', '2022-09-11', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ATH5', 'Austria', '2022-09-04', 'Humanitarian', 500000000);
+INSERT INTO `aid` VALUES ('ATF1', 'Austria', '2022-03-01', 'Financial', 10000000);
+INSERT INTO `aid` VALUES ('ATH1', 'Austria', '2022-02-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ATH2', 'Austria', '2022-06-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ATH3', 'Austria', '2022-05-01', 'Humanitarian', 36900000);
+INSERT INTO `aid` VALUES ('ATH4', 'Austria', '2022-09-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ATH5', 'Austria', '2022-09-01', 'Humanitarian', 500000000);
 INSERT INTO `aid` VALUES ('ATH6', 'Austria', '2022-11-01', 'Humanitarian', 4922621);
 INSERT INTO `aid` VALUES ('ATH7', 'Austria', '2022-11-01', 'Humanitarian', 5000000);
 INSERT INTO `aid` VALUES ('ATH8', 'Austria', '2022-11-01', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ATM1', 'Austria', '2022-03-13', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ATM1', 'Austria', '2022-03-01', 'Military', NULL);
 INSERT INTO `aid` VALUES ('AUH1', 'Australia', '2022-03-01', 'Humanitarian', 35000000);
-INSERT INTO `aid` VALUES ('AUH2', 'Australia', '2022-03-20', 'Humanitarian', 32600000);
-INSERT INTO `aid` VALUES ('AUH3', 'Australia', '2022-03-20', 'Humanitarian', 12000000);
+INSERT INTO `aid` VALUES ('AUH2', 'Australia', '2022-03-01', 'Humanitarian', 32600000);
+INSERT INTO `aid` VALUES ('AUH3', 'Australia', '2022-03-01', 'Humanitarian', 12000000);
 INSERT INTO `aid` VALUES ('AUM1', 'Australia', '2022-03-01', 'Military', 70000000);
-INSERT INTO `aid` VALUES ('AUM10', 'Australia', '2022-10-27', 'Military', NULL);
-INSERT INTO `aid` VALUES ('AUM2', 'Australia', '2022-03-20', 'Military', 21000000);
-INSERT INTO `aid` VALUES ('AUM3', 'Australia', '2022-03-31', 'Military', 25000000);
-INSERT INTO `aid` VALUES ('AUM4', 'Australia', '2022-04-08', 'Military', 49000000);
-INSERT INTO `aid` VALUES ('AUM5', 'Australia', '2022-04-08', 'Military', 26500000);
-INSERT INTO `aid` VALUES ('AUM6', 'Australia', '2022-04-27', 'Military', 26700000);
-INSERT INTO `aid` VALUES ('AUM7', 'Australia', '2022-05-19', 'Military', 60900000);
-INSERT INTO `aid` VALUES ('AUM8', 'Australia', '2022-07-04', 'Military', 79500000);
-INSERT INTO `aid` VALUES ('AUM9', 'Australia', '2022-07-04', 'Military', 8700000);
-INSERT INTO `aid` VALUES ('BEF1', 'Belgium', '2022-11-10', 'Financial', 4960000);
+INSERT INTO `aid` VALUES ('AUM10', 'Australia', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('AUM2', 'Australia', '2022-03-01', 'Military', 21000000);
+INSERT INTO `aid` VALUES ('AUM3', 'Australia', '2022-03-01', 'Military', 25000000);
+INSERT INTO `aid` VALUES ('AUM4', 'Australia', '2022-04-01', 'Military', 49000000);
+INSERT INTO `aid` VALUES ('AUM5', 'Australia', '2022-04-01', 'Military', 26500000);
+INSERT INTO `aid` VALUES ('AUM6', 'Australia', '2022-04-01', 'Military', 26700000);
+INSERT INTO `aid` VALUES ('AUM7', 'Australia', '2022-05-01', 'Military', 60900000);
+INSERT INTO `aid` VALUES ('AUM8', 'Australia', '2022-07-01', 'Military', 79500000);
+INSERT INTO `aid` VALUES ('AUM9', 'Australia', '2022-07-01', 'Military', 8700000);
+INSERT INTO `aid` VALUES ('BEF1', 'Belgium', '2022-11-01', 'Financial', 4960000);
 INSERT INTO `aid` VALUES ('BEH1', 'Belgium', '2022-03-01', 'Humanitarian', 3400000);
-INSERT INTO `aid` VALUES ('BEH2', 'Belgium', '2022-03-02', 'Humanitarian', 230000);
-INSERT INTO `aid` VALUES ('BEH3', 'Belgium', '2022-04-09', 'Humanitarian', 83000000);
-INSERT INTO `aid` VALUES ('BEH4', 'Belgium', '2022-05-05', 'Humanitarian', 29770000);
-INSERT INTO `aid` VALUES ('BEH5', 'Belgium', '2022-07-15', 'Humanitarian', 800000);
-INSERT INTO `aid` VALUES ('BEM1', 'Belgium', '2022-02-26', 'Military', 76000000);
-INSERT INTO `aid` VALUES ('BEM2', 'Belgium', '2022-08-25', 'Military', 8000000);
-INSERT INTO `aid` VALUES ('BEM3', 'Belgium', '2022-09-17', 'Military', 12000000);
-INSERT INTO `aid` VALUES ('BGH1', 'Bulgaria', '2022-02-27', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('BGH2', 'Bulgaria', '2022-04-28', 'Humanitarian', 706000);
-INSERT INTO `aid` VALUES ('BGH3', 'Bulgaria', '2022-05-04', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('BGM1', 'Bulgaria', '2022-04-07', 'Military', NULL);
-INSERT INTO `aid` VALUES ('BGM2', 'Bulgaria', '2022-05-04', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CAF1', 'Canada', '2022-02-14', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('CAF2', 'Canada', '2022-04-07', 'Financial', 1000000000);
-INSERT INTO `aid` VALUES ('CAF3', 'Canada', '2022-05-20', 'Financial', 250000000);
-INSERT INTO `aid` VALUES ('CAF4', 'Canada', '2022-06-28', 'Financial', 200000000);
-INSERT INTO `aid` VALUES ('CAF5', 'Canada', '2022-07-29', 'Financial', 450000000);
-INSERT INTO `aid` VALUES ('CAF6', 'Canada', '2022-08-23', 'Financial', 3850000);
-INSERT INTO `aid` VALUES ('CAF7', 'Canada', '2022-10-28', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('CAH1', 'Canada', '2022-01-26', 'Humanitarian', 50000000);
+INSERT INTO `aid` VALUES ('BEH2', 'Belgium', '2022-03-01', 'Humanitarian', 230000);
+INSERT INTO `aid` VALUES ('BEH3', 'Belgium', '2022-04-01', 'Humanitarian', 83000000);
+INSERT INTO `aid` VALUES ('BEH4', 'Belgium', '2022-05-01', 'Humanitarian', 29770000);
+INSERT INTO `aid` VALUES ('BEH5', 'Belgium', '2022-07-01', 'Humanitarian', 800000);
+INSERT INTO `aid` VALUES ('BEM1', 'Belgium', '2022-02-01', 'Military', 76000000);
+INSERT INTO `aid` VALUES ('BEM2', 'Belgium', '2022-08-01', 'Military', 8000000);
+INSERT INTO `aid` VALUES ('BEM3', 'Belgium', '2022-09-01', 'Military', 12000000);
+INSERT INTO `aid` VALUES ('BGH1', 'Bulgaria', '2022-02-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('BGH2', 'Bulgaria', '2022-04-01', 'Humanitarian', 706000);
+INSERT INTO `aid` VALUES ('BGH3', 'Bulgaria', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('BGM1', 'Bulgaria', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('BGM2', 'Bulgaria', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CAF1', 'Canada', '2022-02-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('CAF2', 'Canada', '2022-04-01', 'Financial', 1000000000);
+INSERT INTO `aid` VALUES ('CAF3', 'Canada', '2022-05-01', 'Financial', 250000000);
+INSERT INTO `aid` VALUES ('CAF4', 'Canada', '2022-06-01', 'Financial', 200000000);
+INSERT INTO `aid` VALUES ('CAF5', 'Canada', '2022-07-01', 'Financial', 450000000);
+INSERT INTO `aid` VALUES ('CAF6', 'Canada', '2022-08-01', 'Financial', 3850000);
+INSERT INTO `aid` VALUES ('CAF7', 'Canada', '2022-10-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('CAH1', 'Canada', '2022-01-01', 'Humanitarian', 50000000);
 INSERT INTO `aid` VALUES ('CAH2', 'Canada', '2022-03-01', 'Humanitarian', 50000000);
-INSERT INTO `aid` VALUES ('CAH3', 'Canada', '2022-04-09', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('CAH4', 'Canada', '2022-05-19', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('CAH5', 'Canada', '2022-06-28', 'Humanitarian', 75000000);
-INSERT INTO `aid` VALUES ('CAH6', 'Canada', '2022-06-28', 'Humanitarian', 52000000);
-INSERT INTO `aid` VALUES ('CAH7', 'Canada', '2022-06-28', 'Humanitarian', 9700000);
-INSERT INTO `aid` VALUES ('CAH8', 'Canada', '2022-09-03', 'Humanitarian', 52000000);
-INSERT INTO `aid` VALUES ('CAM1', 'Canada', '2022-01-26', 'Military', 340000000);
-INSERT INTO `aid` VALUES ('CAM10', 'Canada', '2022-05-08', 'Military', 50000000);
-INSERT INTO `aid` VALUES ('CAM11', 'Canada', '2022-06-30', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CAM12', 'Canada', '2022-10-12', 'Military', 47000000);
-INSERT INTO `aid` VALUES ('CAM13', 'Canada', '2022-11-14', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('CAM14', 'Canada', '2022-11-16', 'Military', 33000000);
-INSERT INTO `aid` VALUES ('CAM2', 'Canada', '2022-02-14', 'Military', 7000000);
-INSERT INTO `aid` VALUES ('CAM3', 'Canada', '2022-02-27', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CAM4', 'Canada', '2022-02-27', 'Military', 25000000);
-INSERT INTO `aid` VALUES ('CAM5', 'Canada', '2022-03-03', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CAM6', 'Canada', '2022-03-03', 'Military', 1000000);
-INSERT INTO `aid` VALUES ('CAM7', 'Canada', '2022-03-09', 'Military', 50000000);
-INSERT INTO `aid` VALUES ('CAM8', 'Canada', '2022-04-22', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CAM9', 'Canada', '2022-04-22', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('CHH1', 'Switzerland', '2022-03-11', 'Humanitarian', 60000000);
-INSERT INTO `aid` VALUES ('CHH2', 'Switzerland', '2022-08-10', 'Humanitarian', 40000000);
-INSERT INTO `aid` VALUES ('CHH3', 'Switzerland', '2022-11-02', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('CNH1', 'China', '2022-03-09', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('CNH2', 'China', '2022-03-21', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('CYH1', 'Cyprus', '2022-03-09', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('CYH2', 'Cyprus', '2022-06-03', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('CZH1', 'Czech Republic', '2022-02-24', 'Humanitarian', 300000000);
-INSERT INTO `aid` VALUES ('CZH2', 'Czech Republic', '2022-03-04', 'Humanitarian', 108000000);
-INSERT INTO `aid` VALUES ('CZH3', 'Czech Republic', '2022-03-05', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('CZH4', 'Czech Republic', '2022-03-10', 'Humanitarian', 25000000);
-INSERT INTO `aid` VALUES ('CZH5', 'Czech Republic', '2022-04-06', 'Humanitarian', 14000000);
-INSERT INTO `aid` VALUES ('CZH6', 'Czech Republic', '2022-05-05', 'Humanitarian', 433000000);
+INSERT INTO `aid` VALUES ('CAH3', 'Canada', '2022-04-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('CAH4', 'Canada', '2022-05-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('CAH5', 'Canada', '2022-06-01', 'Humanitarian', 75000000);
+INSERT INTO `aid` VALUES ('CAH6', 'Canada', '2022-06-01', 'Humanitarian', 52000000);
+INSERT INTO `aid` VALUES ('CAH7', 'Canada', '2022-06-01', 'Humanitarian', 9700000);
+INSERT INTO `aid` VALUES ('CAH8', 'Canada', '2022-09-01', 'Humanitarian', 52000000);
+INSERT INTO `aid` VALUES ('CAM1', 'Canada', '2022-01-01', 'Military', 340000000);
+INSERT INTO `aid` VALUES ('CAM10', 'Canada', '2022-05-01', 'Military', 50000000);
+INSERT INTO `aid` VALUES ('CAM11', 'Canada', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CAM12', 'Canada', '2022-10-01', 'Military', 47000000);
+INSERT INTO `aid` VALUES ('CAM13', 'Canada', '2022-11-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('CAM14', 'Canada', '2022-11-01', 'Military', 33000000);
+INSERT INTO `aid` VALUES ('CAM2', 'Canada', '2022-02-01', 'Military', 7000000);
+INSERT INTO `aid` VALUES ('CAM3', 'Canada', '2022-02-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CAM4', 'Canada', '2022-02-01', 'Military', 25000000);
+INSERT INTO `aid` VALUES ('CAM5', 'Canada', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CAM6', 'Canada', '2022-03-01', 'Military', 1000000);
+INSERT INTO `aid` VALUES ('CAM7', 'Canada', '2022-03-01', 'Military', 50000000);
+INSERT INTO `aid` VALUES ('CAM8', 'Canada', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CAM9', 'Canada', '2022-04-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('CHH1', 'Switzerland', '2022-03-01', 'Humanitarian', 60000000);
+INSERT INTO `aid` VALUES ('CHH2', 'Switzerland', '2022-08-01', 'Humanitarian', 40000000);
+INSERT INTO `aid` VALUES ('CHH3', 'Switzerland', '2022-11-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('CNH1', 'China', '2022-03-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('CNH2', 'China', '2022-03-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('CYH1', 'Cyprus', '2022-03-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('CYH2', 'Cyprus', '2022-06-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('CZH1', 'Czech Republic', '2022-02-01', 'Humanitarian', 300000000);
+INSERT INTO `aid` VALUES ('CZH2', 'Czech Republic', '2022-03-01', 'Humanitarian', 108000000);
+INSERT INTO `aid` VALUES ('CZH3', 'Czech Republic', '2022-03-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('CZH4', 'Czech Republic', '2022-03-01', 'Humanitarian', 25000000);
+INSERT INTO `aid` VALUES ('CZH5', 'Czech Republic', '2022-04-01', 'Humanitarian', 14000000);
+INSERT INTO `aid` VALUES ('CZH6', 'Czech Republic', '2022-05-01', 'Humanitarian', 433000000);
 INSERT INTO `aid` VALUES ('CZH7', 'Czech Republic', '2022-06-01', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('CZH8', 'Czech Republic', '2022-06-07', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('CZM1', 'Czech Republic', '2022-02-26', 'Military', 36600000);
-INSERT INTO `aid` VALUES ('CZM10', 'Czech Republic', '2022-03-10', 'Military', 4500000);
-INSERT INTO `aid` VALUES ('CZM11', 'Czech Republic', '2022-03-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM12', 'Czech Republic', '2022-03-30', 'Military', 857000);
+INSERT INTO `aid` VALUES ('CZH8', 'Czech Republic', '2022-06-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('CZM1', 'Czech Republic', '2022-02-01', 'Military', 36600000);
+INSERT INTO `aid` VALUES ('CZM10', 'Czech Republic', '2022-03-01', 'Military', 4500000);
+INSERT INTO `aid` VALUES ('CZM11', 'Czech Republic', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CZM12', 'Czech Republic', '2022-03-01', 'Military', 857000);
 INSERT INTO `aid` VALUES ('CZM13', 'Czech Republic', '2022-04-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM14', 'Czech Republic', '2022-04-05', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM15', 'Czech Republic', '2022-04-06', 'Military', 133000000);
+INSERT INTO `aid` VALUES ('CZM14', 'Czech Republic', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CZM15', 'Czech Republic', '2022-04-01', 'Military', 133000000);
 INSERT INTO `aid` VALUES ('CZM16', 'Czech Republic', '2022-04-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM17', 'Czech Republic', '2022-05-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM18', 'Cz5ech Republic', '2022-05-29', 'Military', 30000000);
-INSERT INTO `aid` VALUES ('CZM19', 'Czech Republic', '2022-10-05', 'Military', 1801621450);
-INSERT INTO `aid` VALUES ('CZM2', 'Czech Republic', '2022-02-26', 'Military', 188106550);
-INSERT INTO `aid` VALUES ('CZM20', 'Czech Republic', '2022-10-05', 'Military', 7500000);
-INSERT INTO `aid` VALUES ('CZM21', 'Czech Republic', '2022-10-20', 'Military', 413193);
-INSERT INTO `aid` VALUES ('CZM22', 'Czech Republic', '2022-11-04', 'Military', 45000000);
-INSERT INTO `aid` VALUES ('CZM23', 'Czech Republic', '2022-11-16', 'Military', 41600000);
-INSERT INTO `aid` VALUES ('CZM3', 'Czech Republic', '2022-02-27', 'Military', 400000000);
-INSERT INTO `aid` VALUES ('CZM4', 'Czech Republic', '2022-03-03', 'Military', 17000000);
-INSERT INTO `aid` VALUES ('CZM5', 'Czech Republic', '2022-03-09', 'Military', 31500000);
-INSERT INTO `aid` VALUES ('CZM6', 'Czech Republic', '2022-03-09', 'Military', 24000000);
-INSERT INTO `aid` VALUES ('CZM7', 'Czech Republic', '2022-03-10', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CZM17', 'Czech Republic', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('CZM18', 'Cz5ech Republic', '2022-05-01', 'Military', 30000000);
+INSERT INTO `aid` VALUES ('CZM19', 'Czech Republic', '2022-10-01', 'Military', 1801621450);
+INSERT INTO `aid` VALUES ('CZM2', 'Czech Republic', '2022-02-01', 'Military', 188106550);
+INSERT INTO `aid` VALUES ('CZM20', 'Czech Republic', '2022-10-01', 'Military', 7500000);
+INSERT INTO `aid` VALUES ('CZM21', 'Czech Republic', '2022-10-01', 'Military', 413193);
+INSERT INTO `aid` VALUES ('CZM22', 'Czech Republic', '2022-11-01', 'Military', 45000000);
+INSERT INTO `aid` VALUES ('CZM23', 'Czech Republic', '2022-11-01', 'Military', 41600000);
+INSERT INTO `aid` VALUES ('CZM3', 'Czech Republic', '2022-02-01', 'Military', 400000000);
+INSERT INTO `aid` VALUES ('CZM4', 'Czech Republic', '2022-03-01', 'Military', 17000000);
+INSERT INTO `aid` VALUES ('CZM5', 'Czech Republic', '2022-03-01', 'Military', 31500000);
+INSERT INTO `aid` VALUES ('CZM6', 'Czech Republic', '2022-03-01', 'Military', 24000000);
+INSERT INTO `aid` VALUES ('CZM7', 'Czech Republic', '2022-03-01', 'Military', NULL);
 INSERT INTO `aid` VALUES ('CZM8', 'Czech Republic', NULL, 'Military', 53260000);
-INSERT INTO `aid` VALUES ('CZM9', 'Czech Republic', '2022-03-10', 'Military', 30000000);
-INSERT INTO `aid` VALUES ('DEF1', 'Germany', '2022-05-05', 'Financial', 150000000);
-INSERT INTO `aid` VALUES ('DEF2', 'Germany', '2022-05-19', 'Financial', 1000000000);
-INSERT INTO `aid` VALUES ('DEH1', 'Germany', '2022-05-06', 'Humanitarian', 185000000);
-INSERT INTO `aid` VALUES ('DEH2', 'Germany', '2022-04-09', 'Humanitarian', 370000000);
-INSERT INTO `aid` VALUES ('DEH3', 'Germany', '2022-04-09', 'Humanitarian', 70000000);
-INSERT INTO `aid` VALUES ('DEH4', 'Germany', '2022-05-05', 'Humanitarian', 125000000);
-INSERT INTO `aid` VALUES ('DEH5', 'Germany', '2022-09-04', 'Humanitarian', 200000000);
-INSERT INTO `aid` VALUES ('DEH6', 'Germany', '2022-11-11', 'Humanitarian', 1000000000);
-INSERT INTO `aid` VALUES ('DEM1', 'Germany', '2022-04-26', 'Military', NULL);
-INSERT INTO `aid` VALUES ('DEM2', 'Germany', '2022-10-02', 'Military', NULL);
-INSERT INTO `aid` VALUES ('DKF1', 'Denmark', '2022-03-07', 'Financial', 20000000);
-INSERT INTO `aid` VALUES ('DKF2', 'Denmark', '2022-09-30', 'Financial', 37500000);
+INSERT INTO `aid` VALUES ('CZM9', 'Czech Republic', '2022-03-01', 'Military', 30000000);
+INSERT INTO `aid` VALUES ('DEF1', 'Germany', '2022-05-01', 'Financial', 150000000);
+INSERT INTO `aid` VALUES ('DEF2', 'Germany', '2022-05-01', 'Financial', 1000000000);
+INSERT INTO `aid` VALUES ('DEH1', 'Germany', '2022-05-01', 'Humanitarian', 185000000);
+INSERT INTO `aid` VALUES ('DEH2', 'Germany', '2022-04-01', 'Humanitarian', 370000000);
+INSERT INTO `aid` VALUES ('DEH3', 'Germany', '2022-04-01', 'Humanitarian', 70000000);
+INSERT INTO `aid` VALUES ('DEH4', 'Germany', '2022-05-01', 'Humanitarian', 125000000);
+INSERT INTO `aid` VALUES ('DEH5', 'Germany', '2022-09-01', 'Humanitarian', 200000000);
+INSERT INTO `aid` VALUES ('DEH6', 'Germany', '2022-11-01', 'Humanitarian', 1000000000);
+INSERT INTO `aid` VALUES ('DEM1', 'Germany', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('DEM2', 'Germany', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('DKF1', 'Denmark', '2022-03-01', 'Financial', 20000000);
+INSERT INTO `aid` VALUES ('DKF2', 'Denmark', '2022-09-01', 'Financial', 37500000);
 INSERT INTO `aid` VALUES ('DKH1', 'Denmark', '2022-03-01', 'Humanitarian', 8000000);
 INSERT INTO `aid` VALUES ('DKH2', 'Denmark', '2022-03-01', 'Humanitarian', 20000000);
 INSERT INTO `aid` VALUES ('DKH3', 'Denmark', '2022-03-01', 'Humanitarian', 10000000);
@@ -159,631 +159,611 @@ INSERT INTO `aid` VALUES ('DKH5', 'Denmark', '2022-03-01', 'Humanitarian', 50000
 INSERT INTO `aid` VALUES ('DKH6', 'Denmark', '2022-05-01', 'Humanitarian', 155000000);
 INSERT INTO `aid` VALUES ('DKH7', 'Denmark', '2022-08-01', 'Humanitarian', 16000000);
 INSERT INTO `aid` VALUES ('DKH8', 'Denmark', '2022-10-01', 'Humanitarian', 18200000);
-INSERT INTO `aid` VALUES ('DKM1', 'Denmark', '2022-04-21', 'Military', 1000000000);
-INSERT INTO `aid` VALUES ('DKM2', 'Denmark', '2022-05-31', 'Military', 1000000000);
-INSERT INTO `aid` VALUES ('DKM3', 'Denmark', '2022-08-11', 'Military', 820000000);
+INSERT INTO `aid` VALUES ('DKM1', 'Denmark', '2022-04-01', 'Military', 1000000000);
+INSERT INTO `aid` VALUES ('DKM2', 'Denmark', '2022-05-01', 'Military', 1000000000);
+INSERT INTO `aid` VALUES ('DKM3', 'Denmark', '2022-08-01', 'Military', 820000000);
 INSERT INTO `aid` VALUES ('DKM4', 'Denmark', '2022-09-01', 'Military', 974000000);
-INSERT INTO `aid` VALUES ('EEH1', 'Estonia', '2022-07-29', 'Humanitarian', 2070228);
-INSERT INTO `aid` VALUES ('EEH2', 'Estonia', '2022-05-05', 'Humanitarian', 2900000);
-INSERT INTO `aid` VALUES ('EEM1', 'Estonia', '2022-06-07', 'Military', 240000000);
-INSERT INTO `aid` VALUES ('EEM2', 'Estonia', '2022-04-06', 'Military', 5000000);
-INSERT INTO `aid` VALUES ('EEM3', 'Estonia', '2022-02-09', 'Military', 5300000);
-INSERT INTO `aid` VALUES ('EEM4', 'Estonia', '2022-08-18', 'Military', 7820000);
-INSERT INTO `aid` VALUES ('EEM5', 'Estonia', '2022-08-18', 'Military', 10000000);
-INSERT INTO `aid` VALUES ('EEM6', 'Estonia', '2022-10-07', 'Military', 61880000);
-INSERT INTO `aid` VALUES ('EIF1', 'European Investment Bank', '2022-03-04', 'Financial', 2000000000);
-INSERT INTO `aid` VALUES ('EIF2', 'European Investment Bank', '2022-03-07', 'Financial', 2500000);
-INSERT INTO `aid` VALUES ('ELH1', 'Greece', '2022-02-27', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ELH2', 'Greece', '2022-03-18', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ELH3', 'Greece', '2022-04-03', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ELH4', 'Greece', '2022-04-11', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ELM1', 'Greece', '2022-03-15', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ELM2', 'Greece', '2022-05-26', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ELM3', 'Greece', '2022-09-18', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESF1', 'Spain', '2022-06-07', 'Financial', 100000000);
-INSERT INTO `aid` VALUES ('ESF2', 'Spain', '2022-06-07', 'Financial', 100000000);
-INSERT INTO `aid` VALUES ('ESH1', 'Spain', '2022-02-26', 'Humanitarian', 150000);
-INSERT INTO `aid` VALUES ('ESH2', 'Spain', '2022-03-15', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ESH3', 'Spain', '2022-03-17', 'Humanitarian', 23000000);
-INSERT INTO `aid` VALUES ('ESH4', 'Spain', '2022-04-08', 'Humanitarian', 1161542);
-INSERT INTO `aid` VALUES ('ESH5', 'Spain', '2022-04-08', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ESH6', 'Spain', '2022-06-07', 'Humanitarian', 50000000);
-INSERT INTO `aid` VALUES ('ESM1', 'Spain', '2022-03-02', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM10', 'Spain', '2022-11-02', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM2', 'Spain', '2022-03-11', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM3', 'Spain', '2022-03-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM4', 'Spain', '2022-04-21', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM5', 'Spain', '2022-06-05', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM6', 'Spain', '2022-07-12', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM7', 'Spain', '2022-08-24', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM8', 'Spain', '2022-10-06', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ESM9', 'Spain', '2022-10-13', 'Military', NULL);
-INSERT INTO `aid` VALUES ('EUF1', 'EU (Commission and Council)', '2022-02-21', 'Financial', 1200000000);
-INSERT INTO `aid` VALUES ('EUF2', 'EU (Commission and Council)', '2022-04-08', 'Financial', 120000000);
-INSERT INTO `aid` VALUES ('EUF3', 'EU (Commission and Council)', '2022-05-18', 'Financial', 9000000000);
-INSERT INTO `aid` VALUES ('EUF4', 'EU (Commission and Council)', '2022-05-18', 'Financial', 18000000000);
+INSERT INTO `aid` VALUES ('EEH1', 'Estonia', '2022-07-01', 'Humanitarian', 2070228);
+INSERT INTO `aid` VALUES ('EEH2', 'Estonia', '2022-05-01', 'Humanitarian', 2900000);
+INSERT INTO `aid` VALUES ('EEM1', 'Estonia', '2022-06-01', 'Military', 240000000);
+INSERT INTO `aid` VALUES ('EEM2', 'Estonia', '2022-04-01', 'Military', 5000000);
+INSERT INTO `aid` VALUES ('EEM3', 'Estonia', '2022-02-01', 'Military', 5300000);
+INSERT INTO `aid` VALUES ('EEM4', 'Estonia', '2022-08-01', 'Military', 7820000);
+INSERT INTO `aid` VALUES ('EEM5', 'Estonia', '2022-08-01', 'Military', 10000000);
+INSERT INTO `aid` VALUES ('EEM6', 'Estonia', '2022-10-01', 'Military', 61880000);
+INSERT INTO `aid` VALUES ('EIF1', 'European Investment Bank', '2022-03-01', 'Financial', 2000000000);
+INSERT INTO `aid` VALUES ('EIF2', 'European Investment Bank', '2022-03-01', 'Financial', 2500000);
+INSERT INTO `aid` VALUES ('ELH1', 'Greece', '2022-02-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ELH2', 'Greece', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ELH3', 'Greece', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ELH4', 'Greece', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ELM1', 'Greece', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ELM2', 'Greece', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ELM3', 'Greece', '2022-09-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESF1', 'Spain', '2022-06-01', 'Financial', 100000000);
+INSERT INTO `aid` VALUES ('ESF2', 'Spain', '2022-06-01', 'Financial', 100000000);
+INSERT INTO `aid` VALUES ('ESH1', 'Spain', '2022-02-01', 'Humanitarian', 150000);
+INSERT INTO `aid` VALUES ('ESH2', 'Spain', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ESH3', 'Spain', '2022-03-01', 'Humanitarian', 23000000);
+INSERT INTO `aid` VALUES ('ESH4', 'Spain', '2022-04-01', 'Humanitarian', 1161542);
+INSERT INTO `aid` VALUES ('ESH5', 'Spain', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ESH6', 'Spain', '2022-06-01', 'Humanitarian', 50000000);
+INSERT INTO `aid` VALUES ('ESM1', 'Spain', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM10', 'Spain', '2022-11-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM2', 'Spain', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM3', 'Spain', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM4', 'Spain', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM5', 'Spain', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM6', 'Spain', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM7', 'Spain', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM8', 'Spain', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ESM9', 'Spain', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('EUF1', 'EU (Commission and Council)', '2022-02-01', 'Financial', 1200000000);
+INSERT INTO `aid` VALUES ('EUF2', 'EU (Commission and Council)', '2022-04-01', 'Financial', 120000000);
+INSERT INTO `aid` VALUES ('EUF3', 'EU (Commission and Council)', '2022-05-01', 'Financial', 9000000000);
+INSERT INTO `aid` VALUES ('EUF4', 'EU (Commission and Council)', '2022-05-01', 'Financial', 18000000000);
 INSERT INTO `aid` VALUES ('EUH1', 'EU (Commission and Council)', NULL, 'Humanitarian', NULL);
 INSERT INTO `aid` VALUES ('EUH2', 'EU (Commission and Council)', '2022-03-01', 'Humanitarian', 415000000);
-INSERT INTO `aid` VALUES ('EUH3', 'EU (Commission and Council)', '2022-04-09', 'Humanitarian', 600000000);
-INSERT INTO `aid` VALUES ('EUH4', 'EU (Commission and Council)', '2022-05-05', 'Humanitarian', 200000000);
-INSERT INTO `aid` VALUES ('EUH5', 'EU (Commission and Council)', '2022-06-09', 'Humanitarian', 205000000);
-INSERT INTO `aid` VALUES ('EUH6', 'EU (Commission and Council)', '2022-10-19', 'Humanitarian', 150000000);
-INSERT INTO `aid` VALUES ('EUM1', 'European Peace Facility', '2022-02-27', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('EUM2', 'European Peace Facility', '2022-03-23', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('EUM3', 'European Peace Facility', '2022-04-08', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('EUM4', 'European Peace Facility', '2022-05-13', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('EUM5', 'European Peace Facility', '2022-07-22', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('EUM6', 'European Peace Facility', '2022-10-17', 'Military', 600000000);
-INSERT INTO `aid` VALUES ('FIF1', 'Finland', '2022-04-28', 'Financial', 46500000);
-INSERT INTO `aid` VALUES ('FIF2', 'Finland', '2022-09-02', 'Financial', 35000000);
-INSERT INTO `aid` VALUES ('FIH1', 'Finland', '2022-02-17', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('FIH10', 'Finland', '2022-03-25', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIH11', 'Finland', '2022-03-26', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH12', 'Finland', '2022-04-05', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH13', 'Finland', '2022-04-14', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH14', 'Finland', '2022-07-08', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIH15', 'Finland', '2022-08-02', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIH16', 'Finland', '2022-09-02', 'Humanitarian', 35000000);
+INSERT INTO `aid` VALUES ('EUH3', 'EU (Commission and Council)', '2022-04-01', 'Humanitarian', 600000000);
+INSERT INTO `aid` VALUES ('EUH4', 'EU (Commission and Council)', '2022-05-01', 'Humanitarian', 200000000);
+INSERT INTO `aid` VALUES ('EUH5', 'EU (Commission and Council)', '2022-06-01', 'Humanitarian', 205000000);
+INSERT INTO `aid` VALUES ('EUH6', 'EU (Commission and Council)', '2022-10-01', 'Humanitarian', 150000000);
+INSERT INTO `aid` VALUES ('EUM1', 'European Peace Facility', '2022-02-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('EUM2', 'European Peace Facility', '2022-03-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('EUM3', 'European Peace Facility', '2022-04-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('EUM4', 'European Peace Facility', '2022-05-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('EUM5', 'European Peace Facility', '2022-07-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('EUM6', 'European Peace Facility', '2022-10-01', 'Military', 600000000);
+INSERT INTO `aid` VALUES ('FIF1', 'Finland', '2022-04-01', 'Financial', 46500000);
+INSERT INTO `aid` VALUES ('FIF2', 'Finland', '2022-09-01', 'Financial', 35000000);
+INSERT INTO `aid` VALUES ('FIH1', 'Finland', '2022-02-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('FIH10', 'Finland', '2022-03-01', 'Humanitarian', 711595);
+INSERT INTO `aid` VALUES ('FIH11', 'Finland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH12', 'Finland', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH13', 'Finland', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH14', 'Finland', '2022-07-01', 'Humanitarian', 711595);
+INSERT INTO `aid` VALUES ('FIH15', 'Finland', '2022-08-01', 'Humanitarian', 711595);
+INSERT INTO `aid` VALUES ('FIH16', 'Finland', '2022-09-01', 'Humanitarian', 35000000);
 INSERT INTO `aid` VALUES ('FIH17', 'Finland', '2022-10-01', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH2', 'Finland', '2022-03-03', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIH3', 'Finland', '2022-03-03', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH2', 'Finland', '2022-03-01', 'Humanitarian', 711595);
+INSERT INTO `aid` VALUES ('FIH3', 'Finland', '2022-03-01', 'Humanitarian', NULL);
 INSERT INTO `aid` VALUES ('FIH4', 'Finland', '2022-03-01', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIH5', 'Finland', '2022-03-15', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH6', 'Finland', '2022-03-18', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH7', 'Finland', '2022-03-19', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH8', 'Finland', '2022-03-23', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FIH9', 'Finland', '2022-03-24', 'Humanitarian', 711595);
-INSERT INTO `aid` VALUES ('FIM1', 'Finland', '2022-02-27', 'Military', 29300000);
-INSERT INTO `aid` VALUES ('FIM2', 'Finland', '2022-05-05', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FIM3', 'Finland', '2022-06-10', 'Military', 54750000);
+INSERT INTO `aid` VALUES ('FIH5', 'Finland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH6', 'Finland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH7', 'Finland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH8', 'Finland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FIH9', 'Finland', '2022-03-01', 'Humanitarian', 711595);
+INSERT INTO `aid` VALUES ('FIM1', 'Finland', '2022-02-01', 'Military', 29300000);
+INSERT INTO `aid` VALUES ('FIM2', 'Finland', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FIM3', 'Finland', '2022-06-01', 'Military', 54750000);
 INSERT INTO `aid` VALUES ('FIM4', 'Finland', '2022-09-01', 'Military', 8250000);
-INSERT INTO `aid` VALUES ('FIM5', 'Finland', '2022-10-06', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FIM6', 'Finland', '2022-10-27', 'Military', 30000000);
-INSERT INTO `aid` VALUES ('FIM7', 'Finland', '2022-11-17', 'Military', 55600000);
-INSERT INTO `aid` VALUES ('FRF1', 'France', '2022-02-08', 'Financial', 200000000);
-INSERT INTO `aid` VALUES ('FRF2', 'France', '2022-02-25', 'Financial', 300000000);
-INSERT INTO `aid` VALUES ('FRF3', 'France', '2022-05-05', 'Financial', 300000000);
+INSERT INTO `aid` VALUES ('FIM5', 'Finland', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FIM6', 'Finland', '2022-10-01', 'Military', 30000000);
+INSERT INTO `aid` VALUES ('FIM7', 'Finland', '2022-11-01', 'Military', 55600000);
+INSERT INTO `aid` VALUES ('FRF1', 'France', '2022-02-01', 'Financial', 200000000);
+INSERT INTO `aid` VALUES ('FRF2', 'France', '2022-02-01', 'Financial', 300000000);
+INSERT INTO `aid` VALUES ('FRF3', 'France', '2022-05-01', 'Financial', 300000000);
 INSERT INTO `aid` VALUES ('FRH1', 'France', '2022-03-01', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('FRH10', 'France', '2022-06-17', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH11', 'France', '2022-06-28', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH12', 'France', '2022-07-15', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH13', 'France', '2022-09-28', 'Humanitarian', 9000000);
-INSERT INTO `aid` VALUES ('FRH14', 'France', '2022-11-02', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH2', 'France', '2022-03-10', 'Humanitarian', 1600000);
-INSERT INTO `aid` VALUES ('FRH3', 'France', '2022-03-25', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH4', 'France', '2022-04-14', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH5', 'France', '2022-04-21', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH6', 'France', '2022-05-16', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH7', 'France', '2022-05-20', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH8', 'France', '2022-05-30', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRH9', 'France', '2022-06-17', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('FRM1', 'France', '2022-04-13', 'Military', 100000000);
-INSERT INTO `aid` VALUES ('FRM2', 'France', '2022-04-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FRM3', 'France', '2022-04-30', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FRM4', 'France', '2022-05-31', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FRM5', 'France', '2022-06-30', 'Military', NULL);
-INSERT INTO `aid` VALUES ('FRM6', 'France', '2022-10-07', 'Military', 100000000);
-INSERT INTO `aid` VALUES ('FRM7', 'France', '2022-11-06', 'Military', NULL);
-INSERT INTO `aid` VALUES ('HRH1', 'Croatia', '2022-02-24', 'Humanitarian', 9100000);
-INSERT INTO `aid` VALUES ('HRH2', 'Croatia', '2022-04-08', 'Humanitarian', 1516800);
-INSERT INTO `aid` VALUES ('HRH3', 'Croatia', '2022-05-05', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('HRH4', 'Croatia', '2022-06-06', 'Humanitarian', 33000);
-INSERT INTO `aid` VALUES ('HRM1', 'Croatia', '2022-02-28', 'Military', 124000000);
-INSERT INTO `aid` VALUES ('HUH1', 'Hungary', '2022-02-27', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('HUH2', 'Hungary', '2022-03-21', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('HUH3', 'Hungary', '2022-03-21', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('HUH4', 'Hungary', '2022-03-23', 'Humanitarian', 66000000);
-INSERT INTO `aid` VALUES ('HUH5', 'Hungary', '2022-04-20', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('HUH6', 'Hungary', '2022-05-04', 'Humanitarian', 262000000);
-INSERT INTO `aid` VALUES ('HUH7', 'Hungary', '2022-05-05', 'Humanitarian', 37000000);
-INSERT INTO `aid` VALUES ('IEH1', 'Ireland', '2022-02-24', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('IEH2', 'Ireland', '2022-03-07', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('IEH3', 'Ireland', '2022-03-11', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('IEH4', 'Ireland', '2022-03-26', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('IEH5', 'Ireland', '2022-03-26', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('IEH6', 'Ireland', '2022-03-28', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('IEH7', 'Ireland', '2022-04-09', 'Humanitarian', 53000000);
-INSERT INTO `aid` VALUES ('IEH8', 'Ireland', '2022-05-20', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('IEH9', 'Ireland', '2022-06-28', 'Humanitarian', 2197000);
-INSERT INTO `aid` VALUES ('INH1', 'India', '2022-05-07', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('INH2', 'India', '2022-09-12', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ITF1', 'Italy', '2022-02-27', 'Financial', 110000000);
-INSERT INTO `aid` VALUES ('ITF3', 'Italy', '2022-08-05', 'Financial', 200000000);
-INSERT INTO `aid` VALUES ('ITH1', 'Italy', '2022-02-24', 'Humanitarian', 1000000);
-INSERT INTO `aid` VALUES ('ITH2', 'Italy', '2022-03-07', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ITH3', 'Italy', '2022-03-14', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ITH4', 'Italy', '2022-04-19', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ITH5', 'Italy', '2022-04-20', 'Humanitarian', 16000000);
-INSERT INTO `aid` VALUES ('ITM1', 'Italy', '2022-02-28', 'Military', 150000000);
-INSERT INTO `aid` VALUES ('ITM2', 'Italy', '2022-04-22', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ITM3', 'Italy', '2022-05-10', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ITM4', 'Italy', '2022-07-27', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ITM5', 'Italy', '2022-10-17', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ITM6', 'Italy', '2022-10-17', 'Military', NULL);
-INSERT INTO `aid` VALUES ('JPF1', 'Japan', '2022-03-25', 'Financial', 100000000);
-INSERT INTO `aid` VALUES ('JPF2', 'Japan', '2022-04-19', 'Financial', 200000000);
-INSERT INTO `aid` VALUES ('JPF3', 'Japan', '2022-05-19', 'Financial', 300000000);
-INSERT INTO `aid` VALUES ('JPH1', 'Japan', '2022-04-28', 'Humanitarian', 2300000);
-INSERT INTO `aid` VALUES ('JPH2', 'Japan', '2022-05-27', 'Humanitarian', 1660000);
-INSERT INTO `aid` VALUES ('JPH3', 'Japan', '2022-09-26', 'Humanitarian', 1660000);
-INSERT INTO `aid` VALUES ('JPM1', 'Japan', '2022-03-04', 'Military', NULL);
-INSERT INTO `aid` VALUES ('JPM2', 'Japan', '2022-04-19', 'Military', NULL);
-INSERT INTO `aid` VALUES ('JPM3', 'Japan', '2022-08-04', 'Military', NULL);
-INSERT INTO `aid` VALUES ('KOH1', 'South Korea', '2022-02-28', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('KOH2', 'South Korea', '2022-04-20', 'Humanitarian', 30000000);
-INSERT INTO `aid` VALUES ('KOH3', 'South Korea', '2022-06-08', 'Humanitarian', 1200000);
-INSERT INTO `aid` VALUES ('KOH4', 'South Korea', '2022-06-21', 'Humanitarian', 50000000);
+INSERT INTO `aid` VALUES ('FRH10', 'France', '2022-06-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH11', 'France', '2022-06-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH12', 'France', '2022-07-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH13', 'France', '2022-09-01', 'Humanitarian', 9000000);
+INSERT INTO `aid` VALUES ('FRH14', 'France', '2022-11-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH2', 'France', '2022-03-01', 'Humanitarian', 1600000);
+INSERT INTO `aid` VALUES ('FRH3', 'France', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH4', 'France', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH5', 'France', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH6', 'France', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH7', 'France', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH8', 'France', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRH9', 'France', '2022-06-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('FRM1', 'France', '2022-04-01', 'Military', 100000000);
+INSERT INTO `aid` VALUES ('FRM2', 'France', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FRM3', 'France', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FRM4', 'France', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FRM5', 'France', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('FRM6', 'France', '2022-10-01', 'Military', 100000000);
+INSERT INTO `aid` VALUES ('FRM7', 'France', '2022-11-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('HRH1', 'Croatia', '2022-02-01', 'Humanitarian', 9100000);
+INSERT INTO `aid` VALUES ('HRH2', 'Croatia', '2022-04-01', 'Humanitarian', 1516800);
+INSERT INTO `aid` VALUES ('HRH3', 'Croatia', '2022-05-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('HRH4', 'Croatia', '2022-06-01', 'Humanitarian', 33000);
+INSERT INTO `aid` VALUES ('HRM1', 'Croatia', '2022-02-01', 'Military', 124000000);
+INSERT INTO `aid` VALUES ('HUH1', 'Hungary', '2022-02-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('HUH2', 'Hungary', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('HUH3', 'Hungary', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('HUH4', 'Hungary', '2022-03-01', 'Humanitarian', 66000000);
+INSERT INTO `aid` VALUES ('HUH5', 'Hungary', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('HUH6', 'Hungary', '2022-05-01', 'Humanitarian', 262000000);
+INSERT INTO `aid` VALUES ('HUH7', 'Hungary', '2022-05-01', 'Humanitarian', 37000000);
+INSERT INTO `aid` VALUES ('IEH1', 'Ireland', '2022-02-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('IEH2', 'Ireland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('IEH3', 'Ireland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('IEH4', 'Ireland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('IEH5', 'Ireland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('IEH6', 'Ireland', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('IEH7', 'Ireland', '2022-04-01', 'Humanitarian', 53000000);
+INSERT INTO `aid` VALUES ('IEH8', 'Ireland', '2022-05-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('IEH9', 'Ireland', '2022-06-01', 'Humanitarian', 2197000);
+INSERT INTO `aid` VALUES ('INH1', 'India', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('INH2', 'India', '2022-09-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ITF1', 'Italy', '2022-02-01', 'Financial', 110000000);
+INSERT INTO `aid` VALUES ('ITF3', 'Italy', '2022-08-01', 'Financial', 200000000);
+INSERT INTO `aid` VALUES ('ITH1', 'Italy', '2022-02-01', 'Humanitarian', 1000000);
+INSERT INTO `aid` VALUES ('ITH2', 'Italy', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ITH3', 'Italy', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ITH4', 'Italy', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ITH5', 'Italy', '2022-04-01', 'Humanitarian', 16000000);
+INSERT INTO `aid` VALUES ('ITM1', 'Italy', '2022-02-01', 'Military', 150000000);
+INSERT INTO `aid` VALUES ('ITM2', 'Italy', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ITM3', 'Italy', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ITM4', 'Italy', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ITM5', 'Italy', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ITM6', 'Italy', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('JPF1', 'Japan', '2022-03-01', 'Financial', 100000000);
+INSERT INTO `aid` VALUES ('JPF2', 'Japan', '2022-04-01', 'Financial', 200000000);
+INSERT INTO `aid` VALUES ('JPF3', 'Japan', '2022-05-01', 'Financial', 300000000);
+INSERT INTO `aid` VALUES ('JPH1', 'Japan', '2022-04-01', 'Humanitarian', 2300000);
+INSERT INTO `aid` VALUES ('JPH2', 'Japan', '2022-05-01', 'Humanitarian', 1660000);
+INSERT INTO `aid` VALUES ('JPH3', 'Japan', '2022-09-01', 'Humanitarian', 1660000);
+INSERT INTO `aid` VALUES ('JPM1', 'Japan', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('JPM2', 'Japan', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('JPM3', 'Japan', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('KOH1', 'South Korea', '2022-02-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('KOH2', 'South Korea', '2022-04-01', 'Humanitarian', 30000000);
+INSERT INTO `aid` VALUES ('KOH3', 'South Korea', '2022-06-01', 'Humanitarian', 1200000);
+INSERT INTO `aid` VALUES ('KOH4', 'South Korea', '2022-06-01', 'Humanitarian', 50000000);
 INSERT INTO `aid` VALUES ('KOM1', 'South Korea', '2022-03-01', 'Military', 800000);
-INSERT INTO `aid` VALUES ('KOM2', 'South Korea', '2022-04-13', 'Military', 1600000);
-INSERT INTO `aid` VALUES ('KOM3', 'South Korea', '2022-05-26', 'Military', 1180000);
-INSERT INTO `aid` VALUES ('LTF1', 'Lithuania', '2022-03-07', 'Financial', 5000000);
-INSERT INTO `aid` VALUES ('LTH1', 'Lithuania', '2022-02-23', 'Humanitarian', 1800000);
-INSERT INTO `aid` VALUES ('LTH2', 'Lithuania', '2022-02-28', 'Humanitarian', 4000000);
-INSERT INTO `aid` VALUES ('LTH3', 'Lithuania', '2022-04-09', 'Humanitarian', 34200000);
-INSERT INTO `aid` VALUES ('LTH4', 'Lithuania', '2022-05-05', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('LTH5', 'Lithuania', '2022-07-11', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('LTH6', 'Lithuania', '2022-11-18', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('LTM1', 'Lithuania', '2022-03-16', 'Military', 29000000);
-INSERT INTO `aid` VALUES ('LTM10', 'Lithuania', '2022-10-11', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LTM11', 'Lithuania', '2022-10-11', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LTM12', 'Lithuania', '2022-10-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LTM2', 'Lithuania', '2022-03-23', 'Military', 10000000);
-INSERT INTO `aid` VALUES ('LTM3', 'Lithuania', '2022-04-21', 'Military', 61000000);
-INSERT INTO `aid` VALUES ('LTM4', 'Lithuania', '2022-05-25', 'Military', 15500000);
-INSERT INTO `aid` VALUES ('LTM5', 'Lithuania', '2022-07-10', 'Military', 2000000);
-INSERT INTO `aid` VALUES ('LTM6', 'Lithuania', '2022-07-20', 'Military', 25755232);
-INSERT INTO `aid` VALUES ('LTM7', 'Lithuania', '2022-07-28', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LTM8', 'Lithuania', '2022-09-07', 'Military', 25755232);
-INSERT INTO `aid` VALUES ('LTM9', 'Lithuania', '2022-09-14', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LUH1', 'Luxembourg', '2022-05-05', 'Humanitarian', 3000000);
-INSERT INTO `aid` VALUES ('LUH2', 'Luxembourg', '2022-03-16', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('LUH3', 'Luxembourg', '2022-05-05', 'Humanitarian', 1000000);
-INSERT INTO `aid` VALUES ('LUM1', 'Luxembourg', '2022-02-28', 'Military', 50000000);
-INSERT INTO `aid` VALUES ('LUM2', 'Luxembourg', '2022-03-28', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LUM3', 'Luxembourg', '2022-04-10', 'Military', 21800698);
-INSERT INTO `aid` VALUES ('LVF1', 'Latvia', '2022-03-08', 'Financial', 5000000);
-INSERT INTO `aid` VALUES ('LVF2', 'Latvia', '2022-05-05', 'Financial', 10000000);
+INSERT INTO `aid` VALUES ('KOM2', 'South Korea', '2022-04-01', 'Military', 1600000);
+INSERT INTO `aid` VALUES ('KOM3', 'South Korea', '2022-05-01', 'Military', 1180000);
+INSERT INTO `aid` VALUES ('LTF1', 'Lithuania', '2022-03-01', 'Financial', 5000000);
+INSERT INTO `aid` VALUES ('LTH1', 'Lithuania', '2022-02-01', 'Humanitarian', 1800000);
+INSERT INTO `aid` VALUES ('LTH2', 'Lithuania', '2022-02-01', 'Humanitarian', 4000000);
+INSERT INTO `aid` VALUES ('LTH3', 'Lithuania', '2022-04-01', 'Humanitarian', 34200000);
+INSERT INTO `aid` VALUES ('LTH4', 'Lithuania', '2022-05-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('LTH5', 'Lithuania', '2022-07-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('LTH6', 'Lithuania', '2022-11-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('LTM1', 'Lithuania', '2022-03-01', 'Military', 29000000);
+INSERT INTO `aid` VALUES ('LTM10', 'Lithuania', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LTM11', 'Lithuania', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LTM12', 'Lithuania', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LTM2', 'Lithuania', '2022-03-01', 'Military', 10000000);
+INSERT INTO `aid` VALUES ('LTM3', 'Lithuania', '2022-04-01', 'Military', 61000000);
+INSERT INTO `aid` VALUES ('LTM4', 'Lithuania', '2022-05-01', 'Military', 15500000);
+INSERT INTO `aid` VALUES ('LTM5', 'Lithuania', '2022-07-01', 'Military', 2000000);
+INSERT INTO `aid` VALUES ('LTM6', 'Lithuania', '2022-07-01', 'Military', 25755232);
+INSERT INTO `aid` VALUES ('LTM7', 'Lithuania', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LTM8', 'Lithuania', '2022-09-01', 'Military', 25755232);
+INSERT INTO `aid` VALUES ('LTM9', 'Lithuania', '2022-09-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LUH1', 'Luxembourg', '2022-05-01', 'Humanitarian', 3000000);
+INSERT INTO `aid` VALUES ('LUH2', 'Luxembourg', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('LUH3', 'Luxembourg', '2022-05-01', 'Humanitarian', 1000000);
+INSERT INTO `aid` VALUES ('LUM1', 'Luxembourg', '2022-02-01', 'Military', 50000000);
+INSERT INTO `aid` VALUES ('LUM2', 'Luxembourg', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LUM3', 'Luxembourg', '2022-04-01', 'Military', 21800698);
+INSERT INTO `aid` VALUES ('LVF1', 'Latvia', '2022-03-01', 'Financial', 5000000);
+INSERT INTO `aid` VALUES ('LVF2', 'Latvia', '2022-05-01', 'Financial', 10000000);
 INSERT INTO `aid` VALUES ('LVH1', 'Latvia', '2022-03-01', 'Humanitarian', 1200000);
-INSERT INTO `aid` VALUES ('LVH2', 'Latvia', '2022-03-29', 'Humanitarian', 167417);
-INSERT INTO `aid` VALUES ('LVM1', 'Latvia', '2022-04-06', 'Military', 218800000);
-INSERT INTO `aid` VALUES ('LVM2', 'Latvia', '2022-07-07', 'Military', 30000000);
-INSERT INTO `aid` VALUES ('LVM3', 'Latvia', '2022-08-15', 'Military', NULL);
-INSERT INTO `aid` VALUES ('LVM4', 'Latvia', '2022-08-15', 'Military', NULL);
-INSERT INTO `aid` VALUES ('MTH1', 'Malta', '2022-03-11', 'Humanitarian', 1150000);
-INSERT INTO `aid` VALUES ('NLF1', 'Netherlands', '2022-03-07', 'Financial', 80000000);
-INSERT INTO `aid` VALUES ('NLF2', 'Netherlands', '2022-05-06', 'Financial', 200000000);
-INSERT INTO `aid` VALUES ('NLF3', 'Netherlands', '2022-08-28', 'Financial', 68500000);
-INSERT INTO `aid` VALUES ('NLH1', 'Netherlands', '2022-03-07', 'Humanitarian', 15000000);
-INSERT INTO `aid` VALUES ('NLH2', 'Netherlands', '2022-03-10', 'Humanitarian', 1500000);
-INSERT INTO `aid` VALUES ('NLH3', 'Netherlands', '2022-03-02', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('NLH4', 'Netherlands', '2022-05-05', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('NLH5', 'Netherlands', '2022-05-05', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('NLH6', 'Netherlands', '2022-10-12', 'Humanitarian', 180000000);
-INSERT INTO `aid` VALUES ('NLM1', 'Netherlands', '2022-02-18', 'Military', 50000000);
-INSERT INTO `aid` VALUES ('NLM2', 'Netherlands', '2022-04-19', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NLM3', 'Netherlands', '2022-06-16', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NLM4', 'Netherlands', '2022-06-28', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NLM5', 'Netherlands', '2022-08-28', 'Military', 10000000);
-INSERT INTO `aid` VALUES ('NLM6', 'Netherlands', '2022-11-04', 'Military', 120000000);
-INSERT INTO `aid` VALUES ('NOF1', 'Norway', '2022-05-11', 'Financial', 300000000);
-INSERT INTO `aid` VALUES ('NOF2', 'Norway', '2022-05-12', 'Financial', 50000000);
-INSERT INTO `aid` VALUES ('NOF3', 'Norway', '2022-05-10', 'Financial', 2000000000);
-INSERT INTO `aid` VALUES ('NOF4', 'Norway', '2022-05-10', 'Financial', 1000000000);
-INSERT INTO `aid` VALUES ('NOH1', 'Norway', '2022-04-27', 'Humanitarian', 265000000);
-INSERT INTO `aid` VALUES ('NOH2', 'Norway', '2022-04-27', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('NOH3', 'Norway', '2022-06-13', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('LVH2', 'Latvia', '2022-03-01', 'Humanitarian', 167417);
+INSERT INTO `aid` VALUES ('LVM1', 'Latvia', '2022-04-01', 'Military', 218800000);
+INSERT INTO `aid` VALUES ('LVM2', 'Latvia', '2022-07-01', 'Military', 30000000);
+INSERT INTO `aid` VALUES ('LVM3', 'Latvia', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('LVM4', 'Latvia', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('MTH1', 'Malta', '2022-03-01', 'Humanitarian', 1150000);
+INSERT INTO `aid` VALUES ('NLF1', 'Netherlands', '2022-03-01', 'Financial', 80000000);
+INSERT INTO `aid` VALUES ('NLF2', 'Netherlands', '2022-05-01', 'Financial', 200000000);
+INSERT INTO `aid` VALUES ('NLF3', 'Netherlands', '2022-08-01', 'Financial', 68500000);
+INSERT INTO `aid` VALUES ('NLH1', 'Netherlands', '2022-03-01', 'Humanitarian', 15000000);
+INSERT INTO `aid` VALUES ('NLH2', 'Netherlands', '2022-03-01', 'Humanitarian', 1500000);
+INSERT INTO `aid` VALUES ('NLH3', 'Netherlands', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('NLH4', 'Netherlands', '2022-05-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('NLH5', 'Netherlands', '2022-05-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('NLH6', 'Netherlands', '2022-10-01', 'Humanitarian', 180000000);
+INSERT INTO `aid` VALUES ('NLM1', 'Netherlands', '2022-02-01', 'Military', 50000000);
+INSERT INTO `aid` VALUES ('NLM2', 'Netherlands', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NLM3', 'Netherlands', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NLM4', 'Netherlands', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NLM5', 'Netherlands', '2022-08-01', 'Military', 10000000);
+INSERT INTO `aid` VALUES ('NLM6', 'Netherlands', '2022-11-01', 'Military', 120000000);
+INSERT INTO `aid` VALUES ('NOF1', 'Norway', '2022-05-01', 'Financial', 300000000);
+INSERT INTO `aid` VALUES ('NOF2', 'Norway', '2022-05-01', 'Financial', 50000000);
+INSERT INTO `aid` VALUES ('NOF3', 'Norway', '2022-05-01', 'Financial', 2000000000);
+INSERT INTO `aid` VALUES ('NOF4', 'Norway', '2022-05-01', 'Financial', 1000000000);
+INSERT INTO `aid` VALUES ('NOH1', 'Norway', '2022-04-01', 'Humanitarian', 265000000);
+INSERT INTO `aid` VALUES ('NOH2', 'Norway', '2022-04-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('NOH3', 'Norway', '2022-06-01', 'Humanitarian', NULL);
 INSERT INTO `aid` VALUES ('NOH4', 'Norway', '2022-11-01', 'Humanitarian', 1000000000);
 INSERT INTO `aid` VALUES ('NOH5', 'Norway', '2022-11-01', 'Humanitarian', 2000000000);
-INSERT INTO `aid` VALUES ('NOM1', 'Norway', '2022-02-28', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM10', 'Norway', '2022-09-08', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM11', 'Norway', '2022-10-02', 'Military', 30666666);
-INSERT INTO `aid` VALUES ('NOM12', 'Norway', '2022-09-30', 'Military', 3000000000);
-INSERT INTO `aid` VALUES ('NOM2', 'Norway', '2022-03-31', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM3', 'Norway', '2022-04-20', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM4', 'Norway', '2022-04-27', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM5', 'Norway', '2022-04-27', 'Military', 400000000);
-INSERT INTO `aid` VALUES ('NOM6', 'Norway', '2022-06-07', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM7', 'Norway', '2022-06-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM8', 'Norway', '2022-07-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NOM9', 'Norway', '2022-08-24', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NZH1', 'New Zealand', '2022-02-28', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('NZH2', 'New Zealand', '2022-02-28', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('NZM1', 'New Zealand', '2022-03-21', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NZM2', 'New Zealand', '2022-03-21', 'Military', 5000000);
-INSERT INTO `aid` VALUES ('NZM4', 'New Zealand', '2022-04-11', 'Military', 4100000);
-INSERT INTO `aid` VALUES ('NZM5', 'New Zealand', '2022-04-11', 'Military', 7500000);
-INSERT INTO `aid` VALUES ('NZM6', 'New Zealand', '2022-05-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NZM7', 'New Zealand', '2022-06-27', 'Military', 4500000);
-INSERT INTO `aid` VALUES ('NZM8', 'New Zealand', '2022-07-27', 'Military', NULL);
-INSERT INTO `aid` VALUES ('NZM9', 'New Zealand', '2022-11-14', 'Military', 1850000);
-INSERT INTO `aid` VALUES ('PLF1', 'Poland', '2022-02-24', 'Financial', 1000000000);
-INSERT INTO `aid` VALUES ('PLF2', 'Poland', '2022-03-03', 'Financial', 30000000);
-INSERT INTO `aid` VALUES ('PLH1', 'Poland', '2022-04-02', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('PLH2', 'Poland', '2022-05-05', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('PLH3', 'Poland', '2022-08-22', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('PLH4', 'Poland', '2022-04-10', 'Humanitarian', 62105000);
-INSERT INTO `aid` VALUES ('PLH5', 'Poland', '2022-11-10', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('PLM1', 'Poland', '2022-02-17', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PLM2', 'Poland', '2022-04-29', 'Military', 1800000000);
-INSERT INTO `aid` VALUES ('PLM3', 'Poland', '2022-07-25', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PLM4', 'Poland', '2022-04-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PTF1', 'Portugal', '2022-05-21', 'Financial', 250000000);
-INSERT INTO `aid` VALUES ('PTH1', 'Portugal', '2022-03-04', 'Humanitarian', 100000);
-INSERT INTO `aid` VALUES ('PTH2', 'Portugal', '2022-05-05', 'Humanitarian', 1100000);
-INSERT INTO `aid` VALUES ('PTM1', 'Portugal', '2022-02-26', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PTM2', 'Portugal', '2022-04-12', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PTM3', 'Portugal', '2022-10-14', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PTM4', 'Portugal', '2022-05-08', 'Military', NULL);
-INSERT INTO `aid` VALUES ('PTM5', 'Portugal', '2022-05-18', 'Military', NULL);
-INSERT INTO `aid` VALUES ('ROH1', 'Romania', '2022-02-22', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('NOM1', 'Norway', '2022-02-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM10', 'Norway', '2022-09-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM11', 'Norway', '2022-10-01', 'Military', 30666666);
+INSERT INTO `aid` VALUES ('NOM12', 'Norway', '2022-09-01', 'Military', 3000000000);
+INSERT INTO `aid` VALUES ('NOM2', 'Norway', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM3', 'Norway', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM4', 'Norway', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM5', 'Norway', '2022-04-01', 'Military', 400000000);
+INSERT INTO `aid` VALUES ('NOM6', 'Norway', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM7', 'Norway', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM8', 'Norway', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NOM9', 'Norway', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NZH1', 'New Zealand', '2022-02-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('NZH2', 'New Zealand', '2022-02-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('NZM1', 'New Zealand', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NZM2', 'New Zealand', '2022-03-01', 'Military', 5000000);
+INSERT INTO `aid` VALUES ('NZM4', 'New Zealand', '2022-04-01', 'Military', 4100000);
+INSERT INTO `aid` VALUES ('NZM5', 'New Zealand', '2022-04-01', 'Military', 7500000);
+INSERT INTO `aid` VALUES ('NZM6', 'New Zealand', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NZM7', 'New Zealand', '2022-06-01', 'Military', 4500000);
+INSERT INTO `aid` VALUES ('NZM8', 'New Zealand', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('NZM9', 'New Zealand', '2022-11-01', 'Military', 1850000);
+INSERT INTO `aid` VALUES ('PLF1', 'Poland', '2022-02-01', 'Financial', 1000000000);
+INSERT INTO `aid` VALUES ('PLF2', 'Poland', '2022-03-01', 'Financial', 30000000);
+INSERT INTO `aid` VALUES ('PLH1', 'Poland', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('PLH2', 'Poland', '2022-05-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('PLH3', 'Poland', '2022-08-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('PLH4', 'Poland', '2022-04-01', 'Humanitarian', 62105000);
+INSERT INTO `aid` VALUES ('PLH5', 'Poland', '2022-11-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('PLM1', 'Poland', '2022-02-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PLM2', 'Poland', '2022-04-01', 'Military', 1800000000);
+INSERT INTO `aid` VALUES ('PLM3', 'Poland', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PLM4', 'Poland', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PTF1', 'Portugal', '2022-05-01', 'Financial', 250000000);
+INSERT INTO `aid` VALUES ('PTH1', 'Portugal', '2022-03-01', 'Humanitarian', 100000);
+INSERT INTO `aid` VALUES ('PTH2', 'Portugal', '2022-05-01', 'Humanitarian', 1100000);
+INSERT INTO `aid` VALUES ('PTM1', 'Portugal', '2022-02-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PTM2', 'Portugal', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PTM3', 'Portugal', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PTM4', 'Portugal', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('PTM5', 'Portugal', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('ROH1', 'Romania', '2022-02-01', 'Humanitarian', NULL);
 INSERT INTO `aid` VALUES ('ROH2', 'Romania', '2022-03-01', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('ROH3', 'Romania', '2022-04-18', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('ROH4', 'Romania', '2022-05-05', 'Humanitarian', 3200000);
-INSERT INTO `aid` VALUES ('ROM1', 'Romania', '2022-02-27', 'Military', 3000000);
-INSERT INTO `aid` VALUES ('ROM2', 'Romania', '2022-04-19', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SEF1', 'Sweden', '2022-03-07', 'Financial', 50000000);
-INSERT INTO `aid` VALUES ('SEF2', 'Sweden', '2022-04-22', 'Financial', 44000000);
-INSERT INTO `aid` VALUES ('SEF3', 'Sweden', '2022-08-28', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('SEF4', 'Sweden', '2022-11-16', 'Financial', 140000000);
-INSERT INTO `aid` VALUES ('SEH1', 'Sweden', '2022-04-22', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('SEH2', 'Sweden', '2022-05-04', 'Humanitarian', 570000000);
-INSERT INTO `aid` VALUES ('SEH3', 'Sweden', '2022-05-05', 'Humanitarian', 230000000);
-INSERT INTO `aid` VALUES ('SEH4', 'Sweden', '2022-06-02', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('SEH5', 'Sweden', '2022-09-13', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('SEH6', 'Sweden', '2022-11-16', 'Humanitarian', 170000000);
-INSERT INTO `aid` VALUES ('SEM1', 'Sweden', '2022-02-27', 'Military', 400000000);
-INSERT INTO `aid` VALUES ('SEM2', 'Sweden', '2022-02-27', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('SEM3', 'Sweden', '2022-03-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SEM4', 'Sweden', '2022-06-02', 'Military', 262000000);
-INSERT INTO `aid` VALUES ('SEM5', 'Sweden', '2022-06-02', 'Military', 578000000);
-INSERT INTO `aid` VALUES ('SEM6', 'Sweden', '2022-06-02', 'Military', 60000000);
-INSERT INTO `aid` VALUES ('SEM7', 'Sweden', '2022-07-12', 'Military', 577700000);
-INSERT INTO `aid` VALUES ('SEM8', 'Sweden', '2022-08-28', 'Military', 500000000);
-INSERT INTO `aid` VALUES ('SEM9', 'Sweden', '2022-11-16', 'Military', 3000000000);
-INSERT INTO `aid` VALUES ('SIH1', 'Slovenia', '2022-02-26', 'Humanitarian', 163000);
-INSERT INTO `aid` VALUES ('SIH2', 'Slovenia', '2022-02-27', 'Humanitarian', 100000);
-INSERT INTO `aid` VALUES ('SIH3', 'Slovenia', '2022-03-24', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('SIH4', 'Slovenia', '2022-04-06', 'Humanitarian', 1640000);
-INSERT INTO `aid` VALUES ('SIH5', 'Slovenia', '2022-04-29', 'Humanitarian', 180000);
-INSERT INTO `aid` VALUES ('SIM1', 'Slovenia', '2022-06-14', 'Military', 7000000);
-INSERT INTO `aid` VALUES ('SIM2', 'Slovenia', '2022-06-16', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SIM3', 'Slovenia', '2022-07-29', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SIM4', 'Slovenia', '2022-09-20', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SKH1', 'Slovakia', '2022-04-09', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('SKM1', 'Slovakia', '2022-02-21', 'Military', 1700000);
-INSERT INTO `aid` VALUES ('SKM2', 'Slovakia', '2022-02-27', 'Military', 4500000);
-INSERT INTO `aid` VALUES ('SKM3', 'Slovakia', '2022-03-03', 'Military', 32200000);
-INSERT INTO `aid` VALUES ('SKM4', 'Slovakia', '2022-02-26', 'Military', 11000000);
+INSERT INTO `aid` VALUES ('ROH3', 'Romania', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('ROH4', 'Romania', '2022-05-01', 'Humanitarian', 3200000);
+INSERT INTO `aid` VALUES ('ROM1', 'Romania', '2022-02-01', 'Military', 3000000);
+INSERT INTO `aid` VALUES ('ROM2', 'Romania', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SEF1', 'Sweden', '2022-03-01', 'Financial', 50000000);
+INSERT INTO `aid` VALUES ('SEF2', 'Sweden', '2022-04-01', 'Financial', 44000000);
+INSERT INTO `aid` VALUES ('SEF3', 'Sweden', '2022-08-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('SEF4', 'Sweden', '2022-11-01', 'Financial', 140000000);
+INSERT INTO `aid` VALUES ('SEH1', 'Sweden', '2022-04-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('SEH2', 'Sweden', '2022-05-01', 'Humanitarian', 570000000);
+INSERT INTO `aid` VALUES ('SEH3', 'Sweden', '2022-05-01', 'Humanitarian', 230000000);
+INSERT INTO `aid` VALUES ('SEH4', 'Sweden', '2022-06-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('SEH5', 'Sweden', '2022-09-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('SEH6', 'Sweden', '2022-11-01', 'Humanitarian', 170000000);
+INSERT INTO `aid` VALUES ('SEM1', 'Sweden', '2022-02-01', 'Military', 400000000);
+INSERT INTO `aid` VALUES ('SEM2', 'Sweden', '2022-02-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('SEM3', 'Sweden', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SEM4', 'Sweden', '2022-06-01', 'Military', 262000000);
+INSERT INTO `aid` VALUES ('SEM5', 'Sweden', '2022-06-01', 'Military', 578000000);
+INSERT INTO `aid` VALUES ('SEM6', 'Sweden', '2022-06-01', 'Military', 60000000);
+INSERT INTO `aid` VALUES ('SEM7', 'Sweden', '2022-07-01', 'Military', 577700000);
+INSERT INTO `aid` VALUES ('SEM8', 'Sweden', '2022-08-01', 'Military', 500000000);
+INSERT INTO `aid` VALUES ('SEM9', 'Sweden', '2022-11-01', 'Military', 3000000000);
+INSERT INTO `aid` VALUES ('SIH1', 'Slovenia', '2022-02-01', 'Humanitarian', 163000);
+INSERT INTO `aid` VALUES ('SIH2', 'Slovenia', '2022-02-01', 'Humanitarian', 100000);
+INSERT INTO `aid` VALUES ('SIH3', 'Slovenia', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('SIH4', 'Slovenia', '2022-04-01', 'Humanitarian', 1640000);
+INSERT INTO `aid` VALUES ('SIH5', 'Slovenia', '2022-04-01', 'Humanitarian', 180000);
+INSERT INTO `aid` VALUES ('SIM1', 'Slovenia', '2022-06-01', 'Military', 7000000);
+INSERT INTO `aid` VALUES ('SIM2', 'Slovenia', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SIM3', 'Slovenia', '2022-07-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SIM4', 'Slovenia', '2022-09-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SKH1', 'Slovakia', '2022-04-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('SKM1', 'Slovakia', '2022-02-01', 'Military', 1700000);
+INSERT INTO `aid` VALUES ('SKM2', 'Slovakia', '2022-02-01', 'Military', 4500000);
+INSERT INTO `aid` VALUES ('SKM3', 'Slovakia', '2022-03-01', 'Military', 32200000);
+INSERT INTO `aid` VALUES ('SKM4', 'Slovakia', '2022-02-01', 'Military', 11000000);
 INSERT INTO `aid` VALUES ('SKM5', 'Slovakia', '2022-04-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SKM6', 'Slovakia', '2022-04-08', 'Military', 68000000);
-INSERT INTO `aid` VALUES ('SKM7', 'Slovakia', '2022-06-16', 'Military', NULL);
-INSERT INTO `aid` VALUES ('SKM8', 'Slovakia', '2022-08-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('TRH1', 'Turkey', '2022-02-26', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('TRH2', 'Turkey', '2022-03-13', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('TRH3', 'Turkey', '2022-03-20', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('TRM1', 'Turkey', '2022-02-03', 'Military', NULL);
-INSERT INTO `aid` VALUES ('TRM2', 'Turkey', '2022-08-22', 'Military', NULL);
-INSERT INTO `aid` VALUES ('TWH1', 'Taiwan(China)', '2022-04-22', 'Humanitarian', 3000000);
-INSERT INTO `aid` VALUES ('TWH10', 'Taiwan(China)', '2022-10-27', 'Humanitarian', 56000000);
-INSERT INTO `aid` VALUES ('TWH2', 'Taiwan(China)', '2022-04-23', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('TWH3', 'Taiwan(China)', '2022-06-02', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('TWH4', 'Taiwan(China)', '2022-06-02', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('TWH5', 'Taiwan(China)', '2022-06-02', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('TWH6', 'Taiwan(China)', '2022-06-02', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('TWH7', 'Taiwan(China)', '2022-06-02', 'Humanitarian', 500000);
-INSERT INTO `aid` VALUES ('TWH9', 'Taiwan(China)', '2022-06-20', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('SKM6', 'Slovakia', '2022-04-01', 'Military', 68000000);
+INSERT INTO `aid` VALUES ('SKM7', 'Slovakia', '2022-06-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('SKM8', 'Slovakia', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('TRH1', 'Turkey', '2022-02-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('TRH2', 'Turkey', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('TRH3', 'Turkey', '2022-03-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('TRM1', 'Turkey', '2022-02-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('TRM2', 'Turkey', '2022-08-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('TWH1', 'Taiwan(China)', '2022-04-01', 'Humanitarian', 3000000);
+INSERT INTO `aid` VALUES ('TWH10', 'Taiwan(China)', '2022-10-01', 'Humanitarian', 56000000);
+INSERT INTO `aid` VALUES ('TWH2', 'Taiwan(China)', '2022-04-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('TWH3', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('TWH4', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('TWH5', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('TWH6', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('TWH7', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 500000);
+INSERT INTO `aid` VALUES ('TWH9', 'Taiwan(China)', '2022-06-01', 'Humanitarian', 500000);
 INSERT INTO `aid` VALUES ('UKF1', 'United Kingdom', '2022-02-01', 'Financial', 88000000);
-INSERT INTO `aid` VALUES ('UKF2', 'United Kingdom', '2022-02-23', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('UKF3', 'United Kingdom', '2022-03-07', 'Financial', 74000000);
-INSERT INTO `aid` VALUES ('UKF4', 'United Kingdom', '2022-03-24', 'Financial', 29100000);
-INSERT INTO `aid` VALUES ('UKF5', 'United Kingdom', '2022-04-22', 'Financial', 730000000);
-INSERT INTO `aid` VALUES ('UKF6', 'United Kingdom', '2022-04-22', 'Financial', 320000000);
-INSERT INTO `aid` VALUES ('UKF7', 'United Kingdom', '2022-05-19', 'Financial', 50000000);
-INSERT INTO `aid` VALUES ('UKF8', 'United Kingdom', '2022-09-30', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('UKH1', 'United Kingdom', '2022-02-27', 'Humanitarian', 40000000);
+INSERT INTO `aid` VALUES ('UKF2', 'United Kingdom', '2022-02-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('UKF3', 'United Kingdom', '2022-03-01', 'Financial', 74000000);
+INSERT INTO `aid` VALUES ('UKF4', 'United Kingdom', '2022-03-01', 'Financial', 29100000);
+INSERT INTO `aid` VALUES ('UKF5', 'United Kingdom', '2022-04-01', 'Financial', 730000000);
+INSERT INTO `aid` VALUES ('UKF6', 'United Kingdom', '2022-04-01', 'Financial', 320000000);
+INSERT INTO `aid` VALUES ('UKF7', 'United Kingdom', '2022-05-01', 'Financial', 50000000);
+INSERT INTO `aid` VALUES ('UKF8', 'United Kingdom', '2022-09-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('UKH1', 'United Kingdom', '2022-02-01', 'Humanitarian', 40000000);
 INSERT INTO `aid` VALUES ('UKH2', 'United Kingdom', '2022-03-01', 'Humanitarian', 40000000);
-INSERT INTO `aid` VALUES ('UKH3', 'United Kingdom', '2022-03-07', 'Humanitarian', 230000000);
-INSERT INTO `aid` VALUES ('UKH4', 'United Kingdom', '2022-03-14', 'Humanitarian', 7000000);
-INSERT INTO `aid` VALUES ('UKH5', 'United Kingdom', '2022-04-05', 'Humanitarian', 10000000);
-INSERT INTO `aid` VALUES ('UKH6', 'United Kingdom', '2022-07-11', 'Humanitarian', 5000000);
-INSERT INTO `aid` VALUES ('UKH7', 'United Kingdom', '2022-10-27', 'Humanitarian', NULL);
-INSERT INTO `aid` VALUES ('UKH8', 'United Kingdom', '2022-11-16', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('UKH3', 'United Kingdom', '2022-03-01', 'Humanitarian', 230000000);
+INSERT INTO `aid` VALUES ('UKH4', 'United Kingdom', '2022-03-01', 'Humanitarian', 7000000);
+INSERT INTO `aid` VALUES ('UKH5', 'United Kingdom', '2022-04-01', 'Humanitarian', 10000000);
+INSERT INTO `aid` VALUES ('UKH6', 'United Kingdom', '2022-07-01', 'Humanitarian', 5000000);
+INSERT INTO `aid` VALUES ('UKH7', 'United Kingdom', '2022-10-01', 'Humanitarian', NULL);
+INSERT INTO `aid` VALUES ('UKH8', 'United Kingdom', '2022-11-01', 'Humanitarian', 10000000);
 INSERT INTO `aid` VALUES ('UKM1', 'United Kingdom', '2022-02-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM10', 'United Kingdom', '2022-06-30', 'Military', 1000000000);
+INSERT INTO `aid` VALUES ('UKM10', 'United Kingdom', '2022-06-01', 'Military', 1000000000);
 INSERT INTO `aid` VALUES ('UKM11', 'United Kingdom', '2022-08-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM12', 'United Kingdom', '2022-10-13', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM13', 'United Kingdom', '2022-10-13', 'Military', 10000000);
-INSERT INTO `aid` VALUES ('UKM14', 'United Kingdom', '2022-11-09', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM15', 'United Kingdom', '2022-11-19', 'Military', 50000000);
-INSERT INTO `aid` VALUES ('UKM2', 'United Kingdom', '2022-03-09', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM3', 'United Kingdom', '2022-03-09', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM4', 'United Kingdom', '2022-03-23', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM5', 'United Kingdom', '2022-03-24', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM6', 'United Kingdom', '2022-04-08', 'Military', 100000000);
-INSERT INTO `aid` VALUES ('UKM7', 'United Kingdom', '2022-04-09', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM8', 'United Kingdom', '2022-05-19', 'Military', NULL);
-INSERT INTO `aid` VALUES ('UKM9', 'United Kingdom', '2022-05-20', 'Military', 1300000000);
-INSERT INTO `aid` VALUES ('USF1', 'United States of America', '2022-02-14', 'Financial', 1000000000);
-INSERT INTO `aid` VALUES ('USF2', 'United States of America', '2022-03-30', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('USF3', 'United States of America', '2022-04-21', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('USF4', 'United States of America', '2022-05-21', 'Financial', 8006000000);
-INSERT INTO `aid` VALUES ('USF5', 'United States of America', '2022-05-21', 'Financial', 500000000);
-INSERT INTO `aid` VALUES ('USF6', 'United States of America', '2022-05-21', 'Financial', 100000000);
-INSERT INTO `aid` VALUES ('USF7', 'United States of America', '2022-09-30', 'Financial', 4500000000);
-INSERT INTO `aid` VALUES ('USH1', 'United States of America', '2022-02-27', 'Humanitarian', 54000000);
-INSERT INTO `aid` VALUES ('USH10', 'United States of America', '2022-05-10', 'Humanitarian', 2000000);
-INSERT INTO `aid` VALUES ('USH11', 'United States of America', '2022-05-10', 'Humanitarian', 150000000);
-INSERT INTO `aid` VALUES ('USH2', 'United States of America', '2022-03-10', 'Humanitarian', 53000000);
-INSERT INTO `aid` VALUES ('USH3', 'United States of America', '2022-03-15', 'Humanitarian', 3446000000);
-INSERT INTO `aid` VALUES ('USH4', 'United States of America', '2022-03-24', 'Humanitarian', 6100000);
-INSERT INTO `aid` VALUES ('USH5', 'United States of America', '2022-03-24', 'Humanitarian', 320000000);
-INSERT INTO `aid` VALUES ('USH6', 'United States of America', '2022-03-24', 'Humanitarian', 1000000000);
-INSERT INTO `aid` VALUES ('USH7', 'United States of America', '2022-03-26', 'Humanitarian', 100000000);
-INSERT INTO `aid` VALUES ('USH8', 'United States of America', '2022-09-26', 'Humanitarian', 457500000);
-INSERT INTO `aid` VALUES ('USH9', 'United States of America', '2022-05-10', 'Humanitarian', 4350000000);
-INSERT INTO `aid` VALUES ('USM1', 'United States of America', '2022-03-15', 'Military', NULL);
-INSERT INTO `aid` VALUES ('USM10', 'United States of America', '2022-09-30', 'Military', 3000000000);
-INSERT INTO `aid` VALUES ('USM2', 'United States of America', '2022-05-06', 'Military', 150000000);
-INSERT INTO `aid` VALUES ('USM3', 'United States of America', '2022-04-25', 'Military', 322000000);
+INSERT INTO `aid` VALUES ('UKM12', 'United Kingdom', '2022-10-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM13', 'United Kingdom', '2022-10-01', 'Military', 10000000);
+INSERT INTO `aid` VALUES ('UKM14', 'United Kingdom', '2022-11-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM15', 'United Kingdom', '2022-11-01', 'Military', 50000000);
+INSERT INTO `aid` VALUES ('UKM2', 'United Kingdom', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM3', 'United Kingdom', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM4', 'United Kingdom', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM5', 'United Kingdom', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM6', 'United Kingdom', '2022-04-01', 'Military', 100000000);
+INSERT INTO `aid` VALUES ('UKM7', 'United Kingdom', '2022-04-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM8', 'United Kingdom', '2022-05-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('UKM9', 'United Kingdom', '2022-05-01', 'Military', 1300000000);
+INSERT INTO `aid` VALUES ('USF1', 'United States of America', '2022-02-01', 'Financial', 1000000000);
+INSERT INTO `aid` VALUES ('USF2', 'United States of America', '2022-03-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('USF3', 'United States of America', '2022-04-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('USF4', 'United States of America', '2022-05-01', 'Financial', 8006000000);
+INSERT INTO `aid` VALUES ('USF5', 'United States of America', '2022-05-01', 'Financial', 500000000);
+INSERT INTO `aid` VALUES ('USF6', 'United States of America', '2022-05-01', 'Financial', 100000000);
+INSERT INTO `aid` VALUES ('USF7', 'United States of America', '2022-09-01', 'Financial', 4500000000);
+INSERT INTO `aid` VALUES ('USH1', 'United States of America', '2022-02-01', 'Humanitarian', 54000000);
+INSERT INTO `aid` VALUES ('USH10', 'United States of America', '2022-05-01', 'Humanitarian', 2000000);
+INSERT INTO `aid` VALUES ('USH11', 'United States of America', '2022-05-01', 'Humanitarian', 150000000);
+INSERT INTO `aid` VALUES ('USH2', 'United States of America', '2022-03-01', 'Humanitarian', 53000000);
+INSERT INTO `aid` VALUES ('USH3', 'United States of America', '2022-03-01', 'Humanitarian', 3446000000);
+INSERT INTO `aid` VALUES ('USH4', 'United States of America', '2022-03-01', 'Humanitarian', 6100000);
+INSERT INTO `aid` VALUES ('USH5', 'United States of America', '2022-03-01', 'Humanitarian', 320000000);
+INSERT INTO `aid` VALUES ('USH6', 'United States of America', '2022-03-01', 'Humanitarian', 1000000000);
+INSERT INTO `aid` VALUES ('USH7', 'United States of America', '2022-03-01', 'Humanitarian', 100000000);
+INSERT INTO `aid` VALUES ('USH8', 'United States of America', '2022-09-01', 'Humanitarian', 457500000);
+INSERT INTO `aid` VALUES ('USH9', 'United States of America', '2022-05-01', 'Humanitarian', 4350000000);
+INSERT INTO `aid` VALUES ('USM1', 'United States of America', '2022-03-01', 'Military', NULL);
+INSERT INTO `aid` VALUES ('USM10', 'United States of America', '2022-09-01', 'Military', 3000000000);
+INSERT INTO `aid` VALUES ('USM2', 'United States of America', '2022-05-01', 'Military', 150000000);
+INSERT INTO `aid` VALUES ('USM3', 'United States of America', '2022-04-01', 'Military', 322000000);
 INSERT INTO `aid` VALUES ('USM4', 'United States of America', '2022-04-01', 'Military', 300000000);
-INSERT INTO `aid` VALUES ('USM5', 'United States of America', '2022-05-10', 'Military', 650000000);
-INSERT INTO `aid` VALUES ('USM6', 'United States of America', '2022-05-10', 'Military', 600000000);
-INSERT INTO `aid` VALUES ('USM9', 'United States of America', '2022-09-30', 'Military', 3700000000);
+INSERT INTO `aid` VALUES ('USM5', 'United States of America', '2022-05-01', 'Military', 650000000);
+INSERT INTO `aid` VALUES ('USM6', 'United States of America', '2022-05-01', 'Military', 600000000);
+INSERT INTO `aid` VALUES ('USM9', 'United States of America', '2022-09-01', 'Military', 3700000000);
 
 -- ----------------------------
 -- Table structure for all_countries
 -- ----------------------------
 DROP TABLE IF EXISTS `all_countries`;
-CREATE TABLE `all_countries` (
-  `country` varchar(255) NOT NULL,
-  `gdp` double DEFAULT NULL,
+CREATE TABLE `all_countries`  (
+  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `gdp` double NULL DEFAULT NULL,
   `sanction` tinyint(1) NOT NULL,
   `aid` tinyint(1) NOT NULL,
-  `total_cost_in_billion_euros` double DEFAULT NULL,
-  `number_of_refugees` bigint(20) DEFAULT NULL,
-  `code` varchar(5) NOT NULL,
+  `total_cost_in_billion_euros` double NULL DEFAULT NULL,
+  `number_of_refugees` bigint NULL DEFAULT NULL,
+  `code` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`country`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci ROW_FORMAT=DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+
 -- ----------------------------
 -- Records of all_countries
 -- ----------------------------
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Afghanistan',NULL,0,0,0.0,0,'AFG'),
-	 ('Albania',NULL,0,0,0.0,2342,'ALB'),
-	 ('Algeria',NULL,0,0,0.0,0,'DZA'),
-	 ('Andorra',NULL,0,0,0.0,0,'AND'),
-	 ('Angola',NULL,0,0,0.0,0,'AGO'),
-	 ('Antigua and Barbuda',NULL,0,0,0.0,0,'ATG'),
-	 ('Argentina',NULL,0,0,0.0,0,'ARG'),
-	 ('Armenia',NULL,0,0,0.0,486,'ARM'),
-	 ('Australia',0.3204,1,0,0.0,0,'AUS'),
-	 ('Austria',0.5801,1,1,0.35,91631,'AUT');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Azerbaijan',NULL,0,0,0.0,3944,'AZE'),
-	 ('Bahrain',NULL,0,0,0.0,0,'BHR'),
-	 ('Bangladesh',NULL,0,0,0.0,0,'BGD'),
-	 ('Barbados',NULL,0,0,0.0,0,'BRB'),
-	 ('Belarus',NULL,0,0,0.0,19329,'BLR'),
-	 ('Belgium',0.2182,1,0,0.25,66416,'BEL'),
-	 ('Belize',NULL,0,1,0.0,0,'BLZ'),
-	 ('Benin',NULL,0,0,0.0,0,'BEN'),
-	 ('Bhutan',NULL,0,0,0.0,0,'BTN'),
-	 ('Bolivia',NULL,0,0,0.0,0,'BOL');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Bosnia and Herzegovina',NULL,0,0,0.0,149,'BIH'),
-	 ('Botswana',NULL,0,0,0.0,0,'BWA'),
-	 ('Brazil',NULL,0,0,0.0,0,'BRA'),
-	 ('Brunei',NULL,0,0,0.0,0,'BRN'),
-	 ('Bulgaria',0.0045,1,0,0.59,50325,'BGR'),
-	 ('Burkina Faso',NULL,0,0,0.0,0,'BFA'),
-	 ('Burundi',NULL,0,0,0.0,0,'BDI'),
-	 ('Cambodia',NULL,0,0,0.0,0,'KHM'),
-	 ('Cameroon',NULL,0,0,0.0,0,'CMR'),
-	 ('Canada',3.7836,1,0,0.0,0,'CAN');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Cape Verde',NULL,0,1,0.0,0,'CPV'),
-	 ('Central African Republic',NULL,0,0,0.0,0,'CAF'),
-	 ('Chad',NULL,0,0,0.0,0,'TCD'),
-	 ('Chile',NULL,0,0,0.0,0,'CHL'),
-	 ('China',0.0021,0,0,0.0,0,'CHN'),
-	 ('Colombia',NULL,0,0,0.0,0,'COL'),
-	 ('Comoros',NULL,0,0,0.0,0,'COM'),
-	 ('Congo',NULL,0,0,0.0,0,'COG'),
-	 ('Costa Rica',NULL,0,0,0.0,0,'CRI'),
-	 ('Côte d''Ivoire',NULL,0,0,0.0,0,'CIV');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Croatia',0.2229,1,0,0.08,20164,'HRV'),
-	 ('Cuba',NULL,0,1,0.0,0,'CUB'),
-	 ('Cyprus',0.0025,1,0,0.07,15158,'CYP'),
-	 ('Czech Republic',0.5867,1,0,1.86,482049,'CZE'),
-	 ('Democratic Republic of Congo',NULL,0,1,0.0,0,'COD'),
-	 ('Denmark',0.6411,1,0,0.14,39395,'DNK'),
-	 ('Djibouti',NULL,0,0,0.0,0,'DJI'),
-	 ('Dominica',NULL,0,1,0.0,0,'DMA'),
-	 ('Dominican Republic',NULL,0,0,0.0,0,'DOM'),
-	 ('Ecuador',NULL,0,0,0.0,0,'ECU');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Egypt',NULL,0,0,0.0,0,'EGY'),
-	 ('El Salvador',NULL,0,0,0.0,0,'SLV'),
-	 ('Equatorial Guinea',NULL,0,0,0.0,0,'GNQ'),
-	 ('Eritrea',NULL,0,0,0.0,0,'ERI'),
-	 ('Estonia',0.335,1,0,0.15,66074,'EST'),
-	 ('Ethiopia',NULL,0,0,0.0,0,'ETH'),
-	 ('EU (Commission and Council)',NULL,1,1,0.0,0,'UNK1'),
-	 ('European Investment Bank',NULL,1,1,0.0,0,'UNK2'),
-	 ('European Peace Facility',NULL,1,1,0.0,0,'UNK3'),
-	 ('Fiji',NULL,0,0,0.0,0,'FJI');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Finland',0.3056,1,0,0.18,47067,'FIN'),
-	 ('France',1.4142,1,0,0.48,118994,'FRA'),
-	 ('Gabon',NULL,0,1,0.0,0,'GAB'),
-	 ('Georgia',NULL,1,1,0.0,25101,'GEO'),
-	 ('Germany',5.4449,1,0,4.09,1021667,'DEU'),
-	 ('Ghana',NULL,0,0,0.0,0,'GHA'),
-	 ('Greece',0.1912,1,1,0.08,20955,'GRC'),
-	 ('Greenland (Den.)',NULL,1,0,0.0,0,'GRL'),
-	 ('Grenada',NULL,0,1,0.0,0,'GRD'),
-	 ('Guatemala',NULL,0,0,0.0,0,'GTM');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Guinea',NULL,0,0,0.0,0,'GIN'),
-	 ('Guinea-Bissau',NULL,0,0,0.0,0,'GNB'),
-	 ('Guyana',NULL,0,0,0.0,0,'GUY'),
-	 ('Haiti',NULL,0,0,0.0,0,'HTI'),
-	 ('Honduras',NULL,0,0,0.0,0,'HND'),
-	 ('Hong Kong(China)',NULL,0,0,0.0,0,'HKG'),
-	 ('Hungary',0.0467,1,0,0.13,33603,'HUN'),
-	 ('Iceland',NULL,1,0,0.0,2239,'ISL'),
-	 ('India',0.0019,0,0,0.0,0,'IND'),
-	 ('Indonesia',NULL,0,0,0.0,0,'IDN');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Iran',NULL,0,0,0.0,0,'IRN'),
-	 ('Iraq',NULL,0,0,0.0,0,'IRQ'),
-	 ('Ireland',0.0687,1,0,0.26,71597,'IRL'),
-	 ('Israel',NULL,0,0,0.0,0,'ISR'),
-	 ('Italy',0.6725,1,0,0.66,167925,'ITA'),
-	 ('Jamaica',NULL,0,0,0.0,0,'JAM'),
-	 ('Japan',0.606,1,1,0.0,0,'JPN'),
-	 ('Jordan',NULL,0,0,0.0,0,'JOR'),
-	 ('Kazakhstan',NULL,0,0,0.0,0,'KAZ'),
-	 ('Kenya',NULL,0,0,0.0,0,'KEN');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Kiribati',NULL,0,0,0.0,0,'KIR'),
-	 ('Kosovo',NULL,0,0,0.0,0,'XXK'),
-	 ('Kuwait',NULL,0,0,0.0,0,'KWT'),
-	 ('Kyrgyzstan',NULL,0,0,0.0,0,'KGZ'),
-	 ('Laos',NULL,0,0,0.0,0,'LAO'),
-	 ('Latvia',0.3135,1,0,0.17,35212,'LVA'),
-	 ('Lebanon',NULL,0,0,0.0,0,'LBN'),
-	 ('Lesotho',NULL,0,1,0.0,0,'LSO'),
-	 ('Liberia',NULL,0,0,0.0,0,'LBR'),
-	 ('Libya',NULL,0,0,0.0,0,'LBY');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Liechtenstein',NULL,1,0,0.0,405,'LIE'),
-	 ('Lithuania',0.2607,1,0,0.28,73040,'LTU'),
-	 ('Luxembourg',0.076,1,0,0.03,6756,'LUX'),
-	 ('Macau(China)',NULL,0,1,0.0,0,'MAC'),
-	 ('Madagascar',NULL,0,1,0.0,0,'MDG'),
-	 ('Malawi',NULL,0,0,0.0,0,'MWI'),
-	 ('Malaysia',NULL,0,0,0.0,0,'MYS'),
-	 ('Maldives',NULL,0,0,0.0,0,'MDv'),
-	 ('Mali',NULL,0,0,0.0,0,'MLI'),
-	 ('Malta',0.0012,1,0,0.01,1603,'MLT');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Marshall Islands',NULL,0,0,0.0,0,'MHL'),
-	 ('Mauritania',NULL,0,0,0.0,0,'MRT'),
-	 ('Mauritius',NULL,0,0,0.0,0,'MUS'),
-	 ('Mexico',NULL,0,0,0.0,0,'MEX'),
-	 ('Micronesia',NULL,0,0,0.0,0,'FSM'),
-	 ('Moldova',NULL,0,0,0.0,102283,'MDA'),
-	 ('Monaco',NULL,1,0,0.0,0,'MCO'),
-	 ('Mongolia',NULL,0,0,0.0,0,'MNG'),
-	 ('Montenegro',NULL,1,0,0.0,32880,'MNE'),
-	 ('Morocco',NULL,0,0,0.0,0,'MAR');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Mozambique',NULL,0,0,0.0,0,'MOZ'),
-	 ('Myanmar',NULL,0,0,0.0,0,'MMR'),
-	 ('Namibia',NULL,0,0,0.0,0,'NAM'),
-	 ('Nauru',NULL,0,0,0.0,0,'NRU'),
-	 ('Nepal',NULL,0,0,0.0,0,'NPL'),
-	 ('Netherlands',0.8472,1,0,0.32,85210,'NLD'),
-	 ('New Zealand',0.017,1,1,0.0,0,'NZL'),
-	 ('Nicaragua',NULL,0,0,0.0,0,'NIC'),
-	 ('Niger',NULL,0,0,0.0,0,'NER'),
-	 ('Nigeria',NULL,0,0,0.0,0,'NGA');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('North Korea',NULL,0,0,0.0,0,'PRK'),
-	 ('North Macedonia',NULL,1,1,0.0,6404,'MKD'),
-	 ('Norway',1.2099,1,1,0.13,37394,'NOR'),
-	 ('Oman',NULL,0,0,0.0,0,'OMN'),
-	 ('Pakistan',NULL,0,0,0.0,0,'PAK'),
-	 ('Palau',NULL,0,0,0.0,0,'PLW'),
-	 ('Panama',NULL,0,0,0.0,0,'PAN'),
-	 ('Papua New Guinea',NULL,0,0,0.0,0,'PNG'),
-	 ('Paraguay',NULL,0,0,0.0,0,'PRY'),
-	 ('Peru',NULL,0,0,0.0,0,'PER');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Philippines',NULL,0,0,0.0,0,'PHL'),
-	 ('Poland',3.0006,1,1,6.08,1563386,'POL'),
-	 ('Portugal',0.3348,1,1,0.21,57109,'PRT'),
-	 ('Qatar',NULL,0,0,0.0,0,'QAT'),
-	 ('Romania',0.0108,1,0,0.36,106644,'ROU'),
-	 ('Russia',NULL,0,0,0.0,2852395,'RUS'),
-	 ('Rwanda',NULL,0,0,0.0,0,'RWA'),
-	 ('Saint Kitts and Nevis',NULL,0,1,0.0,0,'KNA'),
-	 ('Saint Lucia',NULL,0,0,0.0,0,'LCA'),
-	 ('Saint Vincent and the Grenadines',NULL,0,0,0.0,0,'VCT');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Samoa',NULL,0,0,0.0,0,'ASM'),
-	 ('San Marino',NULL,0,0,0.0,0,'SMR'),
-	 ('São Tomé and Príncipe',NULL,0,0,0.0,0,'STP'),
-	 ('Saudi Arabia',NULL,0,0,0.0,0,'SAU'),
-	 ('Senegal',NULL,0,0,0.0,0,'SEN'),
-	 ('Serbia',NULL,0,0,0.0,2790,'SRB'),
-	 ('Seychelles',NULL,0,0,0.0,0,'SYC'),
-	 ('Sierra Leone',NULL,0,0,0.0,0,'SLE'),
-	 ('Singapore',NULL,1,0,0.0,0,'SGP'),
-	 ('Slovakia',0.2152,1,0,0.41,107476,'SVK');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Slovenia',0.0609,1,0,0.03,9081,'SVN'),
-	 ('Solomon Islands',NULL,0,0,0.0,0,'SLB'),
-	 ('Somalia',NULL,0,1,0.0,0,'SOM'),
-	 ('South Africa',NULL,0,1,0.0,0,'ZAF'),
-	 ('South Korea',0.0944,1,0,0.0,0,'KOR'),
-	 ('South Sudan',NULL,0,0,0.0,0,'SSD'),
-	 ('Spain',0.3821,1,0,0.62,161012,'ESP'),
-	 ('Sri Lanka',NULL,0,0,0.0,0,'LKA'),
-	 ('Sudan',NULL,0,1,0.0,0,'SDN'),
-	 ('Suriname',NULL,0,0,0.0,0,'SUR');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Sweden',0.8065,1,0,0.19,50795,'SWE'),
-	 ('Switzerland',0.2028,1,0,0.28,77450,'CHE'),
-	 ('Syria',NULL,0,1,0.0,0,'SYR'),
-	 ('Taiwan(China)',0.0683,1,0,0.0,0,'TWN'),
-	 ('Tajikistan',NULL,0,0,0.0,0,'TJK'),
-	 ('Tanzania',NULL,0,0,0.0,0,'TZA'),
-	 ('Thailand',NULL,0,0,0.0,0,'THA'),
-	 ('The Bahamas',NULL,0,0,0.0,0,'BHS'),
-	 ('The Gambia',NULL,0,0,0.0,0,'GMB'),
-	 ('Timor-Leste',NULL,0,0,0.0,0,'TLS');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Togo',NULL,0,0,0.0,0,'TGO'),
-	 ('Tonga',NULL,0,0,0.0,0,'TON'),
-	 ('Trinidad and Tobago',NULL,0,0,0.0,0,'TTO'),
-	 ('Tunisia',NULL,0,0,0.0,0,'TUN'),
-	 ('Turkey',0.0644,0,0,0.58,86545,'TUR'),
-	 ('Turkmenistan',NULL,0,0,0.0,0,'TKM'),
-	 ('Tuvalu',NULL,0,1,0.0,0,'TUV'),
-	 ('Uganda',NULL,0,0,0.0,0,'UGA'),
-	 ('Ukraine',NULL,1,0,0.0,0,'UKR'),
-	 ('United Arab Emirates',NULL,0,0,0.0,0,'ARE');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('United Kingdom',7.0818,1,1,0.58,155500,'GBR'),
-	 ('United States of America',47.8192,1,0,0.0,0,'USA'),
-	 ('Uruguay',NULL,0,1,0.0,0,'URY'),
-	 ('Uzbekistan',NULL,0,1,0.0,0,'UZB'),
-	 ('Vanuatu',NULL,0,0,0.0,0,'VUT'),
-	 ('Venezuela',NULL,0,0,0.0,0,'VEN'),
-	 ('Vietnam',NULL,0,0,0.0,0,'VNM'),
-	 ('West Bank and Gaza',NULL,0,0,0.0,0,'UNK4'),
-	 ('Western Sahara',NULL,0,0,0.0,0,'ESH'),
-	 ('Yemen',NULL,0,0,0.0,0,'YEM');
-INSERT INTO all_countries (country,gdp,sanction,aid,total_cost_in_billion_euros,number_of_refugees,code) VALUES
-	 ('Zambia',NULL,0,0,0.0,0,'ZMB'),
-	 ('Zimbabwe',NULL,0,0,0.0,0,'ZWE');
+INSERT INTO `all_countries` VALUES ('Afghanistan', NULL, 0, 0, 0, 0, 'AFG');
+INSERT INTO `all_countries` VALUES ('Albania', NULL, 0, 0, 0, 2342, 'ALB');
+INSERT INTO `all_countries` VALUES ('Algeria', NULL, 0, 0, 0, 0, 'DZA');
+INSERT INTO `all_countries` VALUES ('Andorra', NULL, 0, 0, 0, 0, 'AND');
+INSERT INTO `all_countries` VALUES ('Angola', NULL, 0, 0, 0, 0, 'AGO');
+INSERT INTO `all_countries` VALUES ('Antigua and Barbuda', NULL, 0, 0, 0, 0, 'ATG');
+INSERT INTO `all_countries` VALUES ('Argentina', NULL, 0, 0, 0, 0, 'ARG');
+INSERT INTO `all_countries` VALUES ('Armenia', NULL, 0, 0, 0, 486, 'ARM');
+INSERT INTO `all_countries` VALUES ('Australia', 0.3204, 1, 0, 0, 0, 'AUS');
+INSERT INTO `all_countries` VALUES ('Austria', 0.5801, 1, 1, 0.35, 91631, 'AUT');
+INSERT INTO `all_countries` VALUES ('Azerbaijan', NULL, 0, 0, 0, 3944, 'AZE');
+INSERT INTO `all_countries` VALUES ('Bahrain', NULL, 0, 0, 0, 0, 'BHR');
+INSERT INTO `all_countries` VALUES ('Bangladesh', NULL, 0, 0, 0, 0, 'BGD');
+INSERT INTO `all_countries` VALUES ('Barbados', NULL, 0, 0, 0, 0, 'BRB');
+INSERT INTO `all_countries` VALUES ('Belarus', NULL, 0, 0, 0, 19329, 'BLR');
+INSERT INTO `all_countries` VALUES ('Belgium', 0.2182, 1, 0, 0.25, 66416, 'BEL');
+INSERT INTO `all_countries` VALUES ('Belize', NULL, 0, 1, 0, 0, 'BLZ');
+INSERT INTO `all_countries` VALUES ('Benin', NULL, 0, 0, 0, 0, 'BEN');
+INSERT INTO `all_countries` VALUES ('Bhutan', NULL, 0, 0, 0, 0, 'BTN');
+INSERT INTO `all_countries` VALUES ('Bolivia', NULL, 0, 0, 0, 0, 'BOL');
+INSERT INTO `all_countries` VALUES ('Bosnia and Herzegovina', NULL, 0, 0, 0, 149, 'BIH');
+INSERT INTO `all_countries` VALUES ('Botswana', NULL, 0, 0, 0, 0, 'BWA');
+INSERT INTO `all_countries` VALUES ('Brazil', NULL, 0, 0, 0, 0, 'BRA');
+INSERT INTO `all_countries` VALUES ('Brunei', NULL, 0, 0, 0, 0, 'BRN');
+INSERT INTO `all_countries` VALUES ('Bulgaria', 0.0045, 1, 0, 0.59, 50325, 'BGR');
+INSERT INTO `all_countries` VALUES ('Burkina Faso', NULL, 0, 0, 0, 0, 'BFA');
+INSERT INTO `all_countries` VALUES ('Burundi', NULL, 0, 0, 0, 0, 'BDI');
+INSERT INTO `all_countries` VALUES ('Cambodia', NULL, 0, 0, 0, 0, 'KHM');
+INSERT INTO `all_countries` VALUES ('Cameroon', NULL, 0, 0, 0, 0, 'CMR');
+INSERT INTO `all_countries` VALUES ('Canada', 3.7836, 1, 0, 0, 0, 'CAN');
+INSERT INTO `all_countries` VALUES ('Cape Verde', NULL, 0, 1, 0, 0, 'CPV');
+INSERT INTO `all_countries` VALUES ('Central African Republic', NULL, 0, 0, 0, 0, 'CAF');
+INSERT INTO `all_countries` VALUES ('Chad', NULL, 0, 0, 0, 0, 'TCD');
+INSERT INTO `all_countries` VALUES ('Chile', NULL, 0, 0, 0, 0, 'CHL');
+INSERT INTO `all_countries` VALUES ('China', 0.0021, 0, 0, 0, 0, 'CHN');
+INSERT INTO `all_countries` VALUES ('Colombia', NULL, 0, 0, 0, 0, 'COL');
+INSERT INTO `all_countries` VALUES ('Comoros', NULL, 0, 0, 0, 0, 'COM');
+INSERT INTO `all_countries` VALUES ('Congo', NULL, 0, 0, 0, 0, 'COG');
+INSERT INTO `all_countries` VALUES ('Costa Rica', NULL, 0, 0, 0, 0, 'CRI');
+INSERT INTO `all_countries` VALUES ('Côte d\'Ivoire', NULL, 0, 0, 0, 0, 'CIV');
+INSERT INTO `all_countries` VALUES ('Croatia', 0.2229, 1, 0, 0.08, 20164, 'HRV');
+INSERT INTO `all_countries` VALUES ('Cuba', NULL, 0, 1, 0, 0, 'CUB');
+INSERT INTO `all_countries` VALUES ('Cyprus', 0.0025, 1, 0, 0.07, 15158, 'CYP');
+INSERT INTO `all_countries` VALUES ('Czech Republic', 0.5867, 1, 0, 1.86, 482049, 'CZE');
+INSERT INTO `all_countries` VALUES ('Democratic Republic of Congo', NULL, 0, 1, 0, 0, 'COD');
+INSERT INTO `all_countries` VALUES ('Denmark', 0.6411, 1, 0, 0.14, 39395, 'DNK');
+INSERT INTO `all_countries` VALUES ('Djibouti', NULL, 0, 0, 0, 0, 'DJI');
+INSERT INTO `all_countries` VALUES ('Dominica', NULL, 0, 1, 0, 0, 'DMA');
+INSERT INTO `all_countries` VALUES ('Dominican Republic', NULL, 0, 0, 0, 0, 'DOM');
+INSERT INTO `all_countries` VALUES ('Ecuador', NULL, 0, 0, 0, 0, 'ECU');
+INSERT INTO `all_countries` VALUES ('Egypt', NULL, 0, 0, 0, 0, 'EGY');
+INSERT INTO `all_countries` VALUES ('El Salvador', NULL, 0, 0, 0, 0, 'SLV');
+INSERT INTO `all_countries` VALUES ('Equatorial Guinea', NULL, 0, 0, 0, 0, 'GNQ');
+INSERT INTO `all_countries` VALUES ('Eritrea', NULL, 0, 0, 0, 0, 'ERI');
+INSERT INTO `all_countries` VALUES ('Estonia', 0.335, 1, 0, 0.15, 66074, 'EST');
+INSERT INTO `all_countries` VALUES ('Ethiopia', NULL, 0, 0, 0, 0, 'ETH');
+INSERT INTO `all_countries` VALUES ('EU (Commission and Council)', NULL, 1, 1, 0, 0, 'UNK1');
+INSERT INTO `all_countries` VALUES ('European Investment Bank', NULL, 1, 1, 0, 0, 'UNK2');
+INSERT INTO `all_countries` VALUES ('European Peace Facility', NULL, 1, 1, 0, 0, 'UNK3');
+INSERT INTO `all_countries` VALUES ('Fiji', NULL, 0, 0, 0, 0, 'FJI');
+INSERT INTO `all_countries` VALUES ('Finland', 0.3056, 1, 0, 0.18, 47067, 'FIN');
+INSERT INTO `all_countries` VALUES ('France', 1.4142, 1, 0, 0.48, 118994, 'FRA');
+INSERT INTO `all_countries` VALUES ('Gabon', NULL, 0, 1, 0, 0, 'GAB');
+INSERT INTO `all_countries` VALUES ('Georgia', NULL, 1, 1, 0, 25101, 'GEO');
+INSERT INTO `all_countries` VALUES ('Germany', 5.4449, 1, 0, 4.09, 1021667, 'DEU');
+INSERT INTO `all_countries` VALUES ('Ghana', NULL, 0, 0, 0, 0, 'GHA');
+INSERT INTO `all_countries` VALUES ('Greece', 0.1912, 1, 1, 0.08, 20955, 'GRC');
+INSERT INTO `all_countries` VALUES ('Greenland (Den.)', NULL, 1, 0, 0, 0, 'GRL');
+INSERT INTO `all_countries` VALUES ('Grenada', NULL, 0, 1, 0, 0, 'GRD');
+INSERT INTO `all_countries` VALUES ('Guatemala', NULL, 0, 0, 0, 0, 'GTM');
+INSERT INTO `all_countries` VALUES ('Guinea', NULL, 0, 0, 0, 0, 'GIN');
+INSERT INTO `all_countries` VALUES ('Guinea-Bissau', NULL, 0, 0, 0, 0, 'GNB');
+INSERT INTO `all_countries` VALUES ('Guyana', NULL, 0, 0, 0, 0, 'GUY');
+INSERT INTO `all_countries` VALUES ('Haiti', NULL, 0, 0, 0, 0, 'HTI');
+INSERT INTO `all_countries` VALUES ('Honduras', NULL, 0, 0, 0, 0, 'HND');
+INSERT INTO `all_countries` VALUES ('Hong Kong(China)', NULL, 0, 0, 0, 0, 'HKG');
+INSERT INTO `all_countries` VALUES ('Hungary', 0.0467, 1, 0, 0.13, 33603, 'HUN');
+INSERT INTO `all_countries` VALUES ('Iceland', NULL, 1, 0, 0, 2239, 'ISL');
+INSERT INTO `all_countries` VALUES ('India', 0.0019, 0, 0, 0, 0, 'IND');
+INSERT INTO `all_countries` VALUES ('Indonesia', NULL, 0, 0, 0, 0, 'IDN');
+INSERT INTO `all_countries` VALUES ('Iran', NULL, 0, 0, 0, 0, 'IRN');
+INSERT INTO `all_countries` VALUES ('Iraq', NULL, 0, 0, 0, 0, 'IRQ');
+INSERT INTO `all_countries` VALUES ('Ireland', 0.0687, 1, 0, 0.26, 71597, 'IRL');
+INSERT INTO `all_countries` VALUES ('Israel', NULL, 0, 0, 0, 0, 'ISR');
+INSERT INTO `all_countries` VALUES ('Italy', 0.6725, 1, 0, 0.66, 167925, 'ITA');
+INSERT INTO `all_countries` VALUES ('Jamaica', NULL, 0, 0, 0, 0, 'JAM');
+INSERT INTO `all_countries` VALUES ('Japan', 0.606, 1, 1, 0, 0, 'JPN');
+INSERT INTO `all_countries` VALUES ('Jordan', NULL, 0, 0, 0, 0, 'JOR');
+INSERT INTO `all_countries` VALUES ('Kazakhstan', NULL, 0, 0, 0, 0, 'KAZ');
+INSERT INTO `all_countries` VALUES ('Kenya', NULL, 0, 0, 0, 0, 'KEN');
+INSERT INTO `all_countries` VALUES ('Kiribati', NULL, 0, 0, 0, 0, 'KIR');
+INSERT INTO `all_countries` VALUES ('Kosovo', NULL, 0, 0, 0, 0, 'XXK');
+INSERT INTO `all_countries` VALUES ('Kuwait', NULL, 0, 0, 0, 0, 'KWT');
+INSERT INTO `all_countries` VALUES ('Kyrgyzstan', NULL, 0, 0, 0, 0, 'KGZ');
+INSERT INTO `all_countries` VALUES ('Laos', NULL, 0, 0, 0, 0, 'LAO');
+INSERT INTO `all_countries` VALUES ('Latvia', 0.3135, 1, 0, 0.17, 35212, 'LVA');
+INSERT INTO `all_countries` VALUES ('Lebanon', NULL, 0, 0, 0, 0, 'LBN');
+INSERT INTO `all_countries` VALUES ('Lesotho', NULL, 0, 1, 0, 0, 'LSO');
+INSERT INTO `all_countries` VALUES ('Liberia', NULL, 0, 0, 0, 0, 'LBR');
+INSERT INTO `all_countries` VALUES ('Libya', NULL, 0, 0, 0, 0, 'LBY');
+INSERT INTO `all_countries` VALUES ('Liechtenstein', NULL, 1, 0, 0, 405, 'LIE');
+INSERT INTO `all_countries` VALUES ('Lithuania', 0.2607, 1, 0, 0.28, 73040, 'LTU');
+INSERT INTO `all_countries` VALUES ('Luxembourg', 0.076, 1, 0, 0.03, 6756, 'LUX');
+INSERT INTO `all_countries` VALUES ('Macau(China)', NULL, 0, 1, 0, 0, 'MAC');
+INSERT INTO `all_countries` VALUES ('Madagascar', NULL, 0, 1, 0, 0, 'MDG');
+INSERT INTO `all_countries` VALUES ('Malawi', NULL, 0, 0, 0, 0, 'MWI');
+INSERT INTO `all_countries` VALUES ('Malaysia', NULL, 0, 0, 0, 0, 'MYS');
+INSERT INTO `all_countries` VALUES ('Maldives', NULL, 0, 0, 0, 0, 'MDv');
+INSERT INTO `all_countries` VALUES ('Mali', NULL, 0, 0, 0, 0, 'MLI');
+INSERT INTO `all_countries` VALUES ('Malta', 0.0012, 1, 0, 0.01, 1603, 'MLT');
+INSERT INTO `all_countries` VALUES ('Marshall Islands', NULL, 0, 0, 0, 0, 'MHL');
+INSERT INTO `all_countries` VALUES ('Mauritania', NULL, 0, 0, 0, 0, 'MRT');
+INSERT INTO `all_countries` VALUES ('Mauritius', NULL, 0, 0, 0, 0, 'MUS');
+INSERT INTO `all_countries` VALUES ('Mexico', NULL, 0, 0, 0, 0, 'MEX');
+INSERT INTO `all_countries` VALUES ('Micronesia', NULL, 0, 0, 0, 0, 'FSM');
+INSERT INTO `all_countries` VALUES ('Moldova', NULL, 0, 0, 0, 102283, 'MDA');
+INSERT INTO `all_countries` VALUES ('Monaco', NULL, 1, 0, 0, 0, 'MCO');
+INSERT INTO `all_countries` VALUES ('Mongolia', NULL, 0, 0, 0, 0, 'MNG');
+INSERT INTO `all_countries` VALUES ('Montenegro', NULL, 1, 0, 0, 32880, 'MNE');
+INSERT INTO `all_countries` VALUES ('Morocco', NULL, 0, 0, 0, 0, 'MAR');
+INSERT INTO `all_countries` VALUES ('Mozambique', NULL, 0, 0, 0, 0, 'MOZ');
+INSERT INTO `all_countries` VALUES ('Myanmar', NULL, 0, 0, 0, 0, 'MMR');
+INSERT INTO `all_countries` VALUES ('Namibia', NULL, 0, 0, 0, 0, 'NAM');
+INSERT INTO `all_countries` VALUES ('Nauru', NULL, 0, 0, 0, 0, 'NRU');
+INSERT INTO `all_countries` VALUES ('Nepal', NULL, 0, 0, 0, 0, 'NPL');
+INSERT INTO `all_countries` VALUES ('Netherlands', 0.8472, 1, 0, 0.32, 85210, 'NLD');
+INSERT INTO `all_countries` VALUES ('New Zealand', 0.017, 1, 1, 0, 0, 'NZL');
+INSERT INTO `all_countries` VALUES ('Nicaragua', NULL, 0, 0, 0, 0, 'NIC');
+INSERT INTO `all_countries` VALUES ('Niger', NULL, 0, 0, 0, 0, 'NER');
+INSERT INTO `all_countries` VALUES ('Nigeria', NULL, 0, 0, 0, 0, 'NGA');
+INSERT INTO `all_countries` VALUES ('North Korea', NULL, 0, 0, 0, 0, 'PRK');
+INSERT INTO `all_countries` VALUES ('North Macedonia', NULL, 1, 1, 0, 6404, 'MKD');
+INSERT INTO `all_countries` VALUES ('Norway', 1.2099, 1, 1, 0.13, 37394, 'NOR');
+INSERT INTO `all_countries` VALUES ('Oman', NULL, 0, 0, 0, 0, 'OMN');
+INSERT INTO `all_countries` VALUES ('Pakistan', NULL, 0, 0, 0, 0, 'PAK');
+INSERT INTO `all_countries` VALUES ('Palau', NULL, 0, 0, 0, 0, 'PLW');
+INSERT INTO `all_countries` VALUES ('Panama', NULL, 0, 0, 0, 0, 'PAN');
+INSERT INTO `all_countries` VALUES ('Papua New Guinea', NULL, 0, 0, 0, 0, 'PNG');
+INSERT INTO `all_countries` VALUES ('Paraguay', NULL, 0, 0, 0, 0, 'PRY');
+INSERT INTO `all_countries` VALUES ('Peru', NULL, 0, 0, 0, 0, 'PER');
+INSERT INTO `all_countries` VALUES ('Philippines', NULL, 0, 0, 0, 0, 'PHL');
+INSERT INTO `all_countries` VALUES ('Poland', 3.0006, 1, 1, 6.08, 1563386, 'POL');
+INSERT INTO `all_countries` VALUES ('Portugal', 0.3348, 1, 1, 0.21, 57109, 'PRT');
+INSERT INTO `all_countries` VALUES ('Qatar', NULL, 0, 0, 0, 0, 'QAT');
+INSERT INTO `all_countries` VALUES ('Romania', 0.0108, 1, 0, 0.36, 106644, 'ROU');
+INSERT INTO `all_countries` VALUES ('Russia', NULL, 0, 0, 0, 2852395, 'RUS');
+INSERT INTO `all_countries` VALUES ('Rwanda', NULL, 0, 0, 0, 0, 'RWA');
+INSERT INTO `all_countries` VALUES ('Saint Kitts and Nevis', NULL, 0, 1, 0, 0, 'KNA');
+INSERT INTO `all_countries` VALUES ('Saint Lucia', NULL, 0, 0, 0, 0, 'LCA');
+INSERT INTO `all_countries` VALUES ('Saint Vincent and the Grenadines', NULL, 0, 0, 0, 0, 'VCT');
+INSERT INTO `all_countries` VALUES ('Samoa', NULL, 0, 0, 0, 0, 'ASM');
+INSERT INTO `all_countries` VALUES ('San Marino', NULL, 0, 0, 0, 0, 'SMR');
+INSERT INTO `all_countries` VALUES ('São Tomé and Príncipe', NULL, 0, 0, 0, 0, 'STP');
+INSERT INTO `all_countries` VALUES ('Saudi Arabia', NULL, 0, 0, 0, 0, 'SAU');
+INSERT INTO `all_countries` VALUES ('Senegal', NULL, 0, 0, 0, 0, 'SEN');
+INSERT INTO `all_countries` VALUES ('Serbia', NULL, 0, 0, 0, 2790, 'SRB');
+INSERT INTO `all_countries` VALUES ('Seychelles', NULL, 0, 0, 0, 0, 'SYC');
+INSERT INTO `all_countries` VALUES ('Sierra Leone', NULL, 0, 0, 0, 0, 'SLE');
+INSERT INTO `all_countries` VALUES ('Singapore', NULL, 1, 0, 0, 0, 'SGP');
+INSERT INTO `all_countries` VALUES ('Slovakia', 0.2152, 1, 0, 0.41, 107476, 'SVK');
+INSERT INTO `all_countries` VALUES ('Slovenia', 0.0609, 1, 0, 0.03, 9081, 'SVN');
+INSERT INTO `all_countries` VALUES ('Solomon Islands', NULL, 0, 0, 0, 0, 'SLB');
+INSERT INTO `all_countries` VALUES ('Somalia', NULL, 0, 1, 0, 0, 'SOM');
+INSERT INTO `all_countries` VALUES ('South Africa', NULL, 0, 1, 0, 0, 'ZAF');
+INSERT INTO `all_countries` VALUES ('South Korea', 0.0944, 1, 0, 0, 0, 'KOR');
+INSERT INTO `all_countries` VALUES ('South Sudan', NULL, 0, 0, 0, 0, 'SSD');
+INSERT INTO `all_countries` VALUES ('Spain', 0.3821, 1, 0, 0.62, 161012, 'ESP');
+INSERT INTO `all_countries` VALUES ('Sri Lanka', NULL, 0, 0, 0, 0, 'LKA');
+INSERT INTO `all_countries` VALUES ('Sudan', NULL, 0, 1, 0, 0, 'SDN');
+INSERT INTO `all_countries` VALUES ('Suriname', NULL, 0, 0, 0, 0, 'SUR');
+INSERT INTO `all_countries` VALUES ('Sweden', 0.8065, 1, 0, 0.19, 50795, 'SWE');
+INSERT INTO `all_countries` VALUES ('Switzerland', 0.2028, 1, 0, 0.28, 77450, 'CHE');
+INSERT INTO `all_countries` VALUES ('Syria', NULL, 0, 1, 0, 0, 'SYR');
+INSERT INTO `all_countries` VALUES ('Taiwan(China)', 0.0683, 1, 0, 0, 0, 'TWN');
+INSERT INTO `all_countries` VALUES ('Tajikistan', NULL, 0, 0, 0, 0, 'TJK');
+INSERT INTO `all_countries` VALUES ('Tanzania', NULL, 0, 0, 0, 0, 'TZA');
+INSERT INTO `all_countries` VALUES ('Thailand', NULL, 0, 0, 0, 0, 'THA');
+INSERT INTO `all_countries` VALUES ('The Bahamas', NULL, 0, 0, 0, 0, 'BHS');
+INSERT INTO `all_countries` VALUES ('The Gambia', NULL, 0, 0, 0, 0, 'GMB');
+INSERT INTO `all_countries` VALUES ('Timor-Leste', NULL, 0, 0, 0, 0, 'TLS');
+INSERT INTO `all_countries` VALUES ('Togo', NULL, 0, 0, 0, 0, 'TGO');
+INSERT INTO `all_countries` VALUES ('Tonga', NULL, 0, 0, 0, 0, 'TON');
+INSERT INTO `all_countries` VALUES ('Trinidad and Tobago', NULL, 0, 0, 0, 0, 'TTO');
+INSERT INTO `all_countries` VALUES ('Tunisia', NULL, 0, 0, 0, 0, 'TUN');
+INSERT INTO `all_countries` VALUES ('Turkey', 0.0644, 0, 0, 0.58, 86545, 'TUR');
+INSERT INTO `all_countries` VALUES ('Turkmenistan', NULL, 0, 0, 0, 0, 'TKM');
+INSERT INTO `all_countries` VALUES ('Tuvalu', NULL, 0, 1, 0, 0, 'TUV');
+INSERT INTO `all_countries` VALUES ('Uganda', NULL, 0, 0, 0, 0, 'UGA');
+INSERT INTO `all_countries` VALUES ('Ukraine', NULL, 1, 0, 0, 0, 'UKR');
+INSERT INTO `all_countries` VALUES ('United Arab Emirates', NULL, 0, 0, 0, 0, 'ARE');
+INSERT INTO `all_countries` VALUES ('United Kingdom', 7.0818, 1, 1, 0.58, 155500, 'GBR');
+INSERT INTO `all_countries` VALUES ('United States of America', 47.8192, 1, 0, 0, 0, 'USA');
+INSERT INTO `all_countries` VALUES ('Uruguay', NULL, 0, 1, 0, 0, 'URY');
+INSERT INTO `all_countries` VALUES ('Uzbekistan', NULL, 0, 1, 0, 0, 'UZB');
+INSERT INTO `all_countries` VALUES ('Vanuatu', NULL, 0, 0, 0, 0, 'VUT');
+INSERT INTO `all_countries` VALUES ('Venezuela', NULL, 0, 0, 0, 0, 'VEN');
+INSERT INTO `all_countries` VALUES ('Vietnam', NULL, 0, 0, 0, 0, 'VNM');
+INSERT INTO `all_countries` VALUES ('West Bank and Gaza', NULL, 0, 0, 0, 0, 'UNK4');
+INSERT INTO `all_countries` VALUES ('Western Sahara', NULL, 0, 0, 0, 0, 'ESH');
+INSERT INTO `all_countries` VALUES ('Yemen', NULL, 0, 0, 0, 0, 'YEM');
+INSERT INTO `all_countries` VALUES ('Zambia', NULL, 0, 0, 0, 0, 'ZMB');
+INSERT INTO `all_countries` VALUES ('Zimbabwe', NULL, 0, 0, 0, 0, 'ZWE');
 
 -- ----------------------------
 -- Table structure for military_compare_total
 -- ----------------------------
 DROP TABLE IF EXISTS `military_compare_total`;
 CREATE TABLE `military_compare_total`  (
-  `Type` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `Type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Active military personnel` int NULL DEFAULT NULL,
   `Aircraft` int NULL DEFAULT NULL,
   `Armored vehicles` int NULL DEFAULT NULL,
   `Naval fleet` int NULL DEFAULT NULL,
   `Nuclear warheads` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of military_compare_total
@@ -797,11 +777,11 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `Indicator` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `Indicator` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Russia` int NULL DEFAULT NULL,
   `Ukraine` int NULL DEFAULT NULL,
   PRIMARY KEY (`Indicator`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of r_u_military_comparison
@@ -853,7 +833,7 @@ CREATE TABLE `russia_loss`  (
   `personnel_total` int NULL DEFAULT NULL,
   `personnel_increase` int NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of russia_loss
@@ -895,7 +875,7 @@ CREATE TABLE `sanction_country`  (
   `since_202202` int NOT NULL,
   PRIMARY KEY (`country`) USING BTREE,
   CONSTRAINT `country2` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_country
@@ -917,7 +897,7 @@ CREATE TABLE `sanction_date`  (
   `date` date NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_date
@@ -1029,7 +1009,7 @@ CREATE TABLE `sanction_type`  (
   `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_type
@@ -1069,7 +1049,7 @@ CREATE TABLE `se_status`  (
   `HRW_WHEAT` double NULL DEFAULT NULL,
   `COTTON` double NULL DEFAULT NULL,
   PRIMARY KEY (`Date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of se_status
@@ -1309,11 +1289,11 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `Killed/Injured` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `Killed/Injured` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Total` int NULL DEFAULT NULL,
   `Children` int NULL DEFAULT NULL,
   PRIMARY KEY (`Killed/Injured`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_civilian_casualties
@@ -1326,10 +1306,10 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round-trip`;
 CREATE TABLE `ukraine_round-trip`  (
-  `Type` varchar(255) CHARACTER SET utf8mb4 NOT NULL,
+  `Type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Num` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_round-trip
@@ -1346,7 +1326,7 @@ CREATE TABLE `ukraine_russia_military_expenditure`  (
   `Ukraine` double NULL DEFAULT NULL,
   `Russia` double NULL DEFAULT NULL,
   PRIMARY KEY (`Year`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_russia_military_expenditure
@@ -1369,18 +1349,5 @@ INSERT INTO `ukraine_russia_military_expenditure` VALUES (2018, 4.17, 61.61);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2019, 5.42, 65.2);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2020, 5.92, 61.71);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2021, 5.94, 65.91);
-
--- ----------------------------
--- Table structure for articles
--- ----------------------------
-CREATE TABLE `articles` (
-  `date` date NOT NULL,
-  `articleid` Int NOT NULL AUTO_INCREMENT,
-  `title` varchar(100) NOT NULL,
-  `content` text DEFAULT NULL,
-  `img_url` varchar(1000) DEFAULT NULL,
-  `summary` varchar(1000) DEFAULT NULL,
-  PRIMARY KEY (`articleid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 SET FOREIGN_KEY_CHECKS = 1;
