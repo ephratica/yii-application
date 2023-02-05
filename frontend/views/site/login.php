@@ -7,13 +7,13 @@
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
 
-$this->title = 'Login';
+$this->title = '登录';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Please fill out the following fields to login:</p>
+    <p>要登录，请填写您的帐号密码：</p>
 
     <div class="row">
         <div class="col-lg-5">
@@ -26,13 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
                 <div class="my-1 mx-0" style="color:#999;">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
+                    忘记密码？ <?= Html::a('重设密码', ['site/request-password-reset']) ?>.
                     <br>
-                    Need new verification email? <?= Html::a('Resend', ['site/resend-verification-email']) ?>
+                    需要验证邮件？ <?= Html::a('重新发送', ['site/resend-verification-email']) ?>
                 </div>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'mt-2 btn btn-primary', 'name' => 'login-button']) ?>
                 </div>
 
             <?php ActiveForm::end(); ?>

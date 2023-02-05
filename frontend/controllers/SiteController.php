@@ -148,6 +148,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays charts page.
+     *
+     * @return mixed
+     */
+    public function actionCharts()
+    {
+        return $this->render('charts');
+    }
+
+    /**
      * Displays worldMap page.
      *
      * @return mixed

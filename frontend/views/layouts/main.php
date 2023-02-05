@@ -31,16 +31,17 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'class' => 'navbar navbar-expand-md navbar-dark fixed-top shadow-lg bg-dark p-3',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => '主页', 'url' => ['/site/index']],
         ['label' => '世界地图', 'url' => ['/site/world']],
-        ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => '图表', 'url' => ['/site/charts']],
+        ['label' => '关于', 'url' => ['/site/about']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
     }
 
     echo Nav::widget([
@@ -48,11 +49,11 @@ AppAsset::register($this);
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {
-        echo Html::tag('div',Html::a('Login',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
+        echo Html::tag('div',Html::a('登录',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
     } else {
         echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
             . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
+                '登出 (' . Yii::$app->user->identity->username . ')',
                 ['class' => 'btn btn-link logout text-decoration-none']
             )
             . Html::endForm();
@@ -61,7 +62,7 @@ AppAsset::register($this);
     ?>
 </header>
 
-<main role="main" class="flex-shrink-0">
+<main role="main" class="flex-shrink-0 mt-3">
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
