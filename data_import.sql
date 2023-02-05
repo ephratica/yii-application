@@ -1370,4 +1370,17 @@ INSERT INTO `ukraine_russia_military_expenditure` VALUES (2019, 5.42, 65.2);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2020, 5.92, 61.71);
 INSERT INTO `ukraine_russia_military_expenditure` VALUES (2021, 5.94, 65.91);
 
+-- ----------------------------
+-- Table structure for articles
+-- ----------------------------
+CREATE TABLE `articles` (
+  `date` date NOT NULL,
+  `articleid` Int NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `content` text DEFAULT NULL,
+  `img_url` varchar(1000) DEFAULT NULL,
+  `summary` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`articleid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 SET FOREIGN_KEY_CHECKS = 1;
