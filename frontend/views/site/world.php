@@ -8,9 +8,9 @@ $this->title = '世界地图';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
-<script src="https://d3js.org/d3.v4.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="/js/d3.v4.js"></script>
+<script src="/js/d3-scale-chromatic.v1.min.js"></script>
+<script src="/js/d3-geo-projection.v2.min.js"></script>
 <link rel="stylesheet" href="/css/world-map.css">
 
 <div class="site-world-map">
