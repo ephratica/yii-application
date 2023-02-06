@@ -757,11 +757,11 @@ INSERT INTO `all_countries` VALUES ('Zimbabwe', NULL, 0, 0, 0, 0, 'ZWE');
 DROP TABLE IF EXISTS `military_compare_total`;
 CREATE TABLE `military_compare_total`  (
   `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Active military personnel` int NULL DEFAULT NULL,
+  `Active_military_personnel` int NULL DEFAULT NULL,
   `Aircraft` int NULL DEFAULT NULL,
-  `Armored vehicles` int NULL DEFAULT NULL,
-  `Naval fleet` int NULL DEFAULT NULL,
-  `Nuclear warheads` int NULL DEFAULT NULL,
+  `Armored_vehicles` int NULL DEFAULT NULL,
+  `Naval_fleet` int NULL DEFAULT NULL,
+  `Nuclear_warheads` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
