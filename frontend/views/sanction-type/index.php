@@ -13,7 +13,52 @@ use yii\grid\GridView;
 $this->title = 'Sanction Types';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
+//按列读入再改
 <div class="sanction-type-index">
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 400px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
+        ],
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => '制裁type&value'
+            ],
+            'xAxis' => [
+                'type' => 'category',
+                //'data' =>
+                'data' => ['Aircraft', 'Entity', 'Individual', 'Vessel']
+                //'data' => [$searchModel[0],$searchModel[1],$searchModel[2],$searchModel[3]]
+                //'data' => $model -> type
+            ],
+            'yAxis' => [
+                'type' => 'value'
+            ],
+            'series' => [
+                [
+                    'data' => ['{$searchModel[0]}','{$searchModel[1]}','{$searchModel[2]}','{$searchModel[3]}'],
+                    //'data' => $dataProvider,
+                    'type' => 'bar'
+                ]
+            ]
+        ]
+    ]
+]); ?>
+</div>
+
+<div class="sanction-type">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

@@ -13,6 +13,8 @@ use yii\grid\GridView;
 $this->title = 'Se Statuses';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+
 <div class="se-status-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
