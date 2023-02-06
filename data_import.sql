@@ -1289,10 +1289,10 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `Killed/Injured` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `Killed_Injured` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Total` int NULL DEFAULT NULL,
   `Children` int NULL DEFAULT NULL,
-  PRIMARY KEY (`Killed/Injured`) USING BTREE
+  PRIMARY KEY (`Killed_Injured`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -1305,7 +1305,8 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- Table structure for ukraine_round-trip
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round-trip`;
-CREATE TABLE `ukraine_round-trip`  (
+DROP TABLE IF EXISTS `ukraine_round_trip`;
+CREATE TABLE `ukraine_round_trip`  (
   `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Num` int NULL DEFAULT NULL,
   PRIMARY KEY (`Type`) USING BTREE
@@ -1314,8 +1315,8 @@ CREATE TABLE `ukraine_round-trip`  (
 -- ----------------------------
 -- Records of ukraine_round-trip
 -- ----------------------------
-INSERT INTO `ukraine_round-trip` VALUES ('From Ukraine', 17688845);
-INSERT INTO `ukraine_round-trip` VALUES ('To Ukraine', 9585700);
+INSERT INTO `ukraine_round_trip` VALUES ('From Ukraine', 17688845);
+INSERT INTO `ukraine_round_trip` VALUES ('To Ukraine', 9585700);
 
 -- ----------------------------
 -- Table structure for ukraine_russia_military_expenditure
