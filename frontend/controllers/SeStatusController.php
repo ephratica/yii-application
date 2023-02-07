@@ -3,7 +3,6 @@
 namespace frontend\controllers;
 
 use frontend\models\SeStatus;
-use frontend\models\SeStatusSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -31,11 +30,11 @@ class SeStatusController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -51,13 +50,7 @@ class SeStatusController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SeStatusSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->render('index');
     }
 
     public function actionMetal()
@@ -154,73 +147,9 @@ class SeStatusController extends Controller
         ]);
     }
 
-    /**
-     * Displays a single SeStatus model.
-     * @param string $Date Date
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($Date)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($Date),
-        ]);
-    }
-
-    /**
-     * Creates a new SeStatus model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new SeStatus();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Date' => $model->Date]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing SeStatus model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Date Date
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($Date)
-    {
-        $model = $this->findModel($Date);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Date' => $model->Date]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing SeStatus model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Date Date
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($Date)
-    {
-        $this->findModel($Date)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

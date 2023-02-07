@@ -5,53 +5,83 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use yii\web\JsExpression;
+use daixianceng\echarts\ECharts;
 
 /** @var yii\web\View $this */
 /** @var frontend\models\RussiaLossSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Russia Losses';
+$this->title = '俄罗斯人员损失';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="russia-loss-personnel">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Russia Loss', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'date',
-            'tank',
-            'bbm',
-            'artillery',
-            'multi_barrel_rocket_launcher',
-            //'air_defense_system',
-            //'fixed_wing_aircraft',
-            //'helicopter',
-            //'uav',
-            //'cruise_missile',
-            //'ships',
-            //'automobile_and_oil_tanker',
-            //'special_equipment',
-            //'personnel_total',
-            //'personnel_increase',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, RussiaLoss $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'date' => $model->date]);
-                 }
-            ],
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 400px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
         ],
-    ]); ?>
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => 'Energy Price Fluctuation',
+                'textStyle' =>[
+                    'fontFamily' => 'Center'
+                ],
+            ],
+            'tooltip' => [
+                'trigger' => 'axis'
+            ],
+            'legend' => [
+                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
+            ],
+            'grid' => [
+                'left' => '3%',
+                'right' => '4%',
+                'bottom' => '3%',
+                'containLabel' => true
+            ],
+            'toolbox' => [
+                'feature' => [
+                    'saveAsImage' => []
+                ]
+            ],
+            'xAxis' => [
+                'name' => 'DATE',
+                'type' => 'category',
+                'boundaryGap' => false,
+                'data' => $date
+            ],
+            'yAxis' => [
+                'type' => 'value'
+            ],
+            'series' => [
+                [
+                    'name' => 'personnel total',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $total
+                ],
+                [
+                    'name' => 'personnel increase',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $increase
+                ]
+            ]
+        ]
+    ]
+]); ?>
 
 
 </div>

@@ -17,7 +17,7 @@ class UkraineRoundTrip extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'ukraine_round_trip';
+        return 'ukraine_round-trip';
     }
 
     /**

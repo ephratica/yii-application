@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\UkraineRussiaMilitaryExpenditure;
-use frontend\models\UkraineRussiaMilitaryExpenditureSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,82 +50,21 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UkraineRussiaMilitaryExpenditureSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = UkraineRussiaMilitaryExpenditure::find()->asArray()->all();
+        $year = ArrayHelper::getColumn($model, 'Year');
+        $russia = ArrayHelper::getColumn($model, 'Russia');
+        $ukraine = ArrayHelper::getColumn($model, 'Ukraine');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'year' => $year,
+            'russia' => $russia,
+            'ukraine' => $ukraine,
         ]);
     }
 
-    /**
-     * Displays a single UkraineRussiaMilitaryExpenditure model.
-     * @param int $Year Year
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($Year)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($Year),
-        ]);
-    }
-
-    /**
-     * Creates a new UkraineRussiaMilitaryExpenditure model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new UkraineRussiaMilitaryExpenditure();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Year' => $model->Year]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing UkraineRussiaMilitaryExpenditure model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $Year Year
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($Year)
-    {
-        $model = $this->findModel($Year);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Year' => $model->Year]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing UkraineRussiaMilitaryExpenditure model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $Year Year
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($Year)
-    {
-        $this->findModel($Year)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

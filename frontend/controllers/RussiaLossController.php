@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\RussiaLoss;
-use frontend\models\RussiaLossSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class RussiaLossController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,119 +50,60 @@ class RussiaLossController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new RussiaLossSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->render('index');
     }
 
     public function actionEquipment()
     {
-        $searchModel = new RussiaLossSearch();
-        $dataProvider = $searchModel->searchEquipment();
+        $model = RussiaLoss::find()->asArray()->all();
+        $date = ArrayHelper::getColumn($model, 'date');
+        $tank = ArrayHelper::getColumn($model, 'tank');
+        $bbm = ArrayHelper::getColumn($model, 'bbm');
+        $artillery = ArrayHelper::getColumn($model, 'artillery');
+        $rocket = ArrayHelper::getColumn($model, 'multi_barrel_rocket_launcher');
+        $air_defense = ArrayHelper::getColumn($model, 'air_defense_system');
+        $fixed_wing_aircraft = ArrayHelper::getColumn($model, 'fixed_wing_aircraft');
+        $helicopter = ArrayHelper::getColumn($model, 'helicopter');
+        $uav = ArrayHelper::getColumn($model, 'uav');
+        $cruise_missile = ArrayHelper::getColumn($model, 'cruise_missile');
+        $ships = ArrayHelper::getColumn($model, 'ships');
+        $automobile_and_oil_tanker = ArrayHelper::getColumn($model, 'automobile_and_oil_tanker');
+        $special = ArrayHelper::getColumn($model, 'special_equipment');
 
         return $this->render('equipment', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'date' => $date,
+            'tank' => $tank,
+            'bbm' => $bbm,
+            'artillery' => $artillery,
+            'rocket' => $rocket,
+            'air_defense' => $air_defense,
+            'fixed_wing_aircraft' => $fixed_wing_aircraft,
+            'helicopter' => $helicopter,
+            'uav' => $uav,
+            'cruise_missile' => $cruise_missile,
+            'ships' => $ships,
+            'automobile_and_oil_tanker' => $automobile_and_oil_tanker,
+            'special' => $special,
         ]);
     }
 
     public function actionPersonnel()
     {
-        $searchModel = new RussiaLossSearch();
-        $dataProvider = $searchModel->searchPersonnel();
+        $model = RussiaLoss::find()->asArray()->all();
+        $date = ArrayHelper::getColumn($model, 'date');
+        $total = ArrayHelper::getColumn($model, 'personnel_total');
+        $increase = ArrayHelper::getColumn($model, 'personnel_increase');
 
         return $this->render('personnel', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'date' => $date,
+            'total' => $total,
+            'increase' => $increase,
         ]);
     }
 
-    /**
-     * Displays a single RussiaLoss model.
-     * @param string $date Date
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($date)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($date),
-        ]);
+        // todo
     }
 
-    /**
-     * Creates a new RussiaLoss model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new RussiaLoss();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'date' => $model->date]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing RussiaLoss model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $date Date
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($date)
-    {
-        $model = $this->findModel($date);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'date' => $model->date]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing RussiaLoss model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $date Date
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($date)
-    {
-        $this->findModel($date)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the RussiaLoss model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $date Date
-     * @return RussiaLoss the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($date)
-    {
-        if (($model = RussiaLoss::findOne(['date' => $date])) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
-    }
 }

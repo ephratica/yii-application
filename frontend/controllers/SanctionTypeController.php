@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\SanctionType;
-use frontend\models\SanctionTypeSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class SanctionTypeController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,82 +50,19 @@ class SanctionTypeController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SanctionTypeSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = SanctionType::find()->asArray()->all();
+        $type = ArrayHelper::getColumn($model, 'type');
+        $value = ArrayHelper::getColumn($model, 'value');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'type' => $type,
+            'value' => $value,
         ]);
     }
 
-    /**
-     * Displays a single SanctionType model.
-     * @param string $type Type
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($type)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($type),
-        ]);
-    }
-
-    /**
-     * Creates a new SanctionType model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new SanctionType();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'type' => $model->type]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing SanctionType model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $type Type
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($type)
-    {
-        $model = $this->findModel($type);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'type' => $model->type]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing SanctionType model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $type Type
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($type)
-    {
-        $this->findModel($type)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

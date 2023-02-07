@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\Aid;
-use frontend\models\AidSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class AidController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,130 +50,59 @@ class AidController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+        return $this->render('index');
     }
 
     public function actionCountry()
     {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchCountry();
+        $model = Aid::find()
+            ->select('country, sum(value) as value')
+            ->groupBy('country')
+            ->orderBy('country ASC')
+            ->asArray()->all();
+        $country = ArrayHelper::getColumn($model, 'country');
+        $value = ArrayHelper::getColumn($model, 'value');
 
         return $this->render('country', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'country' => $country,
+            'value' => $value,
         ]);
     }
 
     public function actionDate()
     {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchDate();
+        $model = Aid::find()
+            ->select('date, sum(value) as value')
+            ->groupBy('date')
+            ->orderBy('date ASC')
+            ->asArray()->all();
+        $date = ArrayHelper::getColumn($model, 'date');
+        $value = ArrayHelper::getColumn($model, 'value');
 
         return $this->render('date', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'date' => $date,
+            'value' => $value,
         ]);
     }
 
     public function actionType()
     {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchType();
+        $model = Aid::find()
+            ->select('type, sum(value) as value')
+            ->groupBy('type')
+            ->orderBy('type ASC')
+            ->asArray()->all();
+        $type = ArrayHelper::getColumn($model, 'type');
+        $value = ArrayHelper::getColumn($model, 'value');
 
         return $this->render('type', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'type' => $type,
+            'value' => $value,
         ]);
     }
 
-    /**
-     * Displays a single Aid model.
-     * @param string $id ID
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($id)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new Aid model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new Aid();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing Aid model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
-        $model = $this->findModel($id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing Aid model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
-    }
-
-    /**
-     * Finds the Aid model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $id ID
-     * @return Aid the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    protected function findModel($id)
-    {
-        if (($model = Aid::findOne(['id' => $id])) !== null) {
-            return $model;
-        }
-
-        throw new NotFoundHttpException('The requested page does not exist.');
+        // todo
     }
 }

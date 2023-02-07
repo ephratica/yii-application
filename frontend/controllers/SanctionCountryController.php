@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\SanctionCountry;
-use frontend\models\SanctionCountrySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class SanctionCountryController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,82 +50,21 @@ class SanctionCountryController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new SanctionCountrySearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = SanctionCountry::find()->asArray()->all();
+        $country = ArrayHelper::getColumn($model, 'country');
+        $since_2014 = ArrayHelper::getColumn($model, 'since_2014');
+        $since_202202 = ArrayHelper::getColumn($model, 'since_202202');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'country' => $country,
+            'since_2014' => $since_2014,
+            'since_202202' => $since_202202,
         ]);
     }
 
-    /**
-     * Displays a single SanctionCountry model.
-     * @param string $country Country
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($country)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($country),
-        ]);
-    }
-
-    /**
-     * Creates a new SanctionCountry model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new SanctionCountry();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'country' => $model->country]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing SanctionCountry model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $country Country
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($country)
-    {
-        $model = $this->findModel($country);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'country' => $model->country]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing SanctionCountry model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $country Country
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($country)
-    {
-        $this->findModel($country)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

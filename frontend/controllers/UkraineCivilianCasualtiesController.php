@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\UkraineCivilianCasualties;
-use frontend\models\UkraineCivilianCasualtiesSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class UkraineCivilianCasualtiesController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,82 +50,21 @@ class UkraineCivilianCasualtiesController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UkraineCivilianCasualtiesSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = UkraineCivilianCasualties::find()->asArray()->all();
+        $type = ArrayHelper::getColumn($model, 'Killed/Injured');
+        $total = ArrayHelper::getColumn($model, 'Total');
+        $children = ArrayHelper::getColumn($model, 'Children');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'type' => $type,
+            'total' => $total,
+            'children' => $children,
         ]);
     }
 
-    /**
-     * Displays a single UkraineCivilianCasualties model.
-     * @param string $Killed_Injured Killed Injured
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($Killed_Injured)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($Killed_Injured),
-        ]);
-    }
-
-    /**
-     * Creates a new UkraineCivilianCasualties model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new UkraineCivilianCasualties();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Killed_Injured' => $model->Killed_Injured]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing UkraineCivilianCasualties model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Killed_Injured Killed Injured
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($Killed_Injured)
-    {
-        $model = $this->findModel($Killed_Injured);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Killed_Injured' => $model->Killed_Injured]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing UkraineCivilianCasualties model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Killed_Injured Killed Injured
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($Killed_Injured)
-    {
-        $this->findModel($Killed_Injured)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

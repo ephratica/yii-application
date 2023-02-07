@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\UkraineRoundTrip;
-use frontend\models\UkraineRoundTripSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class UkraineRoundTripController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -50,82 +50,19 @@ class UkraineRoundTripController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UkraineRoundTripSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = UkraineRoundTrip::find()->asArray()->all();
+        $type = ArrayHelper::getColumn($model, 'type');
+        $num = ArrayHelper::getColumn($model, 'num');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'type' => $type,
+            'num' => $num,
         ]);
     }
 
-    /**
-     * Displays a single UkraineRoundTrip model.
-     * @param string $Type Type
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($Type)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($Type),
-        ]);
-    }
-
-    /**
-     * Creates a new UkraineRoundTrip model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new UkraineRoundTrip();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Type' => $model->Type]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing UkraineRoundTrip model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Type Type
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($Type)
-    {
-        $model = $this->findModel($Type);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Type' => $model->Type]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing UkraineRoundTrip model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Type Type
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($Type)
-    {
-        $this->findModel($Type)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**

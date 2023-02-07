@@ -3,10 +3,10 @@
 namespace frontend\controllers;
 
 use frontend\models\SanctionDate;
-use frontend\models\SanctionDateSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
 /**
@@ -30,11 +30,11 @@ class SanctionDateController extends Controller
                 ],
                 'access' => [
                     'class' => AccessControl::className(),
-                    'only' => ['ceate', 'update', 'delete'],
+                    'only' => ['download'],
                     'rules' => [
                         [
                             'allow' => true,
-                            'actions' => ['ceate', 'update', 'delete'],
+                            'actions' => ['download'],
                             'roles' => ['@'],
                         ],
                     ],
@@ -43,89 +43,21 @@ class SanctionDateController extends Controller
         );
     }
 
-    /**
-     * Lists all SanctionDate models.
-     *
-     * @return string
-     */
     public function actionIndex()
     {
-        $searchModel = new SanctionDateSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        $model = SanctionDate::find()->asArray()->all();
+        $date = ArrayHelper::getColumn($model, 'date');
+        $value = ArrayHelper::getColumn($model, 'value');
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'date' => $date,
+            'value' => $value,
         ]);
     }
 
-    /**
-     * Displays a single SanctionDate model.
-     * @param string $date Date
-     * @return string
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($date)
+    public function actionDownload()
     {
-        return $this->render('view', [
-            'model' => $this->findModel($date),
-        ]);
-    }
-
-    /**
-     * Creates a new SanctionDate model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
-    {
-        $model = new SanctionDate();
-
-        if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'date' => $model->date]);
-            }
-        } else {
-            $model->loadDefaultValues();
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing SanctionDate model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $date Date
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($date)
-    {
-        $model = $this->findModel($date);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'date' => $model->date]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing SanctionDate model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $date Date
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($date)
-    {
-        $this->findModel($date)->delete();
-
-        return $this->redirect(['index']);
+        // todo
     }
 
     /**
