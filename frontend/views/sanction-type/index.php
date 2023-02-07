@@ -76,6 +76,58 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ]
 ]); ?>
+</div>
 
-
+//bar
+<div class="aid-type-bar">
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 1300px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
+        ],
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => 'National assistance to Ukraine'
+            ],
+            'grid' => [
+                'left' => '3%',
+                'right' => '4%',
+                'bottom' => '3%',
+                'containLabel' => true
+            ],
+            'tooltip' => [
+                'trigger' => 'axis',
+                'axisPointer' => [
+                    'type' => 'shadow'
+                ],
+            ],
+            'yAxis' => [
+                'type' => 'category',
+                'data' => $type
+                //'axisLabel' => ['interval' => 0]      
+            ],
+            'xAxis' => [
+                'scale' => true,
+                'type' => 'value',
+                'boundaryGap' => [0,0.01]
+            ],
+            'series' => [
+                [
+                    //'data' => ['{$searchModel[0]}','{$searchModel[1]}','{$searchModel[2]}','{$searchModel[3]}'],
+                    'data' => $value,
+                    'type' => 'bar',
+                    //'barGap' => '50%'
+                ]
+            ]
+        ]
+    ]
+]); ?>
 </div>
