@@ -34,16 +34,16 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'Sanctions imposed by countries on Russia',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
             ],
             'tooltip' => [
-                'trigger' => 'axis'
-            ],
-            'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
+                'trigger' => 'axis',
+                'axisPointer' => [
+                    'type' => 'shadow'
+                ]
             ],
             'grid' => [
                 'left' => '3%',
@@ -56,26 +56,38 @@ $this->params['breadcrumbs'][] = $this->title;
                     'saveAsImage' => []
                 ]
             ],
-            'xAxis' => [
+            'yAxis' => [
                 'name' => 'country',
                 'type' => 'category',
                 'boundaryGap' => false,
                 'data' => $country
             ],
-            'yAxis' => [
+            'xAxis' => [
                 'type' => 'value'
             ],
             'series' => [
                 [
                     'name' => 'since 2014',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
+                    'type' => 'bar',
+                    'stack' => 'total',
+                    'label' =>[
+                        'show' => true
+                    ],
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ],
                     'data' => $since_2014
                 ],
                 [
                     'name' => 'since 2022/02',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
+                    'type' => 'bar',
+                    'stack' => 'total',
+                    'label' =>[
+                        'show' => true
+                    ],
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ],
                     'data' => $since_202202
                 ]
             ]
