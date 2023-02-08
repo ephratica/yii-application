@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'ukraine-russia-military-expenditure',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'trigger' => 'axis'
             ],
             'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
+                'data' => ['Ukraine', 'Russia']
             ],
             'grid' => [
                 'left' => '3%',
@@ -67,16 +67,16 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'series' => [
                 [
-                    'name' => 'Russia',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $russia
-                ],
-                [
                     'name' => 'Ukraine',
                     'type' => 'line',
                     'stack' => 'PRICE',
                     'data' => $ukraine
+                ],
+                [
+                    'name' => 'Russia',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $russia
                 ]
             ]
         ]
