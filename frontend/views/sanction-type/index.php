@@ -78,7 +78,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ]); ?>
 </div>
 
-//bar
 <div class="aid-type-bar">
     <?= ECharts::widget([
     'responsive' => true,

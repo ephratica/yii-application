@@ -78,8 +78,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ]); ?>
 </div>
 
-//bar
-//数据库有问题
 <div class="aid-date-bar">
     <?= ECharts::widget([
     'responsive' => true,

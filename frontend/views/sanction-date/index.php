@@ -34,16 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'Sanctions against Russia(Date)',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
             ],
             'tooltip' => [
                 'trigger' => 'axis'
-            ],
-            'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
                 'left' => '3%',
@@ -76,6 +73,59 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ]
 ]); ?>
+</div>
 
-
+//bar
+<div class="sanction-date-bar">
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 1300px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
+        ],
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => 'National assistance to Ukraine'
+            ],
+            'grid' => [
+                'left' => '3%',
+                'right' => '4%',
+                'bottom' => '3%',
+                'containLabel' => true
+            ],
+            'tooltip' => [
+                'trigger' => 'axis',
+                'axisPointer' => [
+                    'type' => 'shadow'
+                ],
+            ],
+            'yAxis' => [
+                'type' => 'category',
+                'data' => $date,
+                'inverse' => true
+                //'axisLabel' => ['interval' => 0]      
+            ],
+            'xAxis' => [
+                'scale' => true,
+                'type' => 'value',
+                'boundaryGap' => [0,0.01]
+            ],
+            'series' => [
+                [
+                    //'data' => ['{$searchModel[0]}','{$searchModel[1]}','{$searchModel[2]}','{$searchModel[3]}'],
+                    'data' => $value,
+                    'type' => 'bar',
+                    //'barGap' => '50%'
+                ]
+            ]
+        ]
+    ]
+]); ?>
 </div>
