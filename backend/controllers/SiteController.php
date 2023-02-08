@@ -13,6 +13,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use common\models\Country;
 use common\models\Article;
+use common\models\Files;
 use backend\models\PasswordResetRequestForm;
 use backend\models\ResetPasswordForm;
 use backend\models\SignupForm;
@@ -309,8 +310,14 @@ class SiteController extends Controller
         if (Yii::$app->request->isPost) {
             $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
             if ($model->upload()) {
-                // 文件上传成功，暂时先跳转回index，后续需要界面(todo)
-                return $this->render('index');
+                // 文件上传成功，在数据库中增加一行记录
+                $files = new Files();
+                foreach ($model->imageFiles as $file) {
+                    $files->name = $file->baseName . '.' . $file->extension;
+                }
+                $files->save();
+                // 暂时先跳转回index，后续需要界面(todo)
+                return $this->goHome();
             }
         }
 
