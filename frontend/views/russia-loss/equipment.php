@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                //'text' => 'Russian armament loss',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'trigger' => 'axis'
             ],
             'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
+                'data' => ['tank', 'bbm','artillery', 'multi barrel rocket launcher', 'air defense system','fixed wing aircraft','helicopter','uav','cruise missile','ships','automobile and oil tanker','special equipment']
             ],
             'grid' => [
                 'left' => '3%',

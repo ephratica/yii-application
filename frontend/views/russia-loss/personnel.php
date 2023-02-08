@@ -15,73 +15,103 @@ use daixianceng\echarts\ECharts;
 $this->title = '俄罗斯人员损失';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="russia-loss-personnel">
+<div class="military-compare-total-index-bar">
 
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <?= ECharts::widget([
-    'responsive' => true,
-    'options' => [
-        'style' => 'height: 400px;'
+<?= ECharts::widget([
+'responsive' => true,
+'options' => [
+    'style' => 'height: 400px;'
+],
+'pluginEvents' => [
+    'click' => [
+        new JsExpression('function (params) {console.log(params)}'),
+        new JsExpression('function (params) {console.log("ok")}')
     ],
-    'pluginEvents' => [
-        'click' => [
-            new JsExpression('function (params) {console.log(params)}'),
-            new JsExpression('function (params) {console.log("ok")}')
+    'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+],
+'pluginOptions' => [
+    'option' => [
+        'title' => [
+            'text' => 'Russian personnel loss',
+            'textStyle' =>[
+                'fontFamily' => 'Center'
+            ],
         ],
-        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
-    ],
-    'pluginOptions' => [
-        'option' => [
-            'title' => [
-                'text' => 'Energy Price Fluctuation',
-                'textStyle' =>[
-                    'fontFamily' => 'Center'
+        'tooltip' => [
+            'trigger' => 'axis',
+            'axisPoniter' => [
+                'type' => 'cross',
+                'crossStyle' => [
+                    'color' => '#999'
+                ]
+            ]
+        ],
+        'toolbox' => [
+            'feature' => [
+                'dataView' => [
+                    'show' => true,
+                    'readOnly' => false
                 ],
-            ],
-            'tooltip' => [
-                'trigger' => 'axis'
-            ],
-            'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
-            ],
-            'grid' => [
-                'left' => '3%',
-                'right' => '4%',
-                'bottom' => '3%',
-                'containLabel' => true
-            ],
-            'toolbox' => [
-                'feature' => [
-                    'saveAsImage' => []
+                'magicType' => [
+                    'show' => true,
+                    'type' => ['line','bar']
+                ],
+                'restore' => [
+                    'show' => true
+                ],
+                'saveAsImage' => [
+                    'show' => true
+                ]
+            ]
+        ],
+        'legend' => [
+            'data' => ['personnel total','personnel increase']
+        ],
+        'xAxis' => [
+            'type' => 'category',
+            'data' => $date,
+            //'boundaryGap' => [0,0.01]
+            'axisPointer' => [
+                'type' => 'shadow'
+            ]
+        ],
+        'yAxis' => [
+            [
+                'type' => 'value',
+                'name' => 'personnel increase',
+                'min' => 106300,
+                'max' => 124000,
+                'interval' => 3540,
+                'axisLabel' => [
+                    'formatter' => '{value}person-time'
                 ]
             ],
-            'xAxis' => [
-                'name' => 'DATE',
-                'type' => 'category',
-                'boundaryGap' => false,
-                'data' => $date
-            ],
-            'yAxis' => [
-                'type' => 'value'
-            ],
-            'series' => [
-                [
-                    'name' => 'personnel total',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $total
-                ],
-                [
-                    'name' => 'personnel increase',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $increase
+            [
+                'type' => 'value',
+                'name' => 'personnel total',
+                'min' => 950,
+                'max' => 400,
+                'interval' => 110,
+                'axisLabel' => [
+                    'formatter' => '{value}person-time'
                 ]
+            ]
+        ],
+        'series' => [
+            [
+                'name' => 'personnel total',
+                'type' => 'bar',
+                'data' => $total
+            ],
+            [
+                'name' => 'personnel increase',
+                'type' => 'line',
+                'yAxisIndex' => 1,
+                'data' => $increase
             ]
         ]
     ]
+]
 ]); ?>
-
-
 </div>
