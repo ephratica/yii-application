@@ -34,16 +34,15 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
-                'textStyle' =>[
-                    'fontFamily' => 'Center'
-                ],
+                'text' => 'Civilian casualties in Ukraine',
             ],
             'tooltip' => [
-                'trigger' => 'axis'
+                'trigger' => 'axis',
+                'axisPointer' => [
+                    'type' => 'shadow'
+                ]
             ],
             'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
                 'left' => '3%',
@@ -57,31 +56,27 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ],
             'xAxis' => [
-                'name' => 'type',
+                //'name' => 'type',
                 'type' => 'category',
-                'boundaryGap' => false,
                 'data' => $type
             ],
             'yAxis' => [
-                'type' => 'value'
+                'type' => 'value',
+                'boundaryGap' => [0,0.01]     
             ],
             'series' => [
                 [
                     'name' => 'total',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
+                    'type' => 'bar',
                     'data' => $total
                 ],
                 [
                     'name' => 'children',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
+                    'type' => 'bar',
                     'data' => $children
                 ]
             ]
         ]
     ]
 ]); ?>
-
-
 </div>
