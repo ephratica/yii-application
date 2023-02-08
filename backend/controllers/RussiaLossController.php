@@ -7,6 +7,7 @@ use backend\models\RussiaLossSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * RussiaLossController implements the CRUD actions for RussiaLoss model.
@@ -27,6 +28,17 @@ class RussiaLossController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['create', 'update', 'delete'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['create', 'update', 'delete'],
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
             ]
         );
     }
@@ -42,28 +54,6 @@ class RussiaLossController extends Controller
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionEquipment()
-    {
-        $searchModel = new RussiaLossSearch();
-        $dataProvider = $searchModel->searchEquipment();
-
-        return $this->render('equipment', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionPersonnel()
-    {
-        $searchModel = new RussiaLossSearch();
-        $dataProvider = $searchModel->searchPersonnel();
-
-        return $this->render('personnel', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);

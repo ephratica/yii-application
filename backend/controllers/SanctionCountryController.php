@@ -7,6 +7,7 @@ use backend\models\SanctionCountrySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * SanctionCountryController implements the CRUD actions for SanctionCountry model.
@@ -25,6 +26,17 @@ class SanctionCountryController extends Controller
                     'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
+                    ],
+                ],
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['create', 'update', 'delete'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['create', 'update', 'delete'],
+                            'roles' => ['@'],
+                        ],
                     ],
                 ],
             ]

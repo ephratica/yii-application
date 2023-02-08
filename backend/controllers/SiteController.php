@@ -17,6 +17,8 @@ use backend\models\PasswordResetRequestForm;
 use backend\models\ResetPasswordForm;
 use backend\models\SignupForm;
 use backend\models\ContactForm;
+use backend\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * Site controller
@@ -31,7 +33,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout', 'signup'],
+                'only' => ['logout', 'signup', 'upload'],
                 'rules' => [
                     [
                         'actions' => ['signup'],
@@ -39,7 +41,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -298,5 +300,20 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionUpload()
+    {
+        $model = new UploadForm();
+
+        if (Yii::$app->request->isPost) {
+            $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
+            if ($model->upload()) {
+                // 文件上传成功，暂时先跳转回index，后续需要界面(todo)
+                return $this->render('index');
+            }
+        }
+
+        return $this->render('upload', ['model' => $model]);
     }
 }

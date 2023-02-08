@@ -7,6 +7,7 @@ use backend\models\AidSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * AidController implements the CRUD actions for Aid model.
@@ -27,6 +28,17 @@ class AidController extends Controller
                         'delete' => ['POST'],
                     ],
                 ],
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['create', 'update', 'delete'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['create', 'update', 'delete'],
+                            'roles' => ['@'],
+                        ],
+                    ],
+                ],
             ]
         );
     }
@@ -42,39 +54,6 @@ class AidController extends Controller
         $dataProvider = $searchModel->search($this->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionCountry()
-    {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchCountry();
-
-        return $this->render('country', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionDate()
-    {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchDate();
-
-        return $this->render('date', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    public function actionType()
-    {
-        $searchModel = new AidSearch();
-        $dataProvider = $searchModel->searchType();
-
-        return $this->render('type', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
