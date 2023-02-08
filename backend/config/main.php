@@ -9,9 +9,9 @@ $params = array_merge(
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
-    'controllerNamespace' => 'backend\controllers',
+    'name' => '俄乌动态',
     'bootstrap' => ['log'],
-    'modules' => [],
+    'controllerNamespace' => 'backend\controllers',
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
