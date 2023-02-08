@@ -75,7 +75,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ]); ?>
 </div>
 
-//bar
 <div class="sanction-date-bar">
     <?= ECharts::widget([
     'responsive' => true,
