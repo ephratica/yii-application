@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                //'text' => 'Russian armament loss',
+                'text' => 'Russian armament loss',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],

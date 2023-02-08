@@ -71,7 +71,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'xAxis' => [
             'type' => 'category',
             'data' => $date,
-            //'boundaryGap' => [0,0.01]
             'axisPointer' => [
                 'type' => 'shadow'
             ]
