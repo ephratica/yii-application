@@ -34,16 +34,13 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'Ukraine round-trip situation',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
             ],
             'tooltip' => [
                 'trigger' => 'axis'
-            ],
-            'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
                 'left' => '3%',
@@ -57,25 +54,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]
             ],
             'xAxis' => [
-                'name' => 'type',
                 'type' => 'category',
-                'boundaryGap' => false,
                 'data' => $type
             ],
             'yAxis' => [
-                'type' => 'value'
+                'type' => 'value',
             ],
             'series' => [
                 [
-                    'name' => 'num',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
+                    'type' => 'bar',
                     'data' => $num
                 ]
             ]
         ]
     ]
 ]); ?>
-
-
 </div>
