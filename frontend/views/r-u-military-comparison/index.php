@@ -15,7 +15,7 @@ use daixianceng\echarts\ECharts;
 $this->title = '俄乌双方军事力量对比';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="rumilitary-comparison-index">
+<div class="military-compare-total-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'Comparison of military strength(DETAILS)',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'trigger' => 'axis'
             ],
             'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
                 'left' => '3%',
@@ -51,30 +50,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 'bottom' => '3%',
                 'containLabel' => true
             ],
-            'toolbox' => [
-                'feature' => [
-                    'saveAsImage' => []
-                ]
-            ],
             'xAxis' => [
                 'name' => 'indicator',
                 'type' => 'category',
-                'boundaryGap' => false,
-                'data' => $indicator
+                //'boundaryGap' => false,
+                //'data' => $type
+                'data' => $indicator,
+                'boundaryGap' => [0,0.01]
             ],
             'yAxis' => [
-                'type' => 'value'
+                'type' => 'value',
+                'data' => ['Russia','Ukraine']
             ],
             'series' => [
                 [
                     'name' => 'Russia',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $russia
                 ],
                 [
                     'name' => 'Ukraine',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $ukraine
                 ]
@@ -82,6 +79,67 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ]
 ]); ?>
+</div>
+
+<div class="military-compare-total-index-bar">
 
 
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 400px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
+        ],
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => 'Overall comparison of military strength',
+                'textStyle' =>[
+                    'fontFamily' => 'Center'
+                ],
+            ],
+            'tooltip' => [
+                'trigger' => 'axis'
+            ],
+            'legend' => [
+            ],
+            'grid' => [
+                'left' => '3%',
+                'right' => '4%',
+                'bottom' => '3%',
+                'containLabel' => true
+            ],
+            'xAxis' => [
+                //'name' => 'type',
+                'type' => 'value',
+                //'boundaryGap' => false,
+                //'data' => $type
+                'data' => $indicator,
+                'boundaryGap' => [0,0.01]
+            ],
+            'yAxis' => [
+                'type' => 'category',
+                'data' => $indicator
+            ],
+            'series' => [
+                [
+                    'name' => 'Russia',
+                    'type' => 'bar',
+                    'data' => $russia
+                ],
+                [
+                    'name' => 'Ukraine',
+                    'type' => 'bar',
+                    'data' => $ukraine
+                ]
+            ]
+        ]
+    ]
+]); ?>
 </div>
