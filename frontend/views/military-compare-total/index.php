@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'Energy Price Fluctuation',
+                'text' => 'Overall comparison of military strength',
                 'textStyle' =>[
                     'fontFamily' => 'Center'
                 ],
@@ -43,7 +43,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'trigger' => 'axis'
             ],
             'legend' => [
-                'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
                 'left' => '3%',
@@ -51,48 +50,45 @@ $this->params['breadcrumbs'][] = $this->title;
                 'bottom' => '3%',
                 'containLabel' => true
             ],
-            'toolbox' => [
-                'feature' => [
-                    'saveAsImage' => []
-                ]
-            ],
             'xAxis' => [
-                'name' => 'type',
-                'type' => 'category',
-                'boundaryGap' => false,
-                'data' => $type
+                //'name' => 'type',
+                'type' => 'value',
+                //'boundaryGap' => false,
+                //'data' => $type
+                'boundaryGap' => [0,0.01]
             ],
             'yAxis' => [
-                'type' => 'value'
+                'type' => 'category',
+                'data' => ['NATO','Russia','Ukraine']
             ],
             'series' => [
                 [
                     'name' => 'Active military personnel',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $personnel
                 ],
                 [
                     'name' => 'Aircraft',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $aircraft
                 ],
                 [
                     'name' => 'Armored vehicles',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $vehicles
                 ],
                 [
                     'name' => 'Naval fleet',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $fleet
                 ],
                 [
                     'name' => 'Nuclear warheads',
-                    'type' => 'line',
+                    'type' => 'bar',
                     'stack' => 'PRICE',
                     'data' => $nuclear
                 ]
@@ -100,6 +96,81 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ]
 ]); ?>
+</div>
+
+<div class="military-compare-total-index-bar">
 
 
+    <?= ECharts::widget([
+    'responsive' => true,
+    'options' => [
+        'style' => 'height: 400px;'
+    ],
+    'pluginEvents' => [
+        'click' => [
+            new JsExpression('function (params) {console.log(params)}'),
+            new JsExpression('function (params) {console.log("ok")}')
+        ],
+        'legendselectchanged' => new JsExpression('function (params) {console.log(params.selected)}')
+    ],
+    'pluginOptions' => [
+        'option' => [
+            'title' => [
+                'text' => 'Overall comparison of military strength',
+                'textStyle' =>[
+                    'fontFamily' => 'Center'
+                ],
+            ],
+            'tooltip' => [
+                'trigger' => 'axis'
+            ],
+            'legend' => [
+            ],
+            'grid' => [
+                'left' => '3%',
+                'right' => '4%',
+                'bottom' => '3%',
+                'containLabel' => true
+            ],
+            'yAxis' => [
+                //'name' => 'type',
+                'type' => 'value',
+                //'boundaryGap' => false,
+                //'data' => $type
+                'boundaryGap' => [0,0.01]
+            ],
+            'xAxis' => [
+                'type' => 'category',
+                'data' => ['NATO','Russia','Ukraine']
+            ],
+            'series' => [
+                [
+                    'name' => 'Active military personnel',
+                    'type' => 'bar',
+                    'data' => $personnel
+                ],
+                [
+                    'name' => 'Aircraft',
+                    'type' => 'bar',
+                    'data' => $aircraft
+                ],
+                [
+                    'name' => 'Armored vehicles',
+                    'type' => 'bar',
+                    'data' => $vehicles
+                ],
+                [
+                    'name' => 'Naval fleet',
+                    'type' => 'bar',
+                    'data' => $fleet
+                ],
+                [
+                    'name' => 'Nuclear warheads',
+                    'type' => 'bar',
+                    'data' => $nuclear
+                ]
+            ]
+        ]
+    ]
+]); ?>
 </div>
