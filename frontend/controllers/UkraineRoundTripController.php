@@ -51,8 +51,8 @@ class UkraineRoundTripController extends Controller
     public function actionIndex()
     {
         $model = UkraineRoundTrip::find()->asArray()->all();
-        $type = ArrayHelper::getColumn($model, 'type');
-        $num = ArrayHelper::getColumn($model, 'num');
+        $type = ArrayHelper::getColumn($model, 'Type');
+        $num = ArrayHelper::getColumn($model, 'Num');
 
         return $this->render('index', [
             'type' => $type,

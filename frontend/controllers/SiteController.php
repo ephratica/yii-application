@@ -13,6 +13,7 @@ use yii\filters\AccessControl;
 use common\models\LoginForm;
 use common\models\Country;
 use common\models\Article;
+use common\models\Files;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -298,5 +299,27 @@ class SiteController extends Controller
         return $this->render('resendVerificationEmail', [
             'model' => $model
         ]);
+    }
+
+    public function actionDownload($fileName)
+    {
+        // 通过index.php?r=site/download&fileName=xxx可以下载
+        $filePath = 'D:\\phpstudy_pro\\WWW\\advanced\\uploads\\';
+        $saveAsFileName = $fileName;
+        $file = fopen($filePath . $fileName, "rb");
+        Header("Content-type:  application/octet-stream ");
+        Header("Accept-Ranges:  bytes ");
+        Header("Content-Disposition:  attachment;  filename= {$saveAsFileName}");
+        $contents = "";
+        while (!feof($file)) {
+            $contents .= fread($file, 8192);
+        }
+        // bug，写echo在powershell中报错Headers already sent（网页不会显示错误），不写echo直接无法访问页面
+        echo $contents;
+        fclose($file);
+        // 在数据库中将“被下载次数”+1
+        $files = Files::findOne($fileName);
+        $files->updateCounters(['download_times' => 1]);
+        return $this->render('download');
     }
 }

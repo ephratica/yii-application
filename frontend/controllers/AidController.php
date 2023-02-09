@@ -56,12 +56,13 @@ class AidController extends Controller
     public function actionCountry()
     {
         $model = Aid::find()
-            ->select('country, sum(value) as value')
+            ->select('country, sum(value) as sum')
             ->groupBy('country')
+            ->having('sum IS NOT NULL')
             ->orderBy('country ASC')
             ->asArray()->all();
         $country = ArrayHelper::getColumn($model, 'country');
-        $value = ArrayHelper::getColumn($model, 'value');
+        $value = ArrayHelper::getColumn($model, 'sum');
 
         return $this->render('country', [
             'country' => $country,
@@ -73,6 +74,7 @@ class AidController extends Controller
     {
         $model = Aid::find()
             ->select('date, sum(value) as value')
+            ->where('date IS NOT NULL')
             ->groupBy('date')
             ->orderBy('date ASC')
             ->asArray()->all();
