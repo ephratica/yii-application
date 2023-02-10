@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 08/02/2023 17:10:21
+ Date: 10/02/2023 11:15:03
 */
 
 SET NAMES utf8mb4;
@@ -22,14 +22,14 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `aid`;
 CREATE TABLE `aid`  (
-  `id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `id` varchar(5) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `country` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date` date NULL DEFAULT NULL,
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `value` bigint NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `country`(`country` ASC) USING BTREE,
-  CONSTRAINT `country` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
+  CONSTRAINT `country1` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -125,7 +125,7 @@ INSERT INTO `aid` VALUES ('CZM14', 'Czech Republic', '2022-04-01', 'Military', N
 INSERT INTO `aid` VALUES ('CZM15', 'Czech Republic', '2022-04-01', 'Military', 133000000);
 INSERT INTO `aid` VALUES ('CZM16', 'Czech Republic', '2022-04-01', 'Military', NULL);
 INSERT INTO `aid` VALUES ('CZM17', 'Czech Republic', '2022-05-01', 'Military', NULL);
-INSERT INTO `aid` VALUES ('CZM18', 'Cz5ech Republic', '2022-05-01', 'Military', 30000000);
+INSERT INTO `aid` VALUES ('CZM18', 'Czech Republic', '2022-05-01', 'Military', 30000000);
 INSERT INTO `aid` VALUES ('CZM19', 'Czech Republic', '2022-10-01', 'Military', 1801621450);
 INSERT INTO `aid` VALUES ('CZM2', 'Czech Republic', '2022-02-01', 'Military', 188106550);
 INSERT INTO `aid` VALUES ('CZM20', 'Czech Republic', '2022-10-01', 'Military', 7500000);
@@ -535,7 +535,7 @@ INSERT INTO `aid` VALUES ('USM9', 'United States of America', '2022-09-01', 'Mil
 -- ----------------------------
 DROP TABLE IF EXISTS `all_countries`;
 CREATE TABLE `all_countries`  (
-  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `country` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `gdp` double NULL DEFAULT NULL,
   `sanction` tinyint(1) NOT NULL,
   `aid` tinyint(1) NOT NULL,
@@ -763,7 +763,7 @@ CREATE TABLE `articles`  (
   `img_url` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `summary` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`articleid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of articles
@@ -784,26 +784,27 @@ INSERT INTO `articles` VALUES ('2023-01-23', 9, '欧盟追加援助', '据法新
 DROP TABLE IF EXISTS `files`;
 CREATE TABLE `files`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `download_times` int NULL DEFAULT 0,
+  `download_times` int NOT NULL DEFAULT 0,
   PRIMARY KEY (`name`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of files
 -- ----------------------------
+INSERT INTO `files` VALUES ('FreshSalt_ZH-CN12818759319_1920x1080.jpg', 1);
 
 -- ----------------------------
 -- Table structure for military_compare_total
 -- ----------------------------
 DROP TABLE IF EXISTS `military_compare_total`;
 CREATE TABLE `military_compare_total`  (
-  `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `Active_military_personnel` int NULL DEFAULT NULL,
-  `Aircraft` int NULL DEFAULT NULL,
-  `Armored_vehicles` int NULL DEFAULT NULL,
-  `Naval_fleet` int NULL DEFAULT NULL,
-  `Nuclear_warheads` int NULL DEFAULT NULL,
-  PRIMARY KEY (`Type`) USING BTREE
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `active_military_personnel` int NULL DEFAULT NULL,
+  `aircraft` int NULL DEFAULT NULL,
+  `armored_vehicles` int NULL DEFAULT NULL,
+  `naval_fleet` int NULL DEFAULT NULL,
+  `nuclear_warheads` int NULL DEFAULT NULL,
+  PRIMARY KEY (`type`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -818,10 +819,10 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `Indicator` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Russia` int NULL DEFAULT NULL,
-  `Ukraine` int NULL DEFAULT NULL,
-  PRIMARY KEY (`Indicator`) USING BTREE
+  `indicator` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `russia` int NULL DEFAULT NULL,
+  `ukraine` int NULL DEFAULT NULL,
+  PRIMARY KEY (`indicator`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -911,7 +912,7 @@ INSERT INTO `russia_loss` VALUES ('2023-01-26', 3175, 6334, 2169, 452, 220, 292,
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_country`;
 CREATE TABLE `sanction_country`  (
-  `country` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `country` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `since_2014` int NOT NULL,
   `since_202202` int NOT NULL,
   PRIMARY KEY (`country`) USING BTREE,
@@ -1047,7 +1048,7 @@ INSERT INTO `sanction_date` VALUES ('2022-12-22', 12634);
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_type`;
 CREATE TABLE `sanction_type`  (
-  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`type`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
@@ -1065,31 +1066,31 @@ INSERT INTO `sanction_type` VALUES ('Vessel', 92);
 -- ----------------------------
 DROP TABLE IF EXISTS `se_status`;
 CREATE TABLE `se_status`  (
-  `Date` date NOT NULL,
-  `NATURAL_GAS` double NULL DEFAULT NULL,
-  `GOLD` double NULL DEFAULT NULL,
-  `WTI_CRUDE` double NULL DEFAULT NULL,
-  `BRENT_CRUDE` double NULL DEFAULT NULL,
-  `SOYBEANS` double NULL DEFAULT NULL,
-  `CORN` double NULL DEFAULT NULL,
-  `COPPER` double NULL DEFAULT NULL,
-  `SILVER` double NULL DEFAULT NULL,
-  `LOW_SULPHUR_GAS_OIL` double NULL DEFAULT NULL,
-  `LIVE_CATTLE` double NULL DEFAULT NULL,
-  `SOYBEAN_OIL` double NULL DEFAULT NULL,
-  `ALUMINIUM` double NULL DEFAULT NULL,
-  `SOYBEAN_MEAL` double NULL DEFAULT NULL,
-  `ZINC` double NULL DEFAULT NULL,
-  `ULS_DIESEL` double NULL DEFAULT NULL,
-  `NICKEL` double NULL DEFAULT NULL,
-  `WHEAT` double NULL DEFAULT NULL,
-  `SUGAR` double NULL DEFAULT NULL,
-  `GASOLINE` double NULL DEFAULT NULL,
-  `COFFEE` double NULL DEFAULT NULL,
-  `LEAN_HOGS` double NULL DEFAULT NULL,
-  `HRW_WHEAT` double NULL DEFAULT NULL,
-  `COTTON` double NULL DEFAULT NULL,
-  PRIMARY KEY (`Date`) USING BTREE
+  `date` date NOT NULL,
+  `natural_gas` double NULL DEFAULT NULL,
+  `gold` double NULL DEFAULT NULL,
+  `wti_crude` double NULL DEFAULT NULL,
+  `brent_crude` double NULL DEFAULT NULL,
+  `soybeans` double NULL DEFAULT NULL,
+  `corn` double NULL DEFAULT NULL,
+  `copper` double NULL DEFAULT NULL,
+  `silver` double NULL DEFAULT NULL,
+  `low_sulphur_gas_oil` double NULL DEFAULT NULL,
+  `live_cattle` double NULL DEFAULT NULL,
+  `soybean_oil` double NULL DEFAULT NULL,
+  `aluminium` double NULL DEFAULT NULL,
+  `soybean_meal` double NULL DEFAULT NULL,
+  `zinc` double NULL DEFAULT NULL,
+  `uls_diesel` double NULL DEFAULT NULL,
+  `nickel` double NULL DEFAULT NULL,
+  `wheat` double NULL DEFAULT NULL,
+  `sugar` double NULL DEFAULT NULL,
+  `gasoline` double NULL DEFAULT NULL,
+  `coffee` double NULL DEFAULT NULL,
+  `lean_hogs` double NULL DEFAULT NULL,
+  `hrw_wheat` double NULL DEFAULT NULL,
+  `cotton` double NULL DEFAULT NULL,
+  PRIMARY KEY (`date`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -1330,10 +1331,10 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `Killed/Injured` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Total` int NULL DEFAULT NULL,
-  `Children` int NULL DEFAULT NULL,
-  PRIMARY KEY (`Killed/Injured`) USING BTREE
+  `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `total` int NULL DEFAULT NULL,
+  `children` int NULL DEFAULT NULL,
+  PRIMARY KEY (`type`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -1343,30 +1344,30 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Injured', 11415, 838);
 INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 
 -- ----------------------------
--- Table structure for ukraine_round-trip
+-- Table structure for ukraine_round_trip
 -- ----------------------------
-DROP TABLE IF EXISTS `ukraine_round-trip`;
-CREATE TABLE `ukraine_round-trip`  (
-  `Type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Num` int NULL DEFAULT NULL,
-  PRIMARY KEY (`Type`) USING BTREE
+DROP TABLE IF EXISTS `ukraine_round_trip`;
+CREATE TABLE `ukraine_round_trip`  (
+  `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `num` int NULL DEFAULT NULL,
+  PRIMARY KEY (`type`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
--- Records of ukraine_round-trip
+-- Records of ukraine_round_trip
 -- ----------------------------
-INSERT INTO `ukraine_round-trip` VALUES ('From Ukraine', 17688845);
-INSERT INTO `ukraine_round-trip` VALUES ('To Ukraine', 9585700);
+INSERT INTO `ukraine_round_trip` VALUES ('From Ukraine', 17688845);
+INSERT INTO `ukraine_round_trip` VALUES ('To Ukraine', 9585700);
 
 -- ----------------------------
 -- Table structure for ukraine_russia_military_expenditure
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_russia_military_expenditure`;
 CREATE TABLE `ukraine_russia_military_expenditure`  (
-  `Year` int NOT NULL,
-  `Ukraine` double NULL DEFAULT NULL,
-  `Russia` double NULL DEFAULT NULL,
-  PRIMARY KEY (`Year`) USING BTREE
+  `year` int NOT NULL,
+  `ukraine` double NULL DEFAULT NULL,
+  `russia` double NULL DEFAULT NULL,
+  PRIMARY KEY (`year`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
@@ -1410,7 +1411,7 @@ CREATE TABLE `user`  (
   UNIQUE INDEX `username`(`username` ASC) USING BTREE,
   UNIQUE INDEX `email`(`email` ASC) USING BTREE,
   UNIQUE INDEX `password_reset_token`(`password_reset_token` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
