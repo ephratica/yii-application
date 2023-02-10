@@ -61,14 +61,14 @@ class UkraineCivilianCasualtiesController extends Controller
 
     /**
      * Displays a single UkraineCivilianCasualties model.
-     * @param string $Killed_Injured Killed Injured
+     * @param string $type Type
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Killed_Injured)
+    public function actionView($type)
     {
         return $this->render('view', [
-            'model' => $this->findModel($Killed_Injured),
+            'model' => $this->findModel($type),
         ]);
     }
 
@@ -83,7 +83,7 @@ class UkraineCivilianCasualtiesController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Killed_Injured' => $model->Killed_Injured]);
+                return $this->redirect(['view', 'type' => $model->type]);
             }
         } else {
             $model->loadDefaultValues();
@@ -97,16 +97,16 @@ class UkraineCivilianCasualtiesController extends Controller
     /**
      * Updates an existing UkraineCivilianCasualties model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Killed_Injured Killed Injured
+     * @param string $type Type
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Killed_Injured)
+    public function actionUpdate($type)
     {
-        $model = $this->findModel($Killed_Injured);
+        $model = $this->findModel($type);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Killed_Injured' => $model->Killed_Injured]);
+            return $this->redirect(['view', 'type' => $model->type]);
         }
 
         return $this->render('update', [
@@ -117,13 +117,13 @@ class UkraineCivilianCasualtiesController extends Controller
     /**
      * Deletes an existing UkraineCivilianCasualties model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Killed_Injured Killed Injured
+     * @param string $type Type
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Killed_Injured)
+    public function actionDelete($type)
     {
-        $this->findModel($Killed_Injured)->delete();
+        $this->findModel($type)->delete();
 
         return $this->redirect(['index']);
     }
@@ -131,13 +131,13 @@ class UkraineCivilianCasualtiesController extends Controller
     /**
      * Finds the UkraineCivilianCasualties model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Killed_Injured Killed Injured
+     * @param string $type Type
      * @return UkraineCivilianCasualties the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Killed_Injured)
+    protected function findModel($type)
     {
-        if (($model = UkraineCivilianCasualties::findOne(['Killed_Injured' => $Killed_Injured])) !== null) {
+        if (($model = UkraineCivilianCasualties::findOne(['type' => $type])) !== null) {
             return $model;
         }
 

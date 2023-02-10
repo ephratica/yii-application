@@ -7,9 +7,9 @@ use Yii;
 /**
  * This is the model class for table "ukraine_russia_military_expenditure".
  *
- * @property int $Year
- * @property float|null $Ukraine
- * @property float|null $Russia
+ * @property int $year
+ * @property float|null $ukraine
+ * @property float|null $russia
  */
 class UkraineRussiaMilitaryExpenditure extends \yii\db\ActiveRecord
 {
@@ -27,10 +27,10 @@ class UkraineRussiaMilitaryExpenditure extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Year'], 'required'],
-            [['Year'], 'integer'],
-            [['Ukraine', 'Russia'], 'number'],
-            [['Year'], 'unique'],
+            [['year'], 'required'],
+            [['year'], 'integer'],
+            [['ukraine', 'russia'], 'number'],
+            [['year'], 'unique'],
         ];
     }
 
@@ -40,9 +40,9 @@ class UkraineRussiaMilitaryExpenditure extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Year' => 'Year',
-            'Ukraine' => 'Ukraine',
-            'Russia' => 'Russia',
+            'year' => 'Year',
+            'ukraine' => 'Ukraine',
+            'russia' => 'Russia',
         ];
     }
 }

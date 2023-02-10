@@ -17,8 +17,8 @@ class RUMilitaryComparisonSearch extends RUMilitaryComparison
     public function rules()
     {
         return [
-            [['Indicator'], 'safe'],
-            [['Russia', 'Ukraine'], 'integer'],
+            [['indicator'], 'safe'],
+            [['russia', 'ukraine'], 'integer'],
         ];
     }
 
@@ -58,11 +58,11 @@ class RUMilitaryComparisonSearch extends RUMilitaryComparison
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'Russia' => $this->Russia,
-            'Ukraine' => $this->Ukraine,
+            'russia' => $this->russia,
+            'ukraine' => $this->ukraine,
         ]);
 
-        $query->andFilterWhere(['like', 'Indicator', $this->Indicator]);
+        $query->andFilterWhere(['like', 'indicator', $this->indicator]);
 
         return $dataProvider;
     }

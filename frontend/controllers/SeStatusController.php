@@ -58,13 +58,13 @@ class SeStatusController extends Controller
         // $searchModel = new SeStatusSearch();
         // $dataProvider = $searchModel->searchMetal();
         $model= SeStatus::find()->asArray()->all();
-        $date = ArrayHelper::getColumn($model,'Date');
-        $gold = ArrayHelper::getColumn($model,'GOLD');
-        $copper = ArrayHelper::getColumn($model,'COPPER');
-        $silver = ArrayHelper::getColumn($model,'SILVER');
-        $aluminium = ArrayHelper::getColumn($model,'ALUMINIUM');
-        $zinc = ArrayHelper::getColumn($model,'ZINC');
-        $nickel = ArrayHelper::getColumn($model,'NICKEL');
+        $date = ArrayHelper::getColumn($model,'date');
+        $gold = ArrayHelper::getColumn($model,'gold');
+        $copper = ArrayHelper::getColumn($model,'copper');
+        $silver = ArrayHelper::getColumn($model,'silver');
+        $aluminium = ArrayHelper::getColumn($model,'aluminium');
+        $zinc = ArrayHelper::getColumn($model,'zinc');
+        $nickel = ArrayHelper::getColumn($model,'nickel');
 
         return $this->render('metal', [
             'date' => $date,
@@ -82,14 +82,14 @@ class SeStatusController extends Controller
         // $searchModel = new SeStatusSearch();
         // $dataProvider = $searchModel->searchEnergy();
         $model= SeStatus::find()->asArray()->all();
-        $date = ArrayHelper::getColumn($model,'Date');
-        $natural_gas = ArrayHelper::getColumn($model,'NATURAL_GAS');
-        $wti_crude = ArrayHelper::getColumn($model,'WTI_CRUDE');
-        $brent_crude = ArrayHelper::getColumn($model,'BRENT_CRUDE');
-        $low_sulphur_gas_oil = ArrayHelper::getColumn($model,'LOW_SULPHUR_GAS_OIL');
-        $soybean_oil = ArrayHelper::getColumn($model,'SOYBEAN_OIL');
-        $uls_diesel = ArrayHelper::getColumn($model,'ULS_DIESEL');
-        $gasoline = ArrayHelper::getColumn($model,'GASOLINE');
+        $date = ArrayHelper::getColumn($model,'date');
+        $natural_gas = ArrayHelper::getColumn($model,'natural_gas');
+        $wti_crude = ArrayHelper::getColumn($model,'wti_crude');
+        $brent_crude = ArrayHelper::getColumn($model,'brent_crude');
+        $low_sulphur_gas_oil = ArrayHelper::getColumn($model,'low_sulphur_gas_oil');
+        $soybean_oil = ArrayHelper::getColumn($model,'soybean_oil');
+        $uls_diesel = ArrayHelper::getColumn($model,'uls_diesel');
+        $gasoline = ArrayHelper::getColumn($model,'gasoline');
 
         return $this->render('energy', [
             'date' => $date,
@@ -108,12 +108,12 @@ class SeStatusController extends Controller
         // $searchModel = new SeStatusSearch();
         // $dataProvider = $searchModel->searchCrop();
         $model= SeStatus::find()->asArray()->all();
-        $date = ArrayHelper::getColumn($model,'Date');
-        $soybeans = ArrayHelper::getColumn($model,'SOYBEANS');
-        $corn = ArrayHelper::getColumn($model,'CORN');
-        $wheat = ArrayHelper::getColumn($model,'WHEAT');
-        $hrw_wheat = ArrayHelper::getColumn($model,'HRW_WHEAT');
-        $cotton = ArrayHelper::getColumn($model,'COTTON');
+        $date = ArrayHelper::getColumn($model,'date');
+        $soybeans = ArrayHelper::getColumn($model,'soybeans');
+        $corn = ArrayHelper::getColumn($model,'corn');
+        $wheat = ArrayHelper::getColumn($model,'wheat');
+        $hrw_wheat = ArrayHelper::getColumn($model,'hrw_wheat');
+        $cotton = ArrayHelper::getColumn($model,'cotton');
 
         return $this->render('crop', [
             'date' => $date,
@@ -130,12 +130,12 @@ class SeStatusController extends Controller
         // $searchModel = new SeStatusSearch();
         // $dataProvider = $searchModel->searchFood();
         $model= SeStatus::find()->asArray()->all();
-        $date = ArrayHelper::getColumn($model,'Date');
-        $live_cattle = ArrayHelper::getColumn($model,'LIVE_CATTLE');
-        $soybean_meal = ArrayHelper::getColumn($model,'SOYBEAN_MEAL');
-        $sugar = ArrayHelper::getColumn($model,'SUGAR');
-        $coffee = ArrayHelper::getColumn($model,'COFFEE');
-        $lean_hogs = ArrayHelper::getColumn($model,'LEAN_HOGS');
+        $date = ArrayHelper::getColumn($model,'date');
+        $live_cattle = ArrayHelper::getColumn($model,'live_cattle');
+        $soybean_meal = ArrayHelper::getColumn($model,'soybean_meal');
+        $sugar = ArrayHelper::getColumn($model,'sugar');
+        $coffee = ArrayHelper::getColumn($model,'coffee');
+        $lean_hogs = ArrayHelper::getColumn($model,'lean_hogs');
 
         return $this->render('food', [
             'date' => $date,
@@ -155,13 +155,13 @@ class SeStatusController extends Controller
     /**
      * Finds the SeStatus model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Date Date
+     * @param string $date Date
      * @return SeStatus the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Date)
+    protected function findModel($date)
     {
-        if (($model = SeStatus::findOne(['Date' => $Date])) !== null) {
+        if (($model = SeStatus::findOne(['date' => $date])) !== null) {
             return $model;
         }
 

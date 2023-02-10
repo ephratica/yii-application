@@ -12,17 +12,17 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Type')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'type')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Active_military_personnel')->textInput() ?>
+    <?= $form->field($model, 'active_military_personnel')->textInput() ?>
 
-    <?= $form->field($model, 'Aircraft')->textInput() ?>
+    <?= $form->field($model, 'aircraft')->textInput() ?>
 
-    <?= $form->field($model, 'Armored_vehicles')->textInput() ?>
+    <?= $form->field($model, 'armored_vehicles')->textInput() ?>
 
-    <?= $form->field($model, 'Naval_fleet')->textInput() ?>
+    <?= $form->field($model, 'naval_fleet')->textInput() ?>
 
-    <?= $form->field($model, 'Nuclear_warheads')->textInput() ?>
+    <?= $form->field($model, 'nuclear_warheads')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

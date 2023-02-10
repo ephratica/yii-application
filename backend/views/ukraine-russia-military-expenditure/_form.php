@@ -12,11 +12,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'Year')->textInput() ?>
+    <?= $form->field($model, 'year')->textInput() ?>
 
-    <?= $form->field($model, 'Ukraine')->textInput() ?>
+    <?= $form->field($model, 'ukraine')->textInput() ?>
 
-    <?= $form->field($model, 'Russia')->textInput() ?>
+    <?= $form->field($model, 'russia')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

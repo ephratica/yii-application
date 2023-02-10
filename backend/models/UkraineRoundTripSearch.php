@@ -17,8 +17,8 @@ class UkraineRoundTripSearch extends UkraineRoundTrip
     public function rules()
     {
         return [
-            [['Type'], 'safe'],
-            [['Num'], 'integer'],
+            [['type'], 'safe'],
+            [['num'], 'integer'],
         ];
     }
 
@@ -58,10 +58,10 @@ class UkraineRoundTripSearch extends UkraineRoundTrip
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'Num' => $this->Num,
+            'num' => $this->num,
         ]);
 
-        $query->andFilterWhere(['like', 'Type', $this->Type]);
+        $query->andFilterWhere(['like', 'type', $this->type]);
 
         return $dataProvider;
     }

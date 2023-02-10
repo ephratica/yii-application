@@ -61,14 +61,14 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
 
     /**
      * Displays a single UkraineRussiaMilitaryExpenditure model.
-     * @param int $Year Year
+     * @param int $year Year
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Year)
+    public function actionView($year)
     {
         return $this->render('view', [
-            'model' => $this->findModel($Year),
+            'model' => $this->findModel($year),
         ]);
     }
 
@@ -83,7 +83,7 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Year' => $model->Year]);
+                return $this->redirect(['view', 'year' => $model->year]);
             }
         } else {
             $model->loadDefaultValues();
@@ -97,16 +97,16 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
     /**
      * Updates an existing UkraineRussiaMilitaryExpenditure model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $Year Year
+     * @param int $year Year
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Year)
+    public function actionUpdate($year)
     {
-        $model = $this->findModel($Year);
+        $model = $this->findModel($year);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Year' => $model->Year]);
+            return $this->redirect(['view', 'year' => $model->year]);
         }
 
         return $this->render('update', [
@@ -117,13 +117,13 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
     /**
      * Deletes an existing UkraineRussiaMilitaryExpenditure model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $Year Year
+     * @param int $year Year
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Year)
+    public function actionDelete($year)
     {
-        $this->findModel($Year)->delete();
+        $this->findModel($year)->delete();
 
         return $this->redirect(['index']);
     }
@@ -131,13 +131,13 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
     /**
      * Finds the UkraineRussiaMilitaryExpenditure model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $Year Year
+     * @param int $year Year
      * @return UkraineRussiaMilitaryExpenditure the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Year)
+    protected function findModel($year)
     {
-        if (($model = UkraineRussiaMilitaryExpenditure::findOne(['Year' => $Year])) !== null) {
+        if (($model = UkraineRussiaMilitaryExpenditure::findOne(['year' => $year])) !== null) {
             return $model;
         }
 

@@ -51,12 +51,12 @@ class MilitaryCompareTotalController extends Controller
     public function actionIndex()
     {
         $model = MilitaryCompareTotal::find()->asArray()->all();
-        $type = ArrayHelper::getColumn($model, 'Type');
-        $personnel = ArrayHelper::getColumn($model, 'Active_military_personnel');
-        $aircraft = ArrayHelper::getColumn($model, 'Aircraft');
-        $vehicles = ArrayHelper::getColumn($model, 'Armored_vehicles');
-        $fleet = ArrayHelper::getColumn($model, 'Naval_fleet');
-        $nuclear = ArrayHelper::getColumn($model, 'Nuclear_warheads');
+        $type = ArrayHelper::getColumn($model, 'type');
+        $personnel = ArrayHelper::getColumn($model, 'active_military_personnel');
+        $aircraft = ArrayHelper::getColumn($model, 'aircraft');
+        $vehicles = ArrayHelper::getColumn($model, 'armored_vehicles');
+        $fleet = ArrayHelper::getColumn($model, 'naval_fleet');
+        $nuclear = ArrayHelper::getColumn($model, 'nuclear_warheads');
 
         return $this->render('index', [
             'type' => $type,

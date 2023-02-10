@@ -51,8 +51,8 @@ class UkraineRoundTripController extends Controller
     public function actionIndex()
     {
         $model = UkraineRoundTrip::find()->asArray()->all();
-        $type = ArrayHelper::getColumn($model, 'Type');
-        $num = ArrayHelper::getColumn($model, 'Num');
+        $type = ArrayHelper::getColumn($model, 'type');
+        $num = ArrayHelper::getColumn($model, 'num');
 
         return $this->render('index', [
             'type' => $type,
@@ -68,13 +68,13 @@ class UkraineRoundTripController extends Controller
     /**
      * Finds the UkraineRoundTrip model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Type Type
+     * @param string $type Type
      * @return UkraineRoundTrip the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Type)
+    protected function findModel($type)
     {
-        if (($model = UkraineRoundTrip::findOne(['Type' => $Type])) !== null) {
+        if (($model = UkraineRoundTrip::findOne(['type' => $type])) !== null) {
             return $model;
         }
 

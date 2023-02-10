@@ -51,9 +51,9 @@ class UkraineCivilianCasualtiesController extends Controller
     public function actionIndex()
     {
         $model = UkraineCivilianCasualties::find()->asArray()->all();
-        $type = ArrayHelper::getColumn($model, 'Killed/Injured');
-        $total = ArrayHelper::getColumn($model, 'Total');
-        $children = ArrayHelper::getColumn($model, 'Children');
+        $type = ArrayHelper::getColumn($model, 'type');
+        $total = ArrayHelper::getColumn($model, 'total');
+        $children = ArrayHelper::getColumn($model, 'children');
 
         return $this->render('index', [
             'type' => $type,
@@ -70,13 +70,13 @@ class UkraineCivilianCasualtiesController extends Controller
     /**
      * Finds the UkraineCivilianCasualties model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Killed_Injured Killed Injured
+     * @param string $type Type
      * @return UkraineCivilianCasualties the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Killed_Injured)
+    protected function findModel($type)
     {
-        if (($model = UkraineCivilianCasualties::findOne(['Killed_Injured' => $Killed_Injured])) !== null) {
+        if (($model = UkraineCivilianCasualties::findOne(['type' => $type])) !== null) {
             return $model;
         }
 

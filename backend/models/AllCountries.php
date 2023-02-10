@@ -37,7 +37,7 @@ class AllCountries extends \yii\db\ActiveRecord
             [['country', 'sanction', 'aid', 'code'], 'required'],
             [['gdp', 'total_cost_in_billion_euros'], 'number'],
             [['sanction', 'aid', 'number_of_refugees'], 'integer'],
-            [['country'], 'string', 'max' => 255],
+            [['country'], 'string', 'max' => 50],
             [['code'], 'string', 'max' => 5],
             [['country'], 'unique'],
         ];

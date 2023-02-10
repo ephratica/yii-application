@@ -7,9 +7,9 @@ use Yii;
 /**
  * This is the model class for table "r_u_military_comparison".
  *
- * @property string $Indicator
- * @property int|null $Russia
- * @property int|null $Ukraine
+ * @property string $indicator
+ * @property int|null $russia
+ * @property int|null $ukraine
  */
 class RUMilitaryComparison extends \yii\db\ActiveRecord
 {
@@ -27,10 +27,10 @@ class RUMilitaryComparison extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Indicator'], 'required'],
-            [['Russia', 'Ukraine'], 'integer'],
-            [['Indicator'], 'string', 'max' => 255],
-            [['Indicator'], 'unique'],
+            [['indicator'], 'required'],
+            [['russia', 'ukraine'], 'integer'],
+            [['indicator'], 'string', 'max' => 30],
+            [['indicator'], 'unique'],
         ];
     }
 
@@ -40,9 +40,9 @@ class RUMilitaryComparison extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Indicator' => 'Indicator',
-            'Russia' => 'Russia',
-            'Ukraine' => 'Ukraine',
+            'indicator' => 'Indicator',
+            'russia' => 'Russia',
+            'ukraine' => 'Ukraine',
         ];
     }
 }

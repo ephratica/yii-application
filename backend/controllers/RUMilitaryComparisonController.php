@@ -61,14 +61,14 @@ class RUMilitaryComparisonController extends Controller
 
     /**
      * Displays a single RUMilitaryComparison model.
-     * @param string $Indicator Indicator
+     * @param string $indicator Indicator
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Indicator)
+    public function actionView($indicator)
     {
         return $this->render('view', [
-            'model' => $this->findModel($Indicator),
+            'model' => $this->findModel($indicator),
         ]);
     }
 
@@ -83,7 +83,7 @@ class RUMilitaryComparisonController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Indicator' => $model->Indicator]);
+                return $this->redirect(['view', 'indicator' => $model->indicator]);
             }
         } else {
             $model->loadDefaultValues();
@@ -97,16 +97,16 @@ class RUMilitaryComparisonController extends Controller
     /**
      * Updates an existing RUMilitaryComparison model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Indicator Indicator
+     * @param string $indicator Indicator
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Indicator)
+    public function actionUpdate($indicator)
     {
-        $model = $this->findModel($Indicator);
+        $model = $this->findModel($indicator);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Indicator' => $model->Indicator]);
+            return $this->redirect(['view', 'indicator' => $model->indicator]);
         }
 
         return $this->render('update', [
@@ -117,13 +117,13 @@ class RUMilitaryComparisonController extends Controller
     /**
      * Deletes an existing RUMilitaryComparison model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Indicator Indicator
+     * @param string $indicator Indicator
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Indicator)
+    public function actionDelete($indicator)
     {
-        $this->findModel($Indicator)->delete();
+        $this->findModel($indicator)->delete();
 
         return $this->redirect(['index']);
     }
@@ -131,13 +131,13 @@ class RUMilitaryComparisonController extends Controller
     /**
      * Finds the RUMilitaryComparison model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Indicator Indicator
+     * @param string $indicator Indicator
      * @return RUMilitaryComparison the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Indicator)
+    protected function findModel($indicator)
     {
-        if (($model = RUMilitaryComparison::findOne(['Indicator' => $Indicator])) !== null) {
+        if (($model = RUMilitaryComparison::findOne(['indicator' => $indicator])) !== null) {
             return $model;
         }
 

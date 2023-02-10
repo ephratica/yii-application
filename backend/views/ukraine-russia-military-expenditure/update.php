@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\UkraineRussiaMilitaryExpenditure $model */
 
-$this->title = 'Update Ukraine Russia Military Expenditure: ' . $model->Year;
+$this->title = 'Update Ukraine Russia Military Expenditure: ' . $model->year;
 $this->params['breadcrumbs'][] = ['label' => 'Ukraine Russia Military Expenditures', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->Year, 'url' => ['view', 'Year' => $model->Year]];
+$this->params['breadcrumbs'][] = ['label' => $model->year, 'url' => ['view', 'year' => $model->year]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="ukraine-russia-military-expenditure-update">

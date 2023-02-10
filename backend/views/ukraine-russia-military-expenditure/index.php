@@ -29,13 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'Year',
-            'Ukraine',
-            'Russia',
+            'year',
+            'ukraine',
+            'russia',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, UkraineRussiaMilitaryExpenditure $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'Year' => $model->Year]);
+                    return Url::toRoute([$action, 'year' => $model->year]);
                  }
             ],
         ],

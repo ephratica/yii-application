@@ -51,9 +51,9 @@ class RUMilitaryComparisonController extends Controller
     public function actionIndex()
     {
         $model = RUMilitaryComparison::find()->asArray()->all();
-        $indicator = ArrayHelper::getColumn($model, 'Indicator');
-        $russia = ArrayHelper::getColumn($model, 'Russia');
-        $ukraine = ArrayHelper::getColumn($model, 'Ukraine');
+        $indicator = ArrayHelper::getColumn($model, 'indicator');
+        $russia = ArrayHelper::getColumn($model, 'russia');
+        $ukraine = ArrayHelper::getColumn($model, 'ukraine');
 
         return $this->render('index', [
             'indicator' => $indicator,

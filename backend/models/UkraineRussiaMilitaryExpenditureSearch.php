@@ -17,8 +17,8 @@ class UkraineRussiaMilitaryExpenditureSearch extends UkraineRussiaMilitaryExpend
     public function rules()
     {
         return [
-            [['Year'], 'integer'],
-            [['Ukraine', 'Russia'], 'number'],
+            [['year'], 'integer'],
+            [['ukraine', 'russia'], 'number'],
         ];
     }
 
@@ -58,9 +58,9 @@ class UkraineRussiaMilitaryExpenditureSearch extends UkraineRussiaMilitaryExpend
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'Year' => $this->Year,
-            'Ukraine' => $this->Ukraine,
-            'Russia' => $this->Russia,
+            'year' => $this->year,
+            'ukraine' => $this->ukraine,
+            'russia' => $this->russia,
         ]);
 
         return $dataProvider;

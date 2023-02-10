@@ -31,7 +31,7 @@ class SanctionCountry extends \yii\db\ActiveRecord
         return [
             [['country', 'since_2014', 'since_202202'], 'required'],
             [['since_2014', 'since_202202'], 'integer'],
-            [['country'], 'string', 'max' => 255],
+            [['country'], 'string', 'max' => 50],
             [['country'], 'unique'],
             [['country'], 'exist', 'skipOnError' => true, 'targetClass' => AllCountries::class, 'targetAttribute' => ['country' => 'country']],
         ];

@@ -17,8 +17,8 @@ class UkraineCivilianCasualtiesSearch extends UkraineCivilianCasualties
     public function rules()
     {
         return [
-            [['Killed_Injured'], 'safe'],
-            [['Total', 'Children'], 'integer'],
+            [['type'], 'safe'],
+            [['total', 'children'], 'integer'],
         ];
     }
 
@@ -58,11 +58,11 @@ class UkraineCivilianCasualtiesSearch extends UkraineCivilianCasualties
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'Total' => $this->Total,
-            'Children' => $this->Children,
+            'total' => $this->total,
+            'children' => $this->children,
         ]);
 
-        $query->andFilterWhere(['like', 'Killed_Injured', $this->Killed_Injured]);
+        $query->andFilterWhere(['like', 'type', $this->type]);
 
         return $dataProvider;
     }

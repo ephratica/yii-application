@@ -7,12 +7,12 @@ use Yii;
 /**
  * This is the model class for table "military_compare_total".
  *
- * @property string $Type
- * @property int|null $Active_military_personnel
- * @property int|null $Aircraft
- * @property int|null $Armored_vehicles
- * @property int|null $Naval_fleet
- * @property int|null $Nuclear_warheads
+ * @property string $type
+ * @property int|null $active_military_personnel
+ * @property int|null $aircraft
+ * @property int|null $armored_vehicles
+ * @property int|null $naval_fleet
+ * @property int|null $nuclear_warheads
  */
 class MilitaryCompareTotal extends \yii\db\ActiveRecord
 {
@@ -30,10 +30,10 @@ class MilitaryCompareTotal extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Type'], 'required'],
-            [['Active_military_personnel', 'Aircraft', 'Armored_vehicles', 'Naval_fleet', 'Nuclear_warheads'], 'integer'],
-            [['Type'], 'string', 'max' => 255],
-            [['Type'], 'unique'],
+            [['type'], 'required'],
+            [['active_military_personnel', 'aircraft', 'armored_vehicles', 'naval_fleet', 'nuclear_warheads'], 'integer'],
+            [['type'], 'string', 'max' => 10],
+            [['type'], 'unique'],
         ];
     }
 
@@ -43,12 +43,12 @@ class MilitaryCompareTotal extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Type' => 'Type',
-            'Active_military_personnel' => 'Active Military Personnel',
-            'Aircraft' => 'Aircraft',
-            'Armored_vehicles' => 'Armored Vehicles',
-            'Naval_fleet' => 'Naval Fleet',
-            'Nuclear_warheads' => 'Nuclear Warheads',
+            'type' => 'Type',
+            'active_military_personnel' => 'Active Military Personnel',
+            'aircraft' => 'Aircraft',
+            'armored_vehicles' => 'Armored Vehicles',
+            'naval_fleet' => 'Naval Fleet',
+            'nuclear_warheads' => 'Nuclear Warheads',
         ];
     }
 }

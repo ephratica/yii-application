@@ -7,32 +7,32 @@ use Yii;
 /**
  * This is the model class for table "se_status".
  *
- * @property string $Date
- * @property float|null $NATURAL_GAS
- * @property float|null $GOLD
- * @property float|null $WTI_CRUDE
- * @property float|null $BRENT_CRUDE
- * @property float|null $SOYBEANS
- * @property float|null $CORN
- * @property float|null $COPPER
- * @property float|null $SILVER
- * @property float|null $LOW_SULPHUR_GAS_OIL
- * @property float|null $LIVE_CATTLE
- * @property float|null $SOYBEAN_OIL
- * @property float|null $ALUMINIUM
- * @property float|null $SOYBEAN_MEAL
- * @property float|null $ZINC
- * @property float|null $ULS_DIESEL
- * @property float|null $NICKEL
- * @property float|null $WHEAT
- * @property float|null $SUGAR
- * @property float|null $GASOLINE
- * @property float|null $COFFEE
- * @property float|null $LEAN_HOGS
- * @property float|null $HRW_WHEAT
- * @property float|null $COTTON
+ * @property string $date
+ * @property float|null $natural_gas
+ * @property float|null $gold
+ * @property float|null $wti_crude
+ * @property float|null $brent_crude
+ * @property float|null $soybeans
+ * @property float|null $corn
+ * @property float|null $copper
+ * @property float|null $silver
+ * @property float|null $low_sulphur_gas_oil
+ * @property float|null $live_cattle
+ * @property float|null $soybean_oil
+ * @property float|null $aluminium
+ * @property float|null $soybean_meal
+ * @property float|null $zinc
+ * @property float|null $uls_diesel
+ * @property float|null $nickel
+ * @property float|null $wheat
+ * @property float|null $sugar
+ * @property float|null $gasoline
+ * @property float|null $coffee
+ * @property float|null $lean_hogs
+ * @property float|null $hrw_wheat
+ * @property float|null $cotton
  */
-class SeStatus extends \yii\db\ActiveRecord
+class SeStatus2 extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -48,10 +48,10 @@ class SeStatus extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Date'], 'required'],
-            [['Date'], 'safe'],
-            [['NATURAL_GAS', 'GOLD', 'WTI_CRUDE', 'BRENT_CRUDE', 'SOYBEANS', 'CORN', 'COPPER', 'SILVER', 'LOW_SULPHUR_GAS_OIL', 'LIVE_CATTLE', 'SOYBEAN_OIL', 'ALUMINIUM', 'SOYBEAN_MEAL', 'ZINC', 'ULS_DIESEL', 'NICKEL', 'WHEAT', 'SUGAR', 'GASOLINE', 'COFFEE', 'LEAN_HOGS', 'HRW_WHEAT', 'COTTON'], 'number'],
-            [['Date'], 'unique'],
+            [['date'], 'required'],
+            [['date'], 'safe'],
+            [['natural_gas', 'gold', 'wti_crude', 'brent_crude', 'soybeans', 'corn', 'copper', 'silver', 'low_sulphur_gas_oil', 'live_cattle', 'soybean_oil', 'aluminium', 'soybean_meal', 'zinc', 'uls_diesel', 'nickel', 'wheat', 'sugar', 'gasoline', 'coffee', 'lean_hogs', 'hrw_wheat', 'cotton'], 'number'],
+            [['date'], 'unique'],
         ];
     }
 
@@ -61,30 +61,30 @@ class SeStatus extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Date' => 'Date',
-            'NATURAL_GAS' => 'Natural Gas',
-            'GOLD' => 'Gold',
-            'WTI_CRUDE' => 'Wti Crude',
-            'BRENT_CRUDE' => 'Brent Crude',
-            'SOYBEANS' => 'Soybeans',
-            'CORN' => 'Corn',
-            'COPPER' => 'Copper',
-            'SILVER' => 'Silver',
-            'LOW_SULPHUR_GAS_OIL' => 'Low Sulphur Gas Oil',
-            'LIVE_CATTLE' => 'Live Cattle',
-            'SOYBEAN_OIL' => 'Soybean Oil',
-            'ALUMINIUM' => 'Aluminium',
-            'SOYBEAN_MEAL' => 'Soybean Meal',
-            'ZINC' => 'Zinc',
-            'ULS_DIESEL' => 'Uls Diesel',
-            'NICKEL' => 'Nickel',
-            'WHEAT' => 'Wheat',
-            'SUGAR' => 'Sugar',
-            'GASOLINE' => 'Gasoline',
-            'COFFEE' => 'Coffee',
-            'LEAN_HOGS' => 'Lean Hogs',
-            'HRW_WHEAT' => 'Hrw Wheat',
-            'COTTON' => 'Cotton',
+            'date' => 'Date',
+            'natural_gas' => 'Natural Gas',
+            'gold' => 'Gold',
+            'wti_crude' => 'Wti Crude',
+            'brent_crude' => 'Brent Crude',
+            'soybeans' => 'Soybeans',
+            'corn' => 'Corn',
+            'copper' => 'Copper',
+            'silver' => 'Silver',
+            'low_sulphur_gas_oil' => 'Low Sulphur Gas Oil',
+            'live_cattle' => 'Live Cattle',
+            'soybean_oil' => 'Soybean Oil',
+            'aluminium' => 'Aluminium',
+            'soybean_meal' => 'Soybean Meal',
+            'zinc' => 'Zinc',
+            'uls_diesel' => 'Uls Diesel',
+            'nickel' => 'Nickel',
+            'wheat' => 'Wheat',
+            'sugar' => 'Sugar',
+            'gasoline' => 'Gasoline',
+            'coffee' => 'Coffee',
+            'lean_hogs' => 'Lean Hogs',
+            'hrw_wheat' => 'Hrw Wheat',
+            'cotton' => 'Cotton',
         ];
     }
 }

@@ -29,13 +29,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'Indicator',
-            'Russia',
-            'Ukraine',
+            'indicator',
+            'russia',
+            'ukraine',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, RUMilitaryComparison $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'Indicator' => $model->Indicator]);
+                    return Url::toRoute([$action, 'indicator' => $model->indicator]);
                  }
             ],
         ],

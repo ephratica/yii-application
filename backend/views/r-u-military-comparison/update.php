@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\RUMilitaryComparison $model */
 
-$this->title = 'Update Ru Military Comparison: ' . $model->Indicator;
+$this->title = 'Update Ru Military Comparison: ' . $model->indicator;
 $this->params['breadcrumbs'][] = ['label' => 'Ru Military Comparisons', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->Indicator, 'url' => ['view', 'Indicator' => $model->Indicator]];
+$this->params['breadcrumbs'][] = ['label' => $model->indicator, 'url' => ['view', 'indicator' => $model->indicator]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="rumilitary-comparison-update">

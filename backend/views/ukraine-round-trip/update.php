@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var backend\models\UkraineRoundTrip $model */
 
-$this->title = 'Update Ukraine Round Trip: ' . $model->Type;
+$this->title = 'Update Ukraine Round Trip: ' . $model->type;
 $this->params['breadcrumbs'][] = ['label' => 'Ukraine Round Trips', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->Type, 'url' => ['view', 'Type' => $model->Type]];
+$this->params['breadcrumbs'][] = ['label' => $model->type, 'url' => ['view', 'type' => $model->type]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="ukraine-round-trip-update">

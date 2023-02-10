@@ -15,17 +15,17 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Type') ?>
+    <?= $form->field($model, 'type') ?>
 
-    <?= $form->field($model, 'Active_military_personnel') ?>
+    <?= $form->field($model, 'active_military_personnel') ?>
 
-    <?= $form->field($model, 'Aircraft') ?>
+    <?= $form->field($model, 'aircraft') ?>
 
-    <?= $form->field($model, 'Armored_vehicles') ?>
+    <?= $form->field($model, 'armored_vehicles') ?>
 
-    <?= $form->field($model, 'Naval_fleet') ?>
+    <?= $form->field($model, 'naval_fleet') ?>
 
-    <?php // echo $form->field($model, 'Nuclear_warheads') ?>
+    <?php // echo $form->field($model, 'nuclear_warheads') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

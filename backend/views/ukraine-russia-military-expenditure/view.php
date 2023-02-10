@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var backend\models\UkraineRussiaMilitaryExpenditure $model */
 
-$this->title = $model->Year;
+$this->title = $model->year;
 $this->params['breadcrumbs'][] = ['label' => 'Ukraine Russia Military Expenditures', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'Year' => $model->Year], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'Year' => $model->Year], [
+        <?= Html::a('Update', ['update', 'year' => $model->year], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'year' => $model->year], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'Year',
-            'Ukraine',
-            'Russia',
+            'year',
+            'ukraine',
+            'russia',
         ],
     ]) ?>
 

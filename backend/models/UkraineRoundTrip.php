@@ -7,8 +7,8 @@ use Yii;
 /**
  * This is the model class for table "ukraine_round_trip".
  *
- * @property string $Type
- * @property int|null $Num
+ * @property string $type
+ * @property int|null $num
  */
 class UkraineRoundTrip extends \yii\db\ActiveRecord
 {
@@ -26,10 +26,10 @@ class UkraineRoundTrip extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Type'], 'required'],
-            [['Num'], 'integer'],
-            [['Type'], 'string', 'max' => 255],
-            [['Type'], 'unique'],
+            [['type'], 'required'],
+            [['num'], 'integer'],
+            [['type'], 'string', 'max' => 20],
+            [['type'], 'unique'],
         ];
     }
 
@@ -39,8 +39,8 @@ class UkraineRoundTrip extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Type' => 'Type',
-            'Num' => 'Num',
+            'type' => 'Type',
+            'num' => 'Num',
         ];
     }
 }

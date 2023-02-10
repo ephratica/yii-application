@@ -51,9 +51,9 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
     public function actionIndex()
     {
         $model = UkraineRussiaMilitaryExpenditure::find()->asArray()->all();
-        $year = ArrayHelper::getColumn($model, 'Year');
-        $russia = ArrayHelper::getColumn($model, 'Russia');
-        $ukraine = ArrayHelper::getColumn($model, 'Ukraine');
+        $year = ArrayHelper::getColumn($model, 'year');
+        $russia = ArrayHelper::getColumn($model, 'russia');
+        $ukraine = ArrayHelper::getColumn($model, 'ukraine');
 
         return $this->render('index', [
             'year' => $year,
@@ -70,13 +70,13 @@ class UkraineRussiaMilitaryExpenditureController extends Controller
     /**
      * Finds the UkraineRussiaMilitaryExpenditure model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param int $Year Year
+     * @param int $year Year
      * @return UkraineRussiaMilitaryExpenditure the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Year)
+    protected function findModel($year)
     {
-        if (($model = UkraineRussiaMilitaryExpenditure::findOne(['Year' => $Year])) !== null) {
+        if (($model = UkraineRussiaMilitaryExpenditure::findOne(['year' => $year])) !== null) {
             return $model;
         }
 

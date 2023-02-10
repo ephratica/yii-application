@@ -17,8 +17,8 @@ class MilitaryCompareTotalSearch extends MilitaryCompareTotal
     public function rules()
     {
         return [
-            [['Type'], 'safe'],
-            [['Active_military_personnel', 'Aircraft', 'Armored_vehicles', 'Naval_fleet', 'Nuclear_warheads'], 'integer'],
+            [['type'], 'safe'],
+            [['active_military_personnel', 'aircraft', 'armored_vehicles', 'naval_fleet', 'nuclear_warheads'], 'integer'],
         ];
     }
 
@@ -58,14 +58,14 @@ class MilitaryCompareTotalSearch extends MilitaryCompareTotal
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'Active_military_personnel' => $this->Active_military_personnel,
-            'Aircraft' => $this->Aircraft,
-            'Armored_vehicles' => $this->Armored_vehicles,
-            'Naval_fleet' => $this->Naval_fleet,
-            'Nuclear_warheads' => $this->Nuclear_warheads,
+            'active_military_personnel' => $this->active_military_personnel,
+            'aircraft' => $this->aircraft,
+            'armored_vehicles' => $this->armored_vehicles,
+            'naval_fleet' => $this->naval_fleet,
+            'nuclear_warheads' => $this->nuclear_warheads,
         ]);
 
-        $query->andFilterWhere(['like', 'Type', $this->Type]);
+        $query->andFilterWhere(['like', 'type', $this->type]);
 
         return $dataProvider;
     }

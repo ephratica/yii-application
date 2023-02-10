@@ -61,14 +61,14 @@ class UkraineRoundTripController extends Controller
 
     /**
      * Displays a single UkraineRoundTrip model.
-     * @param string $Type Type
+     * @param string $type Type
      * @return string
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($Type)
+    public function actionView($type)
     {
         return $this->render('view', [
-            'model' => $this->findModel($Type),
+            'model' => $this->findModel($type),
         ]);
     }
 
@@ -83,7 +83,7 @@ class UkraineRoundTripController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'Type' => $model->Type]);
+                return $this->redirect(['view', 'type' => $model->type]);
             }
         } else {
             $model->loadDefaultValues();
@@ -97,16 +97,16 @@ class UkraineRoundTripController extends Controller
     /**
      * Updates an existing UkraineRoundTrip model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $Type Type
+     * @param string $type Type
      * @return string|\yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($Type)
+    public function actionUpdate($type)
     {
-        $model = $this->findModel($Type);
+        $model = $this->findModel($type);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'Type' => $model->Type]);
+            return $this->redirect(['view', 'type' => $model->type]);
         }
 
         return $this->render('update', [
@@ -117,13 +117,13 @@ class UkraineRoundTripController extends Controller
     /**
      * Deletes an existing UkraineRoundTrip model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $Type Type
+     * @param string $type Type
      * @return \yii\web\Response
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($Type)
+    public function actionDelete($type)
     {
-        $this->findModel($Type)->delete();
+        $this->findModel($type)->delete();
 
         return $this->redirect(['index']);
     }
@@ -131,13 +131,13 @@ class UkraineRoundTripController extends Controller
     /**
      * Finds the UkraineRoundTrip model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param string $Type Type
+     * @param string $type Type
      * @return UkraineRoundTrip the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($Type)
+    protected function findModel($type)
     {
-        if (($model = UkraineRoundTrip::findOne(['Type' => $Type])) !== null) {
+        if (($model = UkraineRoundTrip::findOne(['type' => $type])) !== null) {
             return $model;
         }
 

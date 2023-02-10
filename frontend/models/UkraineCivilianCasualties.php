@@ -7,9 +7,9 @@ use Yii;
 /**
  * This is the model class for table "ukraine_civilian_casualties".
  *
- * @property string $Killed_Injured
- * @property int|null $Total
- * @property int|null $Children
+ * @property string $type
+ * @property int|null $total
+ * @property int|null $children
  */
 class UkraineCivilianCasualties extends \yii\db\ActiveRecord
 {
@@ -27,10 +27,10 @@ class UkraineCivilianCasualties extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['Killed_Injured'], 'required'],
-            [['Total', 'Children'], 'integer'],
-            [['Killed_Injured'], 'string', 'max' => 255],
-            [['Killed_Injured'], 'unique'],
+            [['type'], 'required'],
+            [['total', 'children'], 'integer'],
+            [['type'], 'string', 'max' => 10],
+            [['type'], 'unique'],
         ];
     }
 
@@ -40,9 +40,9 @@ class UkraineCivilianCasualties extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'Killed_Injured' => 'Killed Injured',
-            'Total' => 'Total',
-            'Children' => 'Children',
+            'type' => 'Type',
+            'total' => 'Total',
+            'children' => 'Children',
         ];
     }
 }

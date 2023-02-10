@@ -34,7 +34,9 @@ class Aid extends \yii\db\ActiveRecord
             [['id', 'country', 'type'], 'required'],
             [['date'], 'safe'],
             [['value'], 'integer'],
-            [['id', 'country', 'type'], 'string', 'max' => 255],
+            [['id'], 'string', 'max' => 5],
+            [['country'], 'string', 'max' => 50],
+            [['type'], 'string', 'max' => 20],
             [['id'], 'unique'],
             [['country'], 'exist', 'skipOnError' => true, 'targetClass' => AllCountries::class, 'targetAttribute' => ['country' => 'country']],
         ];

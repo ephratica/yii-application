@@ -28,7 +28,7 @@ class SanctionType extends \yii\db\ActiveRecord
         return [
             [['type', 'value'], 'required'],
             [['value'], 'integer'],
-            [['type'], 'string', 'max' => 255],
+            [['type'], 'string', 'max' => 10],
             [['type'], 'unique'],
         ];
     }

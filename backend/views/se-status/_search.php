@@ -15,53 +15,53 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'Date') ?>
+    <?= $form->field($model, 'date') ?>
 
-    <?= $form->field($model, 'NATURAL_GAS') ?>
+    <?= $form->field($model, 'natural_gas') ?>
 
-    <?= $form->field($model, 'GOLD') ?>
+    <?= $form->field($model, 'gold') ?>
 
-    <?= $form->field($model, 'WTI_CRUDE') ?>
+    <?= $form->field($model, 'wti_crude') ?>
 
-    <?= $form->field($model, 'BRENT_CRUDE') ?>
+    <?= $form->field($model, 'brent_crude') ?>
 
-    <?php // echo $form->field($model, 'SOYBEANS') ?>
+    <?php // echo $form->field($model, 'soybeans') ?>
 
-    <?php // echo $form->field($model, 'CORN') ?>
+    <?php // echo $form->field($model, 'corn') ?>
 
-    <?php // echo $form->field($model, 'COPPER') ?>
+    <?php // echo $form->field($model, 'copper') ?>
 
-    <?php // echo $form->field($model, 'SILVER') ?>
+    <?php // echo $form->field($model, 'silver') ?>
 
-    <?php // echo $form->field($model, 'LOW_SULPHUR_GAS_OIL') ?>
+    <?php // echo $form->field($model, 'low_sulphur_gas_oil') ?>
 
-    <?php // echo $form->field($model, 'LIVE_CATTLE') ?>
+    <?php // echo $form->field($model, 'live_cattle') ?>
 
-    <?php // echo $form->field($model, 'SOYBEAN_OIL') ?>
+    <?php // echo $form->field($model, 'soybean_oil') ?>
 
-    <?php // echo $form->field($model, 'ALUMINIUM') ?>
+    <?php // echo $form->field($model, 'aluminium') ?>
 
-    <?php // echo $form->field($model, 'SOYBEAN_MEAL') ?>
+    <?php // echo $form->field($model, 'soybean_meal') ?>
 
-    <?php // echo $form->field($model, 'ZINC') ?>
+    <?php // echo $form->field($model, 'zinc') ?>
 
-    <?php // echo $form->field($model, 'ULS_DIESEL') ?>
+    <?php // echo $form->field($model, 'uls_diesel') ?>
 
-    <?php // echo $form->field($model, 'NICKEL') ?>
+    <?php // echo $form->field($model, 'nickel') ?>
 
-    <?php // echo $form->field($model, 'WHEAT') ?>
+    <?php // echo $form->field($model, 'wheat') ?>
 
-    <?php // echo $form->field($model, 'SUGAR') ?>
+    <?php // echo $form->field($model, 'sugar') ?>
 
-    <?php // echo $form->field($model, 'GASOLINE') ?>
+    <?php // echo $form->field($model, 'gasoline') ?>
 
-    <?php // echo $form->field($model, 'COFFEE') ?>
+    <?php // echo $form->field($model, 'coffee') ?>
 
-    <?php // echo $form->field($model, 'LEAN_HOGS') ?>
+    <?php // echo $form->field($model, 'lean_hogs') ?>
 
-    <?php // echo $form->field($model, 'HRW_WHEAT') ?>
+    <?php // echo $form->field($model, 'hrw_wheat') ?>
 
-    <?php // echo $form->field($model, 'COTTON') ?>
+    <?php // echo $form->field($model, 'cotton') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

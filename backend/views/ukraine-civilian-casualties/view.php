@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var backend\models\UkraineCivilianCasualties $model */
 
-$this->title = $model->Killed_Injured;
+$this->title = $model->type;
 $this->params['breadcrumbs'][] = ['label' => 'Ukraine Civilian Casualties', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'Killed_Injured' => $model->Killed_Injured], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'Killed_Injured' => $model->Killed_Injured], [
+        <?= Html::a('Update', ['update', 'type' => $model->type], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'type' => $model->type], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,9 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'Killed_Injured',
-            'Total',
-            'Children',
+            'type',
+            'total',
+            'children',
         ],
     ]) ?>
 

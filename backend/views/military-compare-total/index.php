@@ -29,16 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'Type',
-            'Active_military_personnel',
-            'Aircraft',
-            'Armored_vehicles',
-            'Naval_fleet',
-            //'Nuclear_warheads',
+            'type',
+            'active_military_personnel',
+            'aircraft',
+            'armored_vehicles',
+            'naval_fleet',
+            //'nuclear_warheads',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, MilitaryCompareTotal $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'Type' => $model->Type]);
+                    return Url::toRoute([$action, 'type' => $model->type]);
                  }
             ],
         ],
