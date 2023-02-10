@@ -32,7 +32,7 @@ use Yii;
  * @property float|null $hrw_wheat
  * @property float|null $cotton
  */
-class SeStatus2 extends \yii\db\ActiveRecord
+class SeStatus extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
