@@ -46,6 +46,27 @@ $this->params['breadcrumbs'][] = $this->title;
                     'type' => 'shadow'
                 ],
             ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    //'magicType' => [
+                    //    'show' => true,
+                    //    'type' => ['line','bar']
+                    //],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                ]
+            ],
             'yAxis' => [
                 'type' => 'category',
                 'data' => $type

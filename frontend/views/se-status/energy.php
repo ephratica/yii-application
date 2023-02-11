@@ -46,15 +46,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 'data' => ['Natural Gas', 'Wti Crude','Brent Crude', 'Low Sulphur Gas Oil', 'Soybean Oil','Uls Diesel','Gasoline']
             ],
             'grid' => [
-                'left' => '3%',
+                'left' => '0.6%',
                 'right' => '4%',
-                'bottom' => '3%',
-                'containLabel' => true
+                'bottom' => '5%',
+                'containLabel' => false
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
-                ]
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                    ],
+                'top' => '5%',
             ],
             'xAxis' => [
                 'name' => 'DATE',
@@ -70,44 +87,65 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'Natural Gas',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $natural_gas
-                ],
-                [
-                    'name' => 'Wti Crude',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $wti_crude
-                ],
-                [
-                    'name' => 'Brent Crude',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $brent_crude
-                ],
-                [
-                    'name' => 'Low Sulphur Gas Oil',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $low_sulphur_gas_oil
+                    'data' => $natural_gas,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Soybean Oil',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $soybean_oil
+                    'data' => $soybean_oil,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                ],
+                [
+                    'name' => 'Wti Crude',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $wti_crude,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                ],
+                [
+                    'name' => 'Brent Crude',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $brent_crude,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Uls Diesel',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $uls_diesel
+                    'data' => $uls_diesel,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Gasoline',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $gasoline
-                ]
+                    'data' => $gasoline,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                    ],
+                [
+                    'name' => 'Low Sulphur Gas Oil',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $low_sulphur_gas_oil,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                ],
             ]
         ]
     ]

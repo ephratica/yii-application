@@ -42,6 +42,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'tooltip' => [
                 'trigger' => 'axis'
             ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ]
+                ]
+            ],
             'legend' => [
             ],
             'grid' => [
@@ -67,13 +81,19 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'Russia',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $russia
+                    'data' => $russia,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Ukraine',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $ukraine
+                    'data' => $ukraine,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]
@@ -107,6 +127,23 @@ $this->params['breadcrumbs'][] = $this->title;
             'tooltip' => [
                 'trigger' => 'axis'
             ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                ]
+            ],
             'legend' => [
             ],
             'grid' => [
@@ -131,12 +168,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'name' => 'Russia',
                     'type' => 'bar',
-                    'data' => $russia
+                    'data' => $russia,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Ukraine',
                     'type' => 'bar',
-                    'data' => $ukraine
+                    'data' => $ukraine,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]

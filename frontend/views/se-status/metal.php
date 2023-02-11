@@ -54,7 +54,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [
@@ -71,37 +87,55 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'COPPER',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $copper
+                    'data' => $copper,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'SILVER',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $silver
+                    'data' => $silver,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'GOLD',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $gold
+                    'data' => $gold,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'ALUMINIUM',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $aluminium
+                    'data' => $aluminium,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'ZINC',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $zinc
+                    'data' => $zinc,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'NICKEL',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $nickel
+                    'data' => $nickel,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]
@@ -125,13 +159,34 @@ $this->params['breadcrumbs'][] = $this->title;
     'pluginOptions' => [
         'option' => [
             'title' => [
-                'text' => 'NICKEL'
+                'text' => 'NICKEL prices fluctuate'
             ],
             //'grid' => [
             //    'height' => 20
             //],
             'tooltip' => [
                 'trigger' => 'axis'
+            ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                ]
             ],
             'xAxis' => [
                 'type' => 'category',

@@ -52,7 +52,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [
@@ -70,31 +83,46 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'Live Cattle',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $live_cattle
+                    'data' => $live_cattle,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Soybean Meal',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $soybean_meal
+                    'data' => $soybean_meal,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Sugar',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $sugar
+                    'data' => $sugar,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Coffee',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $coffee
+                    'data' => $coffee,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Lean Hogs',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $lean_hogs
+                    'data' => $lean_hogs,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]

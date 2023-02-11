@@ -46,14 +46,30 @@ $this->params['breadcrumbs'][] = $this->title;
                 'data' => ['Soybeans', 'Corn', 'Wheat', 'Hrw Wheat', 'Cotton']
             ],
             'grid' => [
-                'left' => '3%',
+                'left' => '0.6%',
                 'right' => '4%',
-                'bottom' => '3%',
-                'containLabel' => true
+                'bottom' => '5%',
+                'containLabel' => false
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [
@@ -68,34 +84,49 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'series' => [
                 [
-                    'name' => 'Soybeans',
+                    'name' => 'Cotton',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $soybeans
+                    'data' => $cotton,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Corn',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $corn
+                    'data' => $corn,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Wheat',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $wheat
+                    'data' => $wheat,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Hrw Wheat',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $hrw_wheat
+                    'data' => $hrw_wheat,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
-                    'name' => 'Cotton',
+                    'name' => 'Soybeans',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $cotton
+                    'data' => $soybeans,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]

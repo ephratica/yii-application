@@ -42,6 +42,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'tooltip' => [
                 'trigger' => 'axis'
             ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ]
+                ]
+            ],
             'legend' => [
             ],
             'grid' => [
@@ -66,31 +80,46 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'Active military personnel',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $personnel
+                    'data' => $personnel,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Aircraft',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $aircraft
+                    'data' => $aircraft,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Armored vehicles',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $vehicles
+                    'data' => $vehicles,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Naval fleet',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $fleet
+                    'data' => $fleet,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Nuclear warheads',
                     'type' => 'bar',
                     'stack' => 'PRICE',
-                    'data' => $nuclear
+                    'data' => $nuclear,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]
@@ -124,6 +153,27 @@ $this->params['breadcrumbs'][] = $this->title;
             'tooltip' => [
                 'trigger' => 'axis'
             ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    //'magicType' => [
+                    //    'show' => true,
+                    //    'type' => ['line','bar','stack','tied','pie']
+                    //],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                ]
+            ],
             'legend' => [
             ],
             'grid' => [
@@ -147,27 +197,42 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'name' => 'Active military personnel',
                     'type' => 'bar',
-                    'data' => $personnel
+                    'data' => $personnel,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Aircraft',
                     'type' => 'bar',
-                    'data' => $aircraft
+                    'data' => $aircraft,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Armored vehicles',
                     'type' => 'bar',
-                    'data' => $vehicles
+                    'data' => $vehicles,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Naval fleet',
                     'type' => 'bar',
-                    'data' => $fleet
+                    'data' => $fleet,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Nuclear warheads',
                     'type' => 'bar',
-                    'data' => $nuclear
+                    'data' => $nuclear,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]

@@ -50,7 +50,19 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [

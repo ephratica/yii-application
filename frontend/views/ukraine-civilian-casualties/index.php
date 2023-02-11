@@ -52,7 +52,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [
@@ -68,12 +84,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'name' => 'total',
                     'type' => 'bar',
-                    'data' => $total
+                    'data' => $total,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'children',
                     'type' => 'bar',
-                    'data' => $children
+                    'data' => $children,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]

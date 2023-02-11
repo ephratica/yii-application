@@ -53,7 +53,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'yAxis' => [
@@ -94,6 +110,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ]
 ]); ?>
-
-
 </div>

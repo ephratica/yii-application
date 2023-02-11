@@ -18,6 +18,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 <div class="aid-type-bar">
+    <h1><?= Html::encode($this->title) ?></h1>
     <?= ECharts::widget([
     'responsive' => true,
     'options' => [
@@ -46,6 +47,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'axisPointer' => [
                     'type' => 'shadow'
                 ],
+            ],
+            'toolbox' => [
+                'feature' => [
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
+                ]
             ],
             'yAxis' => [
                 'type' => 'category',

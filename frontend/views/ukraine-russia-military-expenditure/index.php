@@ -53,7 +53,23 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'toolbox' => [
                 'feature' => [
-                    'saveAsImage' => []
+                    'dataView' => [
+                        'show' => true,
+                        'readOnly' => true
+                    ],
+                    'magicType' => [
+                        'show' => true,
+                        'type' => ['line','bar','stack']
+                    ],
+                    'restore' => [
+                        'show' => true
+                    ],
+                    'saveAsImage' => [
+                        'show' => true
+                    ],
+                    'dataZoom' => [
+                        'show' => true
+                    ]
                 ]
             ],
             'xAxis' => [
@@ -70,17 +86,22 @@ $this->params['breadcrumbs'][] = $this->title;
                     'name' => 'Ukraine',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $ukraine
+                    'data' => $ukraine,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ],
                 [
                     'name' => 'Russia',
                     'type' => 'line',
                     'stack' => 'PRICE',
-                    'data' => $russia
+                    'data' => $russia,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
                 ]
             ]
         ]
     ]
 ]); ?>
-
 </div>

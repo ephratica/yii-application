@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'feature' => [
                 'dataView' => [
                     'show' => true,
-                    'readOnly' => false
+                    'readOnly' => true
                 ],
                 'magicType' => [
                     'show' => true,
@@ -62,7 +62,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'saveAsImage' => [
                     'show' => true
-                ]
+                ],
             ]
         ],
         'legend' => [
@@ -101,13 +101,19 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'name' => 'personnel total',
                 'type' => 'bar',
-                'data' => $total
+                'data' => $total,
+                'emphasis' => [
+                    'focus' => 'series'
+                ]
             ],
             [
                 'name' => 'personnel increase',
                 'type' => 'line',
                 'yAxisIndex' => 1,
-                'data' => $increase
+                'data' => $increase,
+                'emphasis' => [
+                    'focus' => 'series'
+                ]
             ]
         ]
     ]
