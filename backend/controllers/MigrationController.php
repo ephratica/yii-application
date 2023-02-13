@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the implementing the CRUD actions for table "Migration".
+*/
 namespace backend\controllers;
 
 use backend\models\Migration;

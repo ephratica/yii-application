@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "ukraine_russia_military_expenditure".
+*/
 namespace backend\models;
 
 use Yii;

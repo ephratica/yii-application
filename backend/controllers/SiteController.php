@@ -1,10 +1,5 @@
 <?php
 
-/**
-*  Team: Untitled, NKU
-*  Coding by Roslin 2013743
-*  This is the controller class for our site.
-*/
 
 namespace backend\controllers;
 

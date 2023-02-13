@@ -1,8 +1,8 @@
 <?php
 /**
-* Team: Untitled, NKU
-* Coding by TephrocactusHC 2012026
-* This is the model class for table "comment".
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "comment".
 */
 namespace frontend\models;
 
@@ -22,7 +22,7 @@ class CommentSearch extends Comment
     {
         return [
             [['comment_id'], 'integer'],
-            [['comment'], 'safe'],
+            [['username', 'discuss', 'comment_time'], 'safe'],
         ];
     }
 
@@ -63,9 +63,11 @@ class CommentSearch extends Comment
         // grid filtering conditions
         $query->andFilterWhere([
             'comment_id' => $this->comment_id,
+            'comment_time' => $this->comment_time,
         ]);
 
-        $query->andFilterWhere(['like', 'comment', $this->comment]);
+        $query->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'discuss', $this->discuss]);
 
         return $dataProvider;
     }

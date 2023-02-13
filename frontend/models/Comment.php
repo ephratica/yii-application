@@ -1,9 +1,8 @@
-
 <?php
 /**
-* Team: Untitled, NKU
-* Coding by TephrocactusHC 2012026
-* This is the model class for table "comment".
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "comment".
 */
 namespace frontend\models;
 
@@ -13,7 +12,9 @@ use Yii;
  * This is the model class for table "comment".
  *
  * @property int $comment_id
- * @property string $comment
+ * @property string $username
+ * @property string $discuss
+ * @property string $comment_time
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -31,8 +32,10 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['comment'], 'required'],
-            [['comment'], 'string'],
+            [['username', 'discuss', 'comment_time'], 'required'],
+            [['discuss'], 'string'],
+            [['comment_time'], 'safe'],
+            [['username'], 'string', 'max' => 255],
         ];
     }
 
@@ -43,7 +46,9 @@ class Comment extends \yii\db\ActiveRecord
     {
         return [
             'comment_id' => 'Comment ID',
-            'comment' => 'Comment',
+            'username' => 'Username',
+            'discuss' => 'Discuss',
+            'comment_time' => 'Comment Time',
         ];
     }
 }

@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "comment".
+*/
 namespace frontend\controllers;
 
 use frontend\models\Comment;
@@ -70,8 +74,10 @@ class CommentController extends Controller
         $model = new Comment();
 
         if ($this->request->isPost) {
+            $username =' . Yii::$app->user->identity->username . ';
+            $comment_time=time()-3600;
             if ($model->load($this->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'comment_id' => $model->comment_id]);
+                return $this->redirect([['view', 'comment_id' => $model->comment_id],['view', 'comment_id' => $model->comment_id]]);
             }
         } else {
             $model->loadDefaultValues();

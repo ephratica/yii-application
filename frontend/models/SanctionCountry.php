@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "snction_countyr".
+*/
 namespace frontend\models;
 
 use Yii;
