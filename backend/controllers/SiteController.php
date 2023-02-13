@@ -308,14 +308,14 @@ class SiteController extends Controller
         $model = new UploadForm();
 
         if (Yii::$app->request->isPost) {
-            $model->imageFiles = UploadedFile::getInstances($model, 'imageFiles');
+            $model->dataFiles = UploadedFile::getInstances($model, 'dataFiles');
             if ($model->upload()) {
                 // 文件上传成功，在数据库中增加一行记录
-                $files = new Files();
-                foreach ($model->imageFiles as $file) {
+                foreach ($model->dataFiles as $file) {
+                    $files = new Files();
                     $files->name = $file->baseName . '.' . $file->extension;
+                    $files->save();
                 }
-                $files->save();
                 // 暂时先跳转回index，后续需要界面(todo)
                 return $this->goHome();
             }

@@ -11,20 +11,20 @@ class UploadForm extends Model
     /**
      * @var UploadedFile[]
      */
-    public $imageFiles;
+    public $dataFiles;
 
     public function rules()
     {
         return [
-            [['imageFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg', 'maxFiles' => 4],
+            [['dataFiles'], 'file', 'skipOnEmpty' => false, 'extensions' => 'csv, xls, xlsx, zip, rar', 'maxFiles' => 10],
         ];
     }
     
     public function upload()
     {
         if ($this->validate()) { 
-            foreach ($this->imageFiles as $file) {
-                $file->saveAs('D:/phpstudy_pro/WWW/advanced/uploads/' . $file->baseName . '.' . $file->extension);
+            foreach ($this->dataFiles as $file) {
+                $file->saveAs('../../uploads/' . $file->baseName . '.' . $file->extension);
             }
             return true;
         } else {
