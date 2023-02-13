@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the search view of table 'se_status'.
+*/
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 

@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the model class for table "se_status".
+*/
+
 namespace backend\models;
 
 use Yii;

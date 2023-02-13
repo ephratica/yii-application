@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the model class for table "aid".
+*/
+
 namespace backend\models;
 
 use Yii;

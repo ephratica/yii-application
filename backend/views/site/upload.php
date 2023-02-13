@@ -1,4 +1,11 @@
 <?php
+
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the view of uploading files in backend.
+*/
+
 use yii\widgets\ActiveForm;
 ?>
 

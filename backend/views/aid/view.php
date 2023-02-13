@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the view of a record in table 'aid'.
+*/
+
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
