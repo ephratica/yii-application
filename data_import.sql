@@ -1432,6 +1432,8 @@ CREATE TABLE `comment`  (
 -- Records of comment
 -- ----------------------------
 INSERT INTO `comment` VALUES (1, '这个网站实在是太棒啦！');
+INSERT INTO `comment` VALUES (2, '太厉害啦！把网站做的这么好看！');
+INSERT INTO `comment` VALUES (3, '666！大佬求带飞！');
 
 -- ----------------------------
 -- Table structure for files

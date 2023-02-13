@@ -1,5 +1,10 @@
-<?php
 
+<?php
+/**
+* Team: Untitled, NKU
+* Coding by TephrocactusHC 2012026
+* This is the model class for table "comment".
+*/
 namespace frontend\models;
 
 use Yii;

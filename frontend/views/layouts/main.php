@@ -91,7 +91,7 @@ AppAsset::register($this);
             ]
         ],
         [
-            'label' => '反馈模块', 
+            'label' => '意见与反馈', 
             'items' => [
                 ['label' => '网友评论', 'url' => ['/comment/index']],
                 ['label' => '提交反馈', 'url' => ['/comment/create']]
