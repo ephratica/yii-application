@@ -14,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="card bg-light border-light mt-2 mb-3">
       <div class="card-body">
         <h5 class="card-title">俄罗斯乌克兰战争动态新闻网</h5>
-        <p class="card-text">本网站balabalabala</p>
+        <p class="card-text">本网站建于2023年2月</p>
       </div>
     </div>
 
