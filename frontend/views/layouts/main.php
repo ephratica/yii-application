@@ -9,7 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
-use kartik\bs4dropdown\Dropdown;
+use kartik\bs5dropdown\Dropdown;
 
 AppAsset::register($this);
 ?>
@@ -37,9 +37,9 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
-        ['label' => '外交地图', 'url' => ['/site/world']],
+        ['label' => '数据地图', 'url' => ['/site/world']],
         [
-            'label' => '经济数据', 'url' => ['/site/charts'],
+            'label' => '经济数据', //'url' => ['/site/charts'],
             'items' => [
                 ['label' => '食物', 'url' => ['/se-status/food']],
                 ['label' => '能源', 'url' => ['/se-status/energy']],
@@ -47,11 +47,50 @@ AppAsset::register($this);
                 ['label' => '作物', 'url' => ['/se-status/crop']]
             ]
         ],
-        ['label' => '关于', 'url' => ['/site/about']],
+        [
+            'label' => '军事数据',
+            'items' => [
+                ['label' => '军事能力总体对比', 'url' => ['/military-compare-total/index']],
+                ['label' => '军事能力详细对比', 'url' => ['/r-u-military-comparison/index']],
+                ['label' => '俄乌双方军事投入', 'url' => ['/ukraine-russia-military-expenditure/index']],
+                ['label' => '乌克兰平民伤亡情况', 'url' => ['/ukraine-civilian-casualties/index']],
+                ['label' => '乌克兰往返情况', 'url' => ['/ukraine-round-trip/index']],
+                [
+                    'label' => '俄罗斯损失',
+                    'items' => [
+                        ['label' => '设备损失','url' => ['/russia-loss/equipment']],
+                        ['label' => '人员损失','url' => ['/russia-loss/personnel']]
+                    ]
+                ]
+            ]  
+        ],
+        [
+            'label' => '外交数据',
+            'items' => [
+                [
+                    'label' => '援助数据', 
+                    'items' => [
+                        ['label' => '各国对乌克兰的援助(国家)','url' => ['/aid/country']],
+                        ['label' => '各国对乌克兰的援助(时间)','url' => ['/aid/date']],
+                        ['label' => '各国对乌克兰的援助(类型)','url' => ['/aid/type']]
+                    ]
+                    ],
+                [
+                    'label' => '制裁数据',
+                    'items' => [
+                        ['label' => '各国对俄罗斯的制裁(国家)','url' => ['/sanction-country/index']],
+                        ['label' => '各国对俄罗斯的制裁(时间)','url' => ['/sanction-date/index']],
+                        ['label' => '各国对俄罗斯的制裁(类型)','url' => ['/sanction-type/index']]
+                    ]
+                ]
+            ]
+        ],
+        ['label' => '关于我们', 'url' => ['/site/about']],
     ];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
+        'dropdownClass' => Dropdown::classname(), 
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {

@@ -80,6 +80,15 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'series' => [
                 [
+                    'name' => 'Sugar',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $sugar,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                ],
+                [
                     'name' => 'Live Cattle',
                     'type' => 'line',
                     'stack' => 'PRICE',
@@ -93,15 +102,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     'type' => 'line',
                     'stack' => 'PRICE',
                     'data' => $soybean_meal,
-                    'emphasis' => [
-                        'focus' => 'series'
-                    ]
-                ],
-                [
-                    'name' => 'Sugar',
-                    'type' => 'line',
-                    'stack' => 'PRICE',
-                    'data' => $sugar,
                     'emphasis' => [
                         'focus' => 'series'
                     ]
