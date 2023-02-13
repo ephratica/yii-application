@@ -18,7 +18,7 @@ class CommentSearch extends Comment
     {
         return [
             [['comment_id'], 'integer'],
-            [['username', 'discuss', 'time'], 'safe'],
+            [['comment'], 'safe'],
         ];
     }
 
@@ -59,11 +59,9 @@ class CommentSearch extends Comment
         // grid filtering conditions
         $query->andFilterWhere([
             'comment_id' => $this->comment_id,
-            'time' => $this->time,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'discuss', $this->discuss]);
+        $query->andFilterWhere(['like', 'comment', $this->comment]);
 
         return $dataProvider;
     }

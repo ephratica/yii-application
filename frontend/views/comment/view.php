@@ -30,9 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'comment_id',
-            'username',
-            'discuss:ntext',
-            'time',
+            'comment:ntext',
         ],
     ]) ?>
 

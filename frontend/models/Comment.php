@@ -8,9 +8,7 @@ use Yii;
  * This is the model class for table "comment".
  *
  * @property int $comment_id
- * @property string $username
- * @property string $discuss
- * @property string $time
+ * @property string $comment
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -28,10 +26,8 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['username', 'discuss', 'time'], 'required'],
-            [['discuss'], 'string'],
-            [['time'], 'safe'],
-            [['username'], 'string', 'max' => 255],
+            [['comment'], 'required'],
+            [['comment'], 'string'],
         ];
     }
 
@@ -42,9 +38,7 @@ class Comment extends \yii\db\ActiveRecord
     {
         return [
             'comment_id' => 'Comment ID',
-            'username' => 'Username',
-            'discuss' => 'Discuss',
-            'time' => 'Time',
+            'comment' => 'Comment',
         ];
     }
 }
