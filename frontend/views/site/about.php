@@ -31,7 +31,12 @@ $this->params['breadcrumbs'][] = $this->title;
   <div class="card bg-light border-light h-100">
       <div class="card-body">
         <h5 class="card-title">陈静怡</h5>
-        <p class="card-text">https://github.com/ephratica/yii-application/tree/test/data/personel/2012885-%E9%99%88%E9%9D%99%E6%80%A1</p>
+        <p class="card-text">
+          email: ephratica@foxmail.com
+          <p>
+            <?= Html::a('下载个人作业', ['/site/files'],['class' => ['btn btn-outline-secondary']]); ?>
+          </p>
+        </p>
       </div>
     </div>
   </div>
