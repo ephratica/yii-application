@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
   <div class="card bg-light border-light h-100">
       <div class="card-body">
         <h5 class="card-title">陈静怡</h5>
-        <p class="card-text">负责了世界地图、新闻、主页等</p>
+        <p class="card-text">https://github.com/ephratica/yii-application/tree/test/data/personel/2012885-%E9%99%88%E9%9D%99%E6%80%A1</p>
       </div>
     </div>
   </div>
