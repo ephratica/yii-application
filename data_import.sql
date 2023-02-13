@@ -1418,14 +1418,13 @@ CREATE TABLE `user`  (
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'Roslin', '1WdxXAgRPeWCOQ7cHpX6Yb_KhH1n95AS', '$2y$13$BjQVge8QY.8a8NxysWKkHO1SQ.sl.fRlGJBUap3QvgjM7f2DxistS', NULL, 'roslin_v@163.com', 10, 1675739013, 1675739013, 'LExR42OJqXb2kQGJH_C5UV6c7rUBpp3X_1675739013');
 -- ----------------------------
+
 -- Table structure for comment
 -- ----------------------------
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`  (
   `comment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `discuss` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `time` datetime(0) NOT NULL,
+  `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`comment_id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
@@ -1462,11 +1461,16 @@ INSERT INTO `files` VALUES ('ukraine_round_trip.csv', 0);
 INSERT INTO `files` VALUES ('ukraine_russia_military_expenditure.csv', 0);
 INSERT INTO `files` VALUES ('作业1(2012885_陈静怡).zip', 0);
 INSERT INTO `files` VALUES ('作业1(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2011911_果丁).zip', 0);
 INSERT INTO `files` VALUES ('作业2(2012885_陈静怡).zip', 0);
 INSERT INTO `files` VALUES ('作业2(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2011911_果丁).zip', 0);
 INSERT INTO `files` VALUES ('作业3(2012885_陈静怡).zip', 0);
 INSERT INTO `files` VALUES ('作业3(2013743_林巧莹).zip', 0);
-
+INSERT INTO `files` VALUES ('作业3(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2011911_果丁).zip', 0);
 
 SET FOREIGN_KEY_CHECKS = 1;
 
