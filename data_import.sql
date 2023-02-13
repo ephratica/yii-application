@@ -1417,5 +1417,19 @@ CREATE TABLE `user`  (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES (1, 'Roslin', '1WdxXAgRPeWCOQ7cHpX6Yb_KhH1n95AS', '$2y$13$BjQVge8QY.8a8NxysWKkHO1SQ.sl.fRlGJBUap3QvgjM7f2DxistS', NULL, 'roslin_v@163.com', 10, 1675739013, 1675739013, 'LExR42OJqXb2kQGJH_C5UV6c7rUBpp3X_1675739013');
+-- ----------------------------
+-- Table structure for comment
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`  (
+  `id` int(11) NOT NULL,
+  `discuss` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of comment
+-- ----------------------------
 
 SET FOREIGN_KEY_CHECKS = 1;
+
