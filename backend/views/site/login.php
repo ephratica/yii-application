@@ -2,7 +2,7 @@
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
-/** @var \common\models\LoginForm $model */
+/** @var \common\models\LoginFormAdmin $model */
 
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'adminname')->textInput(['autofocus' => true]) ?>
 
                 <?= $form->field($model, 'password')->passwordInput() ?>
 

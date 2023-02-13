@@ -3,7 +3,7 @@
 namespace backend\models;
 
 use Yii;
-use common\models\User;
+use common\models\Admin;
 use yii\base\Model;
 
 class ResendVerificationEmailForm extends Model
@@ -24,26 +24,26 @@ class ResendVerificationEmailForm extends Model
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'exist',
-                'targetClass' => '\common\models\User',
-                'filter' => ['status' => User::STATUS_INACTIVE],
-                'message' => 'There is no user with this email address.'
+                'targetClass' => '\common\models\Admin',
+                'filter' => ['status' => Admin::STATUS_INACTIVE],
+                'message' => 'There is no admin with this email address.'
             ],
         ];
     }
 
     /**
-     * Sends confirmation email to user
+     * Sends confirmation email to admin
      *
      * @return bool whether the email was sent
      */
     public function sendEmail()
     {
-        $user = User::findOne([
+        $admin = Admin::findOne([
             'email' => $this->email,
-            'status' => User::STATUS_INACTIVE
+            'status' => Admin::STATUS_INACTIVE
         ]);
 
-        if ($user === null) {
+        if ($admin === null) {
             return false;
         }
 
@@ -51,7 +51,7 @@ class ResendVerificationEmailForm extends Model
             ->mailer
             ->compose(
                 ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
+                ['admin' => $admin]
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)

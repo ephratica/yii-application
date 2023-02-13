@@ -5,7 +5,7 @@ namespace backend\models;
 use yii\base\InvalidArgumentException;
 use yii\base\Model;
 use Yii;
-use common\models\User;
+use common\models\Admin;
 
 /**
  * Password reset form
@@ -15,9 +15,9 @@ class ResetPasswordForm extends Model
     public $password;
 
     /**
-     * @var \common\models\User
+     * @var \common\models\Admin
      */
-    private $_user;
+    private $_admin;
 
 
     /**
@@ -32,8 +32,8 @@ class ResetPasswordForm extends Model
         if (empty($token) || !is_string($token)) {
             throw new InvalidArgumentException('Password reset token cannot be blank.');
         }
-        $this->_user = User::findByPasswordResetToken($token);
-        if (!$this->_user) {
+        $this->_admin = Admin::findByPasswordResetToken($token);
+        if (!$this->_admin) {
             throw new InvalidArgumentException('Wrong password reset token.');
         }
         parent::__construct($config);
@@ -46,7 +46,7 @@ class ResetPasswordForm extends Model
     {
         return [
             ['password', 'required'],
-            ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
+            ['password', 'string', 'min' => Yii::$app->params['admin.passwordMinLength']],
         ];
     }
 
@@ -57,11 +57,11 @@ class ResetPasswordForm extends Model
      */
     public function resetPassword()
     {
-        $user = $this->_user;
-        $user->setPassword($this->password);
-        $user->removePasswordResetToken();
-        $user->generateAuthKey();
+        $admin = $this->_admin;
+        $admin->setPassword($this->password);
+        $admin->removePasswordResetToken();
+        $admin->generateAuthKey();
 
-        return $user->save(false);
+        return $admin->save(false);
     }
 }

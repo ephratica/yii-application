@@ -16,7 +16,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use common\models\LoginForm;
+use common\models\LoginFormAdmin;
 use common\models\Country;
 use common\models\Article;
 use common\models\Files;
@@ -40,12 +40,7 @@ class SiteController extends Controller
                 'only' => ['logout', 'signup', 'upload'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
-                    [
-                        'actions' => ['logout', 'upload'],
+                        'actions' => ['logout', 'signup', 'upload'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -101,7 +96,7 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new LoginForm();
+        $model = new LoginFormAdmin();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
@@ -134,7 +129,7 @@ class SiteController extends Controller
     {
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+            if ($model->sendEmail(Yii::$app->params['userEmail'])) {
                 Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
             } else {
                 Yii::$app->session->setFlash('error', 'There was an error sending your message.');

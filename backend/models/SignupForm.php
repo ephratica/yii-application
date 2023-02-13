@@ -4,14 +4,14 @@ namespace backend\models;
 
 use Yii;
 use yii\base\Model;
-use common\models\User;
+use common\models\Admin;
 
 /**
  * Signup form
  */
 class SignupForm extends Model
 {
-    public $username;
+    public $adminname;
     public $email;
     public $password;
 
@@ -22,16 +22,16 @@ class SignupForm extends Model
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['adminname', 'trim'],
+            ['adminname', 'required'],
+            ['adminname', 'unique', 'targetClass' => '\common\models\Admin', 'message' => 'This adminname has already been taken.'],
+            ['adminname', 'string', 'min' => 2, 'max' => 255],
 
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'string', 'max' => 255],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
+            ['email', 'unique', 'targetClass' => '\common\models\Admin', 'message' => 'This email address has already been taken.'],
 
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
@@ -39,7 +39,7 @@ class SignupForm extends Model
     }
 
     /**
-     * Signs user up.
+     * Signs admin up.
      *
      * @return bool whether the creating new account was successful and email was sent
      */
@@ -49,28 +49,28 @@ class SignupForm extends Model
             return null;
         }
         
-        $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
+        $admin = new Admin();
+        $admin->adminname = $this->adminname;
+        $admin->email = $this->email;
+        $admin->setPassword($this->password);
+        $admin->generateAuthKey();
+        $admin->generateEmailVerificationToken();
 
-        return $user->save() && $this->sendEmail($user);
+        return $admin->save() && $this->sendEmail($admin);
     }
 
     /**
-     * Sends confirmation email to user
-     * @param User $user user model to with email should be send
+     * Sends confirmation email to admin
+     * @param Admin $admin admin model to with email should be send
      * @return bool whether the email was sent
      */
-    protected function sendEmail($user)
+    protected function sendEmail($admin)
     {
         return Yii::$app
             ->mailer
             ->compose(
-                ['html' => 'emailVerify-html', 'text' => 'emailVerify-text'],
-                ['user' => $user]
+                ['html' => 'emailVerifyAdmin-html', 'text' => 'emailVerifyAdmin-text'],
+                ['admin' => $admin]
             )
             ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
             ->setTo($this->email)
