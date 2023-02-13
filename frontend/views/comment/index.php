@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var frontend\models\CommentSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Comments';
+$this->title = '留下宝贵意见';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="comment-index">
