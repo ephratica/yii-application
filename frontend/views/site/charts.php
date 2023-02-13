@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  This file has been abandoned.
+*/
 
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */

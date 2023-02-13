@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  This is the model for wordmap.
+*/
 
 namespace common\models;
 
