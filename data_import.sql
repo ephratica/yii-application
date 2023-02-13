@@ -1431,7 +1431,7 @@ CREATE TABLE `comment`  (
 -- ----------------------------
 -- Records of comment
 -- ----------------------------
-
+INSERT INTO `comment` VALUES (1, '这个网站实在是太棒啦！');
 
 -- ----------------------------
 -- Table structure for files
