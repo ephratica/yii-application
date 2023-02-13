@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  Add actions of wordmap and about.
+*/
 
 /**
 *  Team: Untitled, NKU

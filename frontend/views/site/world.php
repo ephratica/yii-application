@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  This is the view for maps.
+*/
 
 /** @var yii\web\View $this */
 
