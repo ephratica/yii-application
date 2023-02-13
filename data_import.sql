@@ -819,11 +819,11 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `indicator` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `indicator` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
   `russia` int NULL DEFAULT NULL,
   `ukraine` int NULL DEFAULT NULL,
   PRIMARY KEY (`indicator`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of r_u_military_comparison
@@ -875,7 +875,7 @@ CREATE TABLE `russia_loss`  (
   `personnel_total` int NULL DEFAULT NULL,
   `personnel_increase` int NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of russia_loss
@@ -912,12 +912,12 @@ INSERT INTO `russia_loss` VALUES ('2023-01-26', 3175, 6334, 2169, 452, 220, 292,
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_country`;
 CREATE TABLE `sanction_country`  (
-  `country` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `country` varchar(50) CHARACTER SET utf8 NOT NULL,
   `since_2014` int NOT NULL,
   `since_202202` int NOT NULL,
   PRIMARY KEY (`country`) USING BTREE,
   CONSTRAINT `country2` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_country
@@ -939,7 +939,7 @@ CREATE TABLE `sanction_date`  (
   `date` date NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_date
@@ -1048,10 +1048,10 @@ INSERT INTO `sanction_date` VALUES ('2022-12-22', 12634);
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_type`;
 CREATE TABLE `sanction_type`  (
-  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8 NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_type
@@ -1091,7 +1091,7 @@ CREATE TABLE `se_status`  (
   `hrw_wheat` double NULL DEFAULT NULL,
   `cotton` double NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of se_status
@@ -1331,11 +1331,11 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
   `total` int NULL DEFAULT NULL,
   `children` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_civilian_casualties
@@ -1348,10 +1348,10 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round_trip`;
 CREATE TABLE `ukraine_round_trip`  (
-  `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `type` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
   `num` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_round_trip
@@ -1368,7 +1368,7 @@ CREATE TABLE `ukraine_russia_military_expenditure`  (
   `ukraine` double NULL DEFAULT NULL,
   `russia` double NULL DEFAULT NULL,
   PRIMARY KEY (`year`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_russia_military_expenditure
@@ -1398,20 +1398,20 @@ INSERT INTO `ukraine_russia_military_expenditure` VALUES (2021, 5.94, 65.91);
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `auth_key` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `password_reset_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `auth_key` varchar(32) CHARACTER SET utf8 NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `password_reset_token` varchar(255) CHARACTER SET utf8 NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
   `status` smallint NOT NULL DEFAULT 10,
   `created_at` int NOT NULL,
   `updated_at` int NOT NULL,
-  `verification_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `verification_token` varchar(255) CHARACTER SET utf8 NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username` ASC) USING BTREE,
   UNIQUE INDEX `email`(`email` ASC) USING BTREE,
   UNIQUE INDEX `password_reset_token`(`password_reset_token` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of user
