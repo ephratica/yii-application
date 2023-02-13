@@ -1422,10 +1422,12 @@ INSERT INTO `user` VALUES (1, 'Roslin', '1WdxXAgRPeWCOQ7cHpX6Yb_KhH1n95AS', '$2y
 -- ----------------------------
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment`  (
-  `id` int(11) NOT NULL,
-  `discuss` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `discuss` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `time` datetime(0) NOT NULL,
+  PRIMARY KEY (`comment_id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of comment

@@ -10,7 +10,7 @@ use yii\grid\GridView;
 /** @var frontend\models\CommentSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = '留下宝贵意见';
+$this->title = 'Comments';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="comment-index">
@@ -29,12 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'discuss',
+            'comment_id',
+            'username',
+            'discuss:ntext',
+            'time',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Comment $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
+                    return Url::toRoute([$action, 'comment_id' => $model->comment_id]);
                  }
             ],
         ],

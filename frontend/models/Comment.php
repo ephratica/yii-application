@@ -7,8 +7,10 @@ use Yii;
 /**
  * This is the model class for table "comment".
  *
- * @property int $id
+ * @property int $comment_id
+ * @property string $username
  * @property string $discuss
+ * @property string $time
  */
 class Comment extends \yii\db\ActiveRecord
 {
@@ -26,10 +28,10 @@ class Comment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id', 'discuss'], 'required'],
-            [['id'], 'integer'],
-            [['discuss'], 'string', 'max' => 255],
-            [['id'], 'unique'],
+            [['username', 'discuss', 'time'], 'required'],
+            [['discuss'], 'string'],
+            [['time'], 'safe'],
+            [['username'], 'string', 'max' => 255],
         ];
     }
 
@@ -39,8 +41,10 @@ class Comment extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
+            'comment_id' => 'Comment ID',
+            'username' => 'Username',
             'discuss' => 'Discuss',
+            'time' => 'Time',
         ];
     }
 }

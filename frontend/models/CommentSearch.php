@@ -17,8 +17,8 @@ class CommentSearch extends Comment
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['discuss'], 'safe'],
+            [['comment_id'], 'integer'],
+            [['username', 'discuss', 'time'], 'safe'],
         ];
     }
 
@@ -58,10 +58,12 @@ class CommentSearch extends Comment
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            'comment_id' => $this->comment_id,
+            'time' => $this->time,
         ]);
 
-        $query->andFilterWhere(['like', 'discuss', $this->discuss]);
+        $query->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'discuss', $this->discuss]);
 
         return $dataProvider;
     }
