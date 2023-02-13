@@ -9,6 +9,7 @@ use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use kartik\bs4dropdown\Dropdown;
 
 AppAsset::register($this);
 ?>
@@ -37,7 +38,15 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
         ['label' => '外交地图', 'url' => ['/site/world']],
-        ['label' => '经济数据', 'url' => ['/site/charts']],
+        [
+            'label' => '经济数据', 'url' => ['/site/charts'],
+            'items' => [
+                ['label' => '食物', 'url' => ['/se-status/food']],
+                ['label' => '能源', 'url' => ['/se-status/energy']],
+                ['label' => '金属', 'url' => ['/se-status/metal']],
+                ['label' => '作物', 'url' => ['/se-status/crop']]
+            ]
+        ],
         ['label' => '关于', 'url' => ['/site/about']],
     ];
 
