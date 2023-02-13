@@ -68,9 +68,4 @@ class MilitaryCompareTotalController extends Controller
         ]);
     }
 
-    public function actionDownload()
-    {
-        // todo
-    }
-
 }

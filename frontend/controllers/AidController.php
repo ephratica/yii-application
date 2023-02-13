@@ -106,8 +106,4 @@ class AidController extends Controller
         ]);
     }
 
-    public function actionDownload()
-    {
-        // todo
-    }
 }

@@ -104,6 +104,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     ]
                 ],
                 [
+                    'name' => 'Soybean Oil',
+                    'type' => 'line',
+                    'stack' => 'PRICE',
+                    'data' => $soybean_oil,
+                    'emphasis' => [
+                        'focus' => 'series'
+                    ]
+                ],
+                [
                     'name' => 'Soybean Meal',
                     'type' => 'line',
                     'stack' => 'PRICE',

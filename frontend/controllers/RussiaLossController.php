@@ -104,9 +104,4 @@ class RussiaLossController extends Controller
         ]);
     }
 
-    public function actionDownload()
-    {
-        // todo
-    }
-
 }

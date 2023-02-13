@@ -90,7 +90,6 @@ class SeStatusController extends Controller
         $wti_crude = ArrayHelper::getColumn($model,'wti_crude');
         $brent_crude = ArrayHelper::getColumn($model,'brent_crude');
         $low_sulphur_gas_oil = ArrayHelper::getColumn($model,'low_sulphur_gas_oil');
-        $soybean_oil = ArrayHelper::getColumn($model,'soybean_oil');
         $uls_diesel = ArrayHelper::getColumn($model,'uls_diesel');
         $gasoline = ArrayHelper::getColumn($model,'gasoline');
 
@@ -100,7 +99,6 @@ class SeStatusController extends Controller
             'wti_crude' => $wti_crude,
             'brent_crude' => $brent_crude,
             'low_sulphur_gas_oil' => $low_sulphur_gas_oil,
-            'soybean_oil' => $soybean_oil,
             'uls_diesel' => $uls_diesel,
             'gasoline' => $gasoline,
         ]);
@@ -135,6 +133,7 @@ class SeStatusController extends Controller
         $model= SeStatus::find()->asArray()->all();
         $date = ArrayHelper::getColumn($model,'date');
         $live_cattle = ArrayHelper::getColumn($model,'live_cattle');
+        $soybean_oil = ArrayHelper::getColumn($model,'soybean_oil');
         $soybean_meal = ArrayHelper::getColumn($model,'soybean_meal');
         $sugar = ArrayHelper::getColumn($model,'sugar');
         $coffee = ArrayHelper::getColumn($model,'coffee');
@@ -143,16 +142,12 @@ class SeStatusController extends Controller
         return $this->render('food', [
             'date' => $date,
             'live_cattle' => $live_cattle,
+            'soybean_oil' => $soybean_oil,
             'soybean_meal' => $soybean_meal,
             'sugar' => $sugar,
             'coffee' => $coffee,
             'lean_hogs' => $lean_hogs,
         ]);
-    }
-
-    public function actionDownload()
-    {
-        // todo
     }
 
     /**

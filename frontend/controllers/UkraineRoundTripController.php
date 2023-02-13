@@ -60,11 +60,6 @@ class UkraineRoundTripController extends Controller
         ]);
     }
 
-    public function actionDownload()
-    {
-        // todo
-    }
-
     /**
      * Finds the UkraineRoundTrip model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

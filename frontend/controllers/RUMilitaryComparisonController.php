@@ -62,9 +62,4 @@ class RUMilitaryComparisonController extends Controller
         ]);
     }
 
-    public function actionDownload()
-    {
-        // todo
-    }
-
 }
