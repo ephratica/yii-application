@@ -1,0 +1,495 @@
+"id","country","date","type","value"
+"ATF1","Austria","2022-3-1","Financial","10000000"
+"ATH1","Austria","2022-2-1","Humanitarian",
+"ATH2","Austria","2022-6-1","Humanitarian",
+"ATH3","Austria","2022-5-1","Humanitarian","36900000"
+"ATH4","Austria","2022-9-1","Humanitarian",
+"ATH5","Austria","2022-9-1","Humanitarian","500000000"
+"ATH6","Austria","2022-11-1","Humanitarian","4922621"
+"ATH7","Austria","2022-11-1","Humanitarian","5000000"
+"ATH8","Austria","2022-11-1","Humanitarian",
+"ATM1","Austria","2022-3-1","Military",
+"AUH1","Australia","2022-3-1","Humanitarian","35000000"
+"AUH2","Australia","2022-3-1","Humanitarian","32600000"
+"AUH3","Australia","2022-3-1","Humanitarian","12000000"
+"AUM1","Australia","2022-3-1","Military","70000000"
+"AUM10","Australia","2022-10-1","Military",
+"AUM2","Australia","2022-3-1","Military","21000000"
+"AUM3","Australia","2022-3-1","Military","25000000"
+"AUM4","Australia","2022-4-1","Military","49000000"
+"AUM5","Australia","2022-4-1","Military","26500000"
+"AUM6","Australia","2022-4-1","Military","26700000"
+"AUM7","Australia","2022-5-1","Military","60900000"
+"AUM8","Australia","2022-7-1","Military","79500000"
+"AUM9","Australia","2022-7-1","Military","8700000"
+"BEF1","Belgium","2022-11-1","Financial","4960000"
+"BEH1","Belgium","2022-3-1","Humanitarian","3400000"
+"BEH2","Belgium","2022-3-1","Humanitarian","230000"
+"BEH3","Belgium","2022-4-1","Humanitarian","83000000"
+"BEH4","Belgium","2022-5-1","Humanitarian","29770000"
+"BEH5","Belgium","2022-7-1","Humanitarian","800000"
+"BEM1","Belgium","2022-2-1","Military","76000000"
+"BEM2","Belgium","2022-8-1","Military","8000000"
+"BEM3","Belgium","2022-9-1","Military","12000000"
+"BGH1","Bulgaria","2022-2-1","Humanitarian",
+"BGH2","Bulgaria","2022-4-1","Humanitarian","706000"
+"BGH3","Bulgaria","2022-5-1","Humanitarian",
+"BGM1","Bulgaria","2022-4-1","Military",
+"BGM2","Bulgaria","2022-5-1","Military",
+"CAF1","Canada","2022-2-1","Financial","500000000"
+"CAF2","Canada","2022-4-1","Financial","1000000000"
+"CAF3","Canada","2022-5-1","Financial","250000000"
+"CAF4","Canada","2022-6-1","Financial","200000000"
+"CAF5","Canada","2022-7-1","Financial","450000000"
+"CAF6","Canada","2022-8-1","Financial","3850000"
+"CAF7","Canada","2022-10-1","Financial","500000000"
+"CAH1","Canada","2022-1-1","Humanitarian","50000000"
+"CAH2","Canada","2022-3-1","Humanitarian","50000000"
+"CAH3","Canada","2022-4-1","Humanitarian","100000000"
+"CAH4","Canada","2022-5-1","Humanitarian","2000000"
+"CAH5","Canada","2022-6-1","Humanitarian","75000000"
+"CAH6","Canada","2022-6-1","Humanitarian","52000000"
+"CAH7","Canada","2022-6-1","Humanitarian","9700000"
+"CAH8","Canada","2022-9-1","Humanitarian","52000000"
+"CAM1","Canada","2022-1-1","Military","340000000"
+"CAM10","Canada","2022-5-1","Military","50000000"
+"CAM11","Canada","2022-6-1","Military",
+"CAM12","Canada","2022-10-1","Military","47000000"
+"CAM13","Canada","2022-11-1","Military","500000000"
+"CAM14","Canada","2022-11-1","Military","33000000"
+"CAM2","Canada","2022-2-1","Military","7000000"
+"CAM3","Canada","2022-2-1","Military",
+"CAM4","Canada","2022-2-1","Military","25000000"
+"CAM5","Canada","2022-3-1","Military",
+"CAM6","Canada","2022-3-1","Military","1000000"
+"CAM7","Canada","2022-3-1","Military","50000000"
+"CAM8","Canada","2022-4-1","Military",
+"CAM9","Canada","2022-4-1","Military","500000000"
+"CHH1","Switzerland","2022-3-1","Humanitarian","60000000"
+"CHH2","Switzerland","2022-8-1","Humanitarian","40000000"
+"CHH3","Switzerland","2022-11-1","Humanitarian","100000000"
+"CNH1","China","2022-3-1","Humanitarian","5000000"
+"CNH2","China","2022-3-1","Humanitarian","10000000"
+"CYH1","Cyprus","2022-3-1","Humanitarian","2000000"
+"CYH2","Cyprus","2022-6-1","Humanitarian","500000"
+"CZH1","Czech Republic","2022-2-1","Humanitarian","300000000"
+"CZH2","Czech Republic","2022-3-1","Humanitarian","108000000"
+"CZH3","Czech Republic","2022-3-1","Humanitarian","10000000"
+"CZH4","Czech Republic","2022-3-1","Humanitarian","25000000"
+"CZH5","Czech Republic","2022-4-1","Humanitarian","14000000"
+"CZH6","Czech Republic","2022-5-1","Humanitarian","433000000"
+"CZH7","Czech Republic","2022-6-1","Humanitarian",
+"CZH8","Czech Republic","2022-6-1","Humanitarian","100000000"
+"CZM1","Czech Republic","2022-2-1","Military","36600000"
+"CZM10","Czech Republic","2022-3-1","Military","4500000"
+"CZM11","Czech Republic","2022-3-1","Military",
+"CZM12","Czech Republic","2022-3-1","Military","857000"
+"CZM13","Czech Republic","2022-4-1","Military",
+"CZM14","Czech Republic","2022-4-1","Military",
+"CZM15","Czech Republic","2022-4-1","Military","133000000"
+"CZM16","Czech Republic","2022-4-1","Military",
+"CZM17","Czech Republic","2022-5-1","Military",
+"CZM18","Czech Republic","2022-5-1","Military","30000000"
+"CZM19","Czech Republic","2022-10-1","Military","1801621450"
+"CZM2","Czech Republic","2022-2-1","Military","188106550"
+"CZM20","Czech Republic","2022-10-1","Military","7500000"
+"CZM21","Czech Republic","2022-10-1","Military","413193"
+"CZM22","Czech Republic","2022-11-1","Military","45000000"
+"CZM23","Czech Republic","2022-11-1","Military","41600000"
+"CZM3","Czech Republic","2022-2-1","Military","400000000"
+"CZM4","Czech Republic","2022-3-1","Military","17000000"
+"CZM5","Czech Republic","2022-3-1","Military","31500000"
+"CZM6","Czech Republic","2022-3-1","Military","24000000"
+"CZM7","Czech Republic","2022-3-1","Military",
+"CZM8","Czech Republic",,"Military","53260000"
+"CZM9","Czech Republic","2022-3-1","Military","30000000"
+"DEF1","Germany","2022-5-1","Financial","150000000"
+"DEF2","Germany","2022-5-1","Financial","1000000000"
+"DEH1","Germany","2022-5-1","Humanitarian","185000000"
+"DEH2","Germany","2022-4-1","Humanitarian","370000000"
+"DEH3","Germany","2022-4-1","Humanitarian","70000000"
+"DEH4","Germany","2022-5-1","Humanitarian","125000000"
+"DEH5","Germany","2022-9-1","Humanitarian","200000000"
+"DEH6","Germany","2022-11-1","Humanitarian","1000000000"
+"DEM1","Germany","2022-4-1","Military",
+"DEM2","Germany","2022-10-1","Military",
+"DKF1","Denmark","2022-3-1","Financial","20000000"
+"DKF2","Denmark","2022-9-1","Financial","37500000"
+"DKH1","Denmark","2022-3-1","Humanitarian","8000000"
+"DKH2","Denmark","2022-3-1","Humanitarian","20000000"
+"DKH3","Denmark","2022-3-1","Humanitarian","10000000"
+"DKH4","Denmark","2022-3-1","Humanitarian","50000000"
+"DKH5","Denmark","2022-3-1","Humanitarian","50000000"
+"DKH6","Denmark","2022-5-1","Humanitarian","155000000"
+"DKH7","Denmark","2022-8-1","Humanitarian","16000000"
+"DKH8","Denmark","2022-10-1","Humanitarian","18200000"
+"DKM1","Denmark","2022-4-1","Military","1000000000"
+"DKM2","Denmark","2022-5-1","Military","1000000000"
+"DKM3","Denmark","2022-8-1","Military","820000000"
+"DKM4","Denmark","2022-9-1","Military","974000000"
+"EEH1","Estonia","2022-7-1","Humanitarian","2070228"
+"EEH2","Estonia","2022-5-1","Humanitarian","2900000"
+"EEM1","Estonia","2022-6-1","Military","240000000"
+"EEM2","Estonia","2022-4-1","Military","5000000"
+"EEM3","Estonia","2022-2-1","Military","5300000"
+"EEM4","Estonia","2022-8-1","Military","7820000"
+"EEM5","Estonia","2022-8-1","Military","10000000"
+"EEM6","Estonia","2022-10-1","Military","61880000"
+"EIF1","European Investment Bank","2022-3-1","Financial","2000000000"
+"EIF2","European Investment Bank","2022-3-1","Financial","2500000"
+"ELH1","Greece","2022-2-1","Humanitarian",
+"ELH2","Greece","2022-3-1","Humanitarian",
+"ELH3","Greece","2022-4-1","Humanitarian",
+"ELH4","Greece","2022-4-1","Humanitarian",
+"ELM1","Greece","2022-3-1","Military",
+"ELM2","Greece","2022-5-1","Military",
+"ELM3","Greece","2022-9-1","Military",
+"ESF1","Spain","2022-6-1","Financial","100000000"
+"ESF2","Spain","2022-6-1","Financial","100000000"
+"ESH1","Spain","2022-2-1","Humanitarian","150000"
+"ESH2","Spain","2022-3-1","Humanitarian",
+"ESH3","Spain","2022-3-1","Humanitarian","23000000"
+"ESH4","Spain","2022-4-1","Humanitarian","1161542"
+"ESH5","Spain","2022-4-1","Humanitarian",
+"ESH6","Spain","2022-6-1","Humanitarian","50000000"
+"ESM1","Spain","2022-3-1","Military",
+"ESM10","Spain","2022-11-1","Military",
+"ESM2","Spain","2022-3-1","Military",
+"ESM3","Spain","2022-3-1","Military",
+"ESM4","Spain","2022-4-1","Military",
+"ESM5","Spain","2022-6-1","Military",
+"ESM6","Spain","2022-7-1","Military",
+"ESM7","Spain","2022-8-1","Military",
+"ESM8","Spain","2022-10-1","Military",
+"ESM9","Spain","2022-10-1","Military",
+"EUF1","EU (Commission and Council)","2022-2-1","Financial","1200000000"
+"EUF2","EU (Commission and Council)","2022-4-1","Financial","120000000"
+"EUF3","EU (Commission and Council)","2022-5-1","Financial","9000000000"
+"EUF4","EU (Commission and Council)","2022-5-1","Financial","18000000000"
+"EUH1","EU (Commission and Council)",,"Humanitarian",
+"EUH2","EU (Commission and Council)","2022-3-1","Humanitarian","415000000"
+"EUH3","EU (Commission and Council)","2022-4-1","Humanitarian","600000000"
+"EUH4","EU (Commission and Council)","2022-5-1","Humanitarian","200000000"
+"EUH5","EU (Commission and Council)","2022-6-1","Humanitarian","205000000"
+"EUH6","EU (Commission and Council)","2022-10-1","Humanitarian","150000000"
+"EUM1","European Peace Facility","2022-2-1","Military","500000000"
+"EUM2","European Peace Facility","2022-3-1","Military","500000000"
+"EUM3","European Peace Facility","2022-4-1","Military","500000000"
+"EUM4","European Peace Facility","2022-5-1","Military","500000000"
+"EUM5","European Peace Facility","2022-7-1","Military","500000000"
+"EUM6","European Peace Facility","2022-10-1","Military","600000000"
+"FIF1","Finland","2022-4-1","Financial","46500000"
+"FIF2","Finland","2022-9-1","Financial","35000000"
+"FIH1","Finland","2022-2-1","Humanitarian","2000000"
+"FIH10","Finland","2022-3-1","Humanitarian","711595"
+"FIH11","Finland","2022-3-1","Humanitarian",
+"FIH12","Finland","2022-4-1","Humanitarian",
+"FIH13","Finland","2022-4-1","Humanitarian",
+"FIH14","Finland","2022-7-1","Humanitarian","711595"
+"FIH15","Finland","2022-8-1","Humanitarian","711595"
+"FIH16","Finland","2022-9-1","Humanitarian","35000000"
+"FIH17","Finland","2022-10-1","Humanitarian",
+"FIH2","Finland","2022-3-1","Humanitarian","711595"
+"FIH3","Finland","2022-3-1","Humanitarian",
+"FIH4","Finland","2022-3-1","Humanitarian","711595"
+"FIH5","Finland","2022-3-1","Humanitarian",
+"FIH6","Finland","2022-3-1","Humanitarian",
+"FIH7","Finland","2022-3-1","Humanitarian",
+"FIH8","Finland","2022-3-1","Humanitarian",
+"FIH9","Finland","2022-3-1","Humanitarian","711595"
+"FIM1","Finland","2022-2-1","Military","29300000"
+"FIM2","Finland","2022-5-1","Military",
+"FIM3","Finland","2022-6-1","Military","54750000"
+"FIM4","Finland","2022-9-1","Military","8250000"
+"FIM5","Finland","2022-10-1","Military",
+"FIM6","Finland","2022-10-1","Military","30000000"
+"FIM7","Finland","2022-11-1","Military","55600000"
+"FRF1","France","2022-2-1","Financial","200000000"
+"FRF2","France","2022-2-1","Financial","300000000"
+"FRF3","France","2022-5-1","Financial","300000000"
+"FRH1","France","2022-3-1","Humanitarian","100000000"
+"FRH10","France","2022-6-1","Humanitarian",
+"FRH11","France","2022-6-1","Humanitarian",
+"FRH12","France","2022-7-1","Humanitarian",
+"FRH13","France","2022-9-1","Humanitarian","9000000"
+"FRH14","France","2022-11-1","Humanitarian",
+"FRH2","France","2022-3-1","Humanitarian","1600000"
+"FRH3","France","2022-3-1","Humanitarian",
+"FRH4","France","2022-4-1","Humanitarian",
+"FRH5","France","2022-4-1","Humanitarian",
+"FRH6","France","2022-5-1","Humanitarian",
+"FRH7","France","2022-5-1","Humanitarian",
+"FRH8","France","2022-5-1","Humanitarian",
+"FRH9","France","2022-6-1","Humanitarian",
+"FRM1","France","2022-4-1","Military","100000000"
+"FRM2","France","2022-4-1","Military",
+"FRM3","France","2022-4-1","Military",
+"FRM4","France","2022-5-1","Military",
+"FRM5","France","2022-6-1","Military",
+"FRM6","France","2022-10-1","Military","100000000"
+"FRM7","France","2022-11-1","Military",
+"HRH1","Croatia","2022-2-1","Humanitarian","9100000"
+"HRH2","Croatia","2022-4-1","Humanitarian","1516800"
+"HRH3","Croatia","2022-5-1","Humanitarian","5000000"
+"HRH4","Croatia","2022-6-1","Humanitarian","33000"
+"HRM1","Croatia","2022-2-1","Military","124000000"
+"HUH1","Hungary","2022-2-1","Humanitarian",
+"HUH2","Hungary","2022-3-1","Humanitarian",
+"HUH3","Hungary","2022-3-1","Humanitarian",
+"HUH4","Hungary","2022-3-1","Humanitarian","66000000"
+"HUH5","Hungary","2022-4-1","Humanitarian",
+"HUH6","Hungary","2022-5-1","Humanitarian","262000000"
+"HUH7","Hungary","2022-5-1","Humanitarian","37000000"
+"IEH1","Ireland","2022-2-1","Humanitarian","10000000"
+"IEH2","Ireland","2022-3-1","Humanitarian",
+"IEH3","Ireland","2022-3-1","Humanitarian",
+"IEH4","Ireland","2022-3-1","Humanitarian",
+"IEH5","Ireland","2022-3-1","Humanitarian",
+"IEH6","Ireland","2022-3-1","Humanitarian",
+"IEH7","Ireland","2022-4-1","Humanitarian","53000000"
+"IEH8","Ireland","2022-5-1","Humanitarian","500000"
+"IEH9","Ireland","2022-6-1","Humanitarian","2197000"
+"INH1","India","2022-5-1","Humanitarian",
+"INH2","India","2022-9-1","Humanitarian",
+"ITF1","Italy","2022-2-1","Financial","110000000"
+"ITF3","Italy","2022-8-1","Financial","200000000"
+"ITH1","Italy","2022-2-1","Humanitarian","1000000"
+"ITH2","Italy","2022-3-1","Humanitarian",
+"ITH3","Italy","2022-3-1","Humanitarian",
+"ITH4","Italy","2022-4-1","Humanitarian",
+"ITH5","Italy","2022-4-1","Humanitarian","16000000"
+"ITM1","Italy","2022-2-1","Military","150000000"
+"ITM2","Italy","2022-4-1","Military",
+"ITM3","Italy","2022-5-1","Military",
+"ITM4","Italy","2022-7-1","Military",
+"ITM5","Italy","2022-10-1","Military",
+"ITM6","Italy","2022-10-1","Military",
+"JPF1","Japan","2022-3-1","Financial","100000000"
+"JPF2","Japan","2022-4-1","Financial","200000000"
+"JPF3","Japan","2022-5-1","Financial","300000000"
+"JPH1","Japan","2022-4-1","Humanitarian","2300000"
+"JPH2","Japan","2022-5-1","Humanitarian","1660000"
+"JPH3","Japan","2022-9-1","Humanitarian","1660000"
+"JPM1","Japan","2022-3-1","Military",
+"JPM2","Japan","2022-4-1","Military",
+"JPM3","Japan","2022-8-1","Military",
+"KOH1","South Korea","2022-2-1","Humanitarian","10000000"
+"KOH2","South Korea","2022-4-1","Humanitarian","30000000"
+"KOH3","South Korea","2022-6-1","Humanitarian","1200000"
+"KOH4","South Korea","2022-6-1","Humanitarian","50000000"
+"KOM1","South Korea","2022-3-1","Military","800000"
+"KOM2","South Korea","2022-4-1","Military","1600000"
+"KOM3","South Korea","2022-5-1","Military","1180000"
+"LTF1","Lithuania","2022-3-1","Financial","5000000"
+"LTH1","Lithuania","2022-2-1","Humanitarian","1800000"
+"LTH2","Lithuania","2022-2-1","Humanitarian","4000000"
+"LTH3","Lithuania","2022-4-1","Humanitarian","34200000"
+"LTH4","Lithuania","2022-5-1","Humanitarian","2000000"
+"LTH5","Lithuania","2022-7-1","Humanitarian","10000000"
+"LTH6","Lithuania","2022-11-1","Humanitarian","5000000"
+"LTM1","Lithuania","2022-3-1","Military","29000000"
+"LTM10","Lithuania","2022-10-1","Military",
+"LTM11","Lithuania","2022-10-1","Military",
+"LTM12","Lithuania","2022-10-1","Military",
+"LTM2","Lithuania","2022-3-1","Military","10000000"
+"LTM3","Lithuania","2022-4-1","Military","61000000"
+"LTM4","Lithuania","2022-5-1","Military","15500000"
+"LTM5","Lithuania","2022-7-1","Military","2000000"
+"LTM6","Lithuania","2022-7-1","Military","25755232"
+"LTM7","Lithuania","2022-7-1","Military",
+"LTM8","Lithuania","2022-9-1","Military","25755232"
+"LTM9","Lithuania","2022-9-1","Military",
+"LUH1","Luxembourg","2022-5-1","Humanitarian","3000000"
+"LUH2","Luxembourg","2022-3-1","Humanitarian",
+"LUH3","Luxembourg","2022-5-1","Humanitarian","1000000"
+"LUM1","Luxembourg","2022-2-1","Military","50000000"
+"LUM2","Luxembourg","2022-3-1","Military",
+"LUM3","Luxembourg","2022-4-1","Military","21800698"
+"LVF1","Latvia","2022-3-1","Financial","5000000"
+"LVF2","Latvia","2022-5-1","Financial","10000000"
+"LVH1","Latvia","2022-3-1","Humanitarian","1200000"
+"LVH2","Latvia","2022-3-1","Humanitarian","167417"
+"LVM1","Latvia","2022-4-1","Military","218800000"
+"LVM2","Latvia","2022-7-1","Military","30000000"
+"LVM3","Latvia","2022-8-1","Military",
+"LVM4","Latvia","2022-8-1","Military",
+"MTH1","Malta","2022-3-1","Humanitarian","1150000"
+"NLF1","Netherlands","2022-3-1","Financial","80000000"
+"NLF2","Netherlands","2022-5-1","Financial","200000000"
+"NLF3","Netherlands","2022-8-1","Financial","68500000"
+"NLH1","Netherlands","2022-3-1","Humanitarian","15000000"
+"NLH2","Netherlands","2022-3-1","Humanitarian","1500000"
+"NLH3","Netherlands","2022-3-1","Humanitarian",
+"NLH4","Netherlands","2022-5-1","Humanitarian",
+"NLH5","Netherlands","2022-5-1","Humanitarian","5000000"
+"NLH6","Netherlands","2022-10-1","Humanitarian","180000000"
+"NLM1","Netherlands","2022-2-1","Military","50000000"
+"NLM2","Netherlands","2022-4-1","Military",
+"NLM3","Netherlands","2022-6-1","Military",
+"NLM4","Netherlands","2022-6-1","Military",
+"NLM5","Netherlands","2022-8-1","Military","10000000"
+"NLM6","Netherlands","2022-11-1","Military","120000000"
+"NOF1","Norway","2022-5-1","Financial","300000000"
+"NOF2","Norway","2022-5-1","Financial","50000000"
+"NOF3","Norway","2022-5-1","Financial","2000000000"
+"NOF4","Norway","2022-5-1","Financial","1000000000"
+"NOH1","Norway","2022-4-1","Humanitarian","265000000"
+"NOH2","Norway","2022-4-1","Humanitarian","100000000"
+"NOH3","Norway","2022-6-1","Humanitarian",
+"NOH4","Norway","2022-11-1","Humanitarian","1000000000"
+"NOH5","Norway","2022-11-1","Humanitarian","2000000000"
+"NOM1","Norway","2022-2-1","Military",
+"NOM10","Norway","2022-9-1","Military",
+"NOM11","Norway","2022-10-1","Military","30666666"
+"NOM12","Norway","2022-9-1","Military","3000000000"
+"NOM2","Norway","2022-3-1","Military",
+"NOM3","Norway","2022-4-1","Military",
+"NOM4","Norway","2022-4-1","Military",
+"NOM5","Norway","2022-4-1","Military","400000000"
+"NOM6","Norway","2022-6-1","Military",
+"NOM7","Norway","2022-6-1","Military",
+"NOM8","Norway","2022-7-1","Military",
+"NOM9","Norway","2022-8-1","Military",
+"NZH1","New Zealand","2022-2-1","Humanitarian","2000000"
+"NZH2","New Zealand","2022-2-1","Humanitarian","2000000"
+"NZM1","New Zealand","2022-3-1","Military",
+"NZM2","New Zealand","2022-3-1","Military","5000000"
+"NZM4","New Zealand","2022-4-1","Military","4100000"
+"NZM5","New Zealand","2022-4-1","Military","7500000"
+"NZM6","New Zealand","2022-5-1","Military",
+"NZM7","New Zealand","2022-6-1","Military","4500000"
+"NZM8","New Zealand","2022-7-1","Military",
+"NZM9","New Zealand","2022-11-1","Military","1850000"
+"PLF1","Poland","2022-2-1","Financial","1000000000"
+"PLF2","Poland","2022-3-1","Financial","30000000"
+"PLH1","Poland","2022-4-1","Humanitarian",
+"PLH2","Poland","2022-5-1","Humanitarian","100000000"
+"PLH3","Poland","2022-8-1","Humanitarian",
+"PLH4","Poland","2022-4-1","Humanitarian","62105000"
+"PLH5","Poland","2022-11-1","Humanitarian",
+"PLM1","Poland","2022-2-1","Military",
+"PLM2","Poland","2022-4-1","Military","1800000000"
+"PLM3","Poland","2022-7-1","Military",
+"PLM4","Poland","2022-4-1","Military",
+"PTF1","Portugal","2022-5-1","Financial","250000000"
+"PTH1","Portugal","2022-3-1","Humanitarian","100000"
+"PTH2","Portugal","2022-5-1","Humanitarian","1100000"
+"PTM1","Portugal","2022-2-1","Military",
+"PTM2","Portugal","2022-4-1","Military",
+"PTM3","Portugal","2022-10-1","Military",
+"PTM4","Portugal","2022-5-1","Military",
+"PTM5","Portugal","2022-5-1","Military",
+"ROH1","Romania","2022-2-1","Humanitarian",
+"ROH2","Romania","2022-3-1","Humanitarian","5000000"
+"ROH3","Romania","2022-4-1","Humanitarian",
+"ROH4","Romania","2022-5-1","Humanitarian","3200000"
+"ROM1","Romania","2022-2-1","Military","3000000"
+"ROM2","Romania","2022-4-1","Military",
+"SEF1","Sweden","2022-3-1","Financial","50000000"
+"SEF2","Sweden","2022-4-1","Financial","44000000"
+"SEF3","Sweden","2022-8-1","Financial","500000000"
+"SEF4","Sweden","2022-11-1","Financial","140000000"
+"SEH1","Sweden","2022-4-1","Humanitarian",
+"SEH2","Sweden","2022-5-1","Humanitarian","570000000"
+"SEH3","Sweden","2022-5-1","Humanitarian","230000000"
+"SEH4","Sweden","2022-6-1","Humanitarian","100000000"
+"SEH5","Sweden","2022-9-1","Humanitarian",
+"SEH6","Sweden","2022-11-1","Humanitarian","170000000"
+"SEM1","Sweden","2022-2-1","Military","400000000"
+"SEM2","Sweden","2022-2-1","Military","500000000"
+"SEM3","Sweden","2022-3-1","Military",
+"SEM4","Sweden","2022-6-1","Military","262000000"
+"SEM5","Sweden","2022-6-1","Military","578000000"
+"SEM6","Sweden","2022-6-1","Military","60000000"
+"SEM7","Sweden","2022-7-1","Military","577700000"
+"SEM8","Sweden","2022-8-1","Military","500000000"
+"SEM9","Sweden","2022-11-1","Military","3000000000"
+"SIH1","Slovenia","2022-2-1","Humanitarian","163000"
+"SIH2","Slovenia","2022-2-1","Humanitarian","100000"
+"SIH3","Slovenia","2022-3-1","Humanitarian",
+"SIH4","Slovenia","2022-4-1","Humanitarian","1640000"
+"SIH5","Slovenia","2022-4-1","Humanitarian","180000"
+"SIM1","Slovenia","2022-6-1","Military","7000000"
+"SIM2","Slovenia","2022-6-1","Military",
+"SIM3","Slovenia","2022-7-1","Military",
+"SIM4","Slovenia","2022-9-1","Military",
+"SKH1","Slovakia","2022-4-1","Humanitarian","5000000"
+"SKM1","Slovakia","2022-2-1","Military","1700000"
+"SKM2","Slovakia","2022-2-1","Military","4500000"
+"SKM3","Slovakia","2022-3-1","Military","32200000"
+"SKM4","Slovakia","2022-2-1","Military","11000000"
+"SKM5","Slovakia","2022-4-1","Military",
+"SKM6","Slovakia","2022-4-1","Military","68000000"
+"SKM7","Slovakia","2022-6-1","Military",
+"SKM8","Slovakia","2022-8-1","Military",
+"TRH1","Turkey","2022-2-1","Humanitarian",
+"TRH2","Turkey","2022-3-1","Humanitarian",
+"TRH3","Turkey","2022-3-1","Humanitarian",
+"TRM1","Turkey","2022-2-1","Military",
+"TRM2","Turkey","2022-8-1","Military",
+"TWH1","Taiwan(China)","2022-4-1","Humanitarian","3000000"
+"TWH10","Taiwan(China)","2022-10-1","Humanitarian","56000000"
+"TWH2","Taiwan(China)","2022-4-1","Humanitarian","5000000"
+"TWH3","Taiwan(China)","2022-6-1","Humanitarian","2000000"
+"TWH4","Taiwan(China)","2022-6-1","Humanitarian","500000"
+"TWH5","Taiwan(China)","2022-6-1","Humanitarian","500000"
+"TWH6","Taiwan(China)","2022-6-1","Humanitarian","500000"
+"TWH7","Taiwan(China)","2022-6-1","Humanitarian","500000"
+"TWH9","Taiwan(China)","2022-6-1","Humanitarian","500000"
+"UKF1","United Kingdom","2022-2-1","Financial","88000000"
+"UKF2","United Kingdom","2022-2-1","Financial","500000000"
+"UKF3","United Kingdom","2022-3-1","Financial","74000000"
+"UKF4","United Kingdom","2022-3-1","Financial","29100000"
+"UKF5","United Kingdom","2022-4-1","Financial","730000000"
+"UKF6","United Kingdom","2022-4-1","Financial","320000000"
+"UKF7","United Kingdom","2022-5-1","Financial","50000000"
+"UKF8","United Kingdom","2022-9-1","Financial","500000000"
+"UKH1","United Kingdom","2022-2-1","Humanitarian","40000000"
+"UKH2","United Kingdom","2022-3-1","Humanitarian","40000000"
+"UKH3","United Kingdom","2022-3-1","Humanitarian","230000000"
+"UKH4","United Kingdom","2022-3-1","Humanitarian","7000000"
+"UKH5","United Kingdom","2022-4-1","Humanitarian","10000000"
+"UKH6","United Kingdom","2022-7-1","Humanitarian","5000000"
+"UKH7","United Kingdom","2022-10-1","Humanitarian",
+"UKH8","United Kingdom","2022-11-1","Humanitarian","10000000"
+"UKM1","United Kingdom","2022-2-1","Military",
+"UKM10","United Kingdom","2022-6-1","Military","1000000000"
+"UKM11","United Kingdom","2022-8-1","Military",
+"UKM12","United Kingdom","2022-10-1","Military",
+"UKM13","United Kingdom","2022-10-1","Military","10000000"
+"UKM14","United Kingdom","2022-11-1","Military",
+"UKM15","United Kingdom","2022-11-1","Military","50000000"
+"UKM2","United Kingdom","2022-3-1","Military",
+"UKM3","United Kingdom","2022-3-1","Military",
+"UKM4","United Kingdom","2022-3-1","Military",
+"UKM5","United Kingdom","2022-3-1","Military",
+"UKM6","United Kingdom","2022-4-1","Military","100000000"
+"UKM7","United Kingdom","2022-4-1","Military",
+"UKM8","United Kingdom","2022-5-1","Military",
+"UKM9","United Kingdom","2022-5-1","Military","1300000000"
+"USF1","United States of America","2022-2-1","Financial","1000000000"
+"USF2","United States of America","2022-3-1","Financial","500000000"
+"USF3","United States of America","2022-4-1","Financial","500000000"
+"USF4","United States of America","2022-5-1","Financial","8006000000"
+"USF5","United States of America","2022-5-1","Financial","500000000"
+"USF6","United States of America","2022-5-1","Financial","100000000"
+"USF7","United States of America","2022-9-1","Financial","4500000000"
+"USH1","United States of America","2022-2-1","Humanitarian","54000000"
+"USH10","United States of America","2022-5-1","Humanitarian","2000000"
+"USH11","United States of America","2022-5-1","Humanitarian","150000000"
+"USH2","United States of America","2022-3-1","Humanitarian","53000000"
+"USH3","United States of America","2022-3-1","Humanitarian","3446000000"
+"USH4","United States of America","2022-3-1","Humanitarian","6100000"
+"USH5","United States of America","2022-3-1","Humanitarian","320000000"
+"USH6","United States of America","2022-3-1","Humanitarian","1000000000"
+"USH7","United States of America","2022-3-1","Humanitarian","100000000"
+"USH8","United States of America","2022-9-1","Humanitarian","457500000"
+"USH9","United States of America","2022-5-1","Humanitarian","4350000000"
+"USM1","United States of America","2022-3-1","Military",
+"USM10","United States of America","2022-9-1","Military","3000000000"
+"USM2","United States of America","2022-5-1","Military","150000000"
+"USM3","United States of America","2022-4-1","Military","322000000"
+"USM4","United States of America","2022-4-1","Military","300000000"
+"USM5","United States of America","2022-5-1","Military","650000000"
+"USM6","United States of America","2022-5-1","Military","600000000"
+"USM9","United States of America","2022-9-1","Military","3700000000"

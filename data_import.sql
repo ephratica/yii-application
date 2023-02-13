@@ -1433,5 +1433,40 @@ CREATE TABLE `comment`  (
 -- Records of comment
 -- ----------------------------
 
+
+-- ----------------------------
+-- Table structure for files
+-- ----------------------------
+DROP TABLE IF EXISTS `files`;
+CREATE TABLE `files`  (
+  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `download_times` int NOT NULL DEFAULT 0,
+  PRIMARY KEY (`name`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of files
+-- ----------------------------
+INSERT INTO `files` VALUES ('aid.csv', 1);
+INSERT INTO `files` VALUES ('all_countries.csv', 0);
+INSERT INTO `files` VALUES ('articles.csv', 0);
+INSERT INTO `files` VALUES ('military_compare_total.csv', 0);
+INSERT INTO `files` VALUES ('russia_loss.csv', 0);
+INSERT INTO `files` VALUES ('r_u_military_comparison.csv', 0);
+INSERT INTO `files` VALUES ('sanction_country.csv', 0);
+INSERT INTO `files` VALUES ('sanction_date.csv', 1);
+INSERT INTO `files` VALUES ('sanction_type.csv', 0);
+INSERT INTO `files` VALUES ('se_status.csv', 1);
+INSERT INTO `files` VALUES ('ukraine_civilian_casualties.csv', 0);
+INSERT INTO `files` VALUES ('ukraine_round_trip.csv', 0);
+INSERT INTO `files` VALUES ('ukraine_russia_military_expenditure.csv', 0);
+INSERT INTO `files` VALUES ('作业1(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2013743_林巧莹).zip', 0);
+
+
 SET FOREIGN_KEY_CHECKS = 1;
 
