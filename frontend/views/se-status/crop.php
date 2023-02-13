@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the view showing crop price fluctuation in table 'se_status'.
+*/
+
 use frontend\models\SeStatus;
 use yii\helpers\Html;
 use yii\helpers\Url;

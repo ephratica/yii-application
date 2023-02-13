@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the main view of table 'aid'.
+*/
+
 use backend\models\Aid;
 use yii\helpers\Html;
 use yii\helpers\Url;

@@ -1,14 +1,17 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This represents the model behind the search form of `backend\models\Aid`.
+*/
+
 namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\Aid;
 
-/**
- * AidSearch represents the model behind the search form of `backend\models\Aid`.
- */
 class AidSearch extends Aid
 {
     /**

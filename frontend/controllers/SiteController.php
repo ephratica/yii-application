@@ -5,6 +5,12 @@
 *  Add actions of wordmap and about.
 */
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the controller class for our site.
+*/
+
 namespace frontend\controllers;
 
 use frontend\models\ResendVerificationEmailForm;
@@ -25,9 +31,6 @@ use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
 
-/**
- * Site controller
- */
 class SiteController extends Controller
 {
     /**

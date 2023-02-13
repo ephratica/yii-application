@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the model class of uploading form, supporting csv, xls, xlsx, zip, rar files.
+*/
+
 namespace backend\models;
 
 use Yii;

@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the controller class implementing the CRUD actions for Aid model.
+*/
+
 namespace frontend\controllers;
 
 use frontend\models\Aid;
@@ -9,9 +15,6 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
-/**
- * AidController implements the CRUD actions for Aid model.
- */
 class AidController extends Controller
 {
     /**

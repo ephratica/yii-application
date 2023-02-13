@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the controller class implementing the CRUD actions for RussiaLoss model.
+*/
+
 namespace backend\controllers;
 
 use backend\models\RussiaLoss;
@@ -9,9 +15,6 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-/**
- * RussiaLossController implements the CRUD actions for RussiaLoss model.
- */
 class RussiaLossController extends Controller
 {
     /**

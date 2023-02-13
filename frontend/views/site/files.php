@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the view of downloading files in frontend.
+*/
+
 use common\models\Files;
 use yii\helpers\Html;
 use yii\helpers\Url;

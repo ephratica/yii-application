@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the main view of table 'russia_loss'.
+*/
+
 use backend\models\RussiaLoss;
 use yii\helpers\Html;
 use yii\helpers\Url;

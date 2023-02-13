@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the controller class implementing the CRUD actions for SeStatus model.
+*/
+
 namespace frontend\controllers;
 
 use frontend\models\SeStatus;
@@ -9,9 +15,6 @@ use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
 use yii\filters\AccessControl;
 
-/**
- * SeStatusController implements the CRUD actions for SeStatus model.
- */
 class SeStatusController extends Controller
 {
     /**

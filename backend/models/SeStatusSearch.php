@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This represents the model behind the search form of `backend\models\SeStatus`.
+*/
+
 namespace backend\models;
 
 use yii\base\Model;

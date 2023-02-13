@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the create view of a record in table 'russia_loss'.
+*/
+
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
