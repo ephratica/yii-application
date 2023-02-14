@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  This is the view for index.
+*/
 
 /** @var yii\web\View $this */
 
@@ -23,16 +28,49 @@ $this->title = '俄乌动态';
             <div class="col-lg card bg-light border-light p-5 me-4" style="border-radius: 50px;">
                 <h2>经济数据</h2>
 
-                <p>时刻掌握战争中的经济数据，包括大宗商品价格、balabalabala。</p>
+                <p>掌握战争中的经济数据，包括食物、能源、金属和作物价格波动。</p>
 
-                <p><?= Html::a('查看经济数据 &raquo;', ['/site/charts'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <!--<p><?= Html::a('查看食物价格波动 &raquo;', ['/se-status/food'],['class' => ['btn btn-outline-secondary']]); ?>-->
+                <p><?= Html::a('查看价格波动源数据 &raquo;', ['/se-status/index'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <!--<p><?= Html::a('查看金属价格波动 &raquo;', ['/se-status/metal'],['class' => ['btn btn-outline-secondary']]); ?>
+                <?= Html::a('查看作物价格波动 &raquo;', ['/se-status/crop'],['class' => ['btn btn-outline-secondary']]); ?></p>-->
             </div>
             <div class="col-lg card bg-light border-light p-5 ms-4" style="border-radius: 50px;">
-                <h2>外交地图</h2>
+                <h2>数据地图</h2>
 
                 <p>在世界地图上查看外交动态，了解制裁、援助、花费数额、难民去向。</p>
 
                 <p><?= Html::a('查看外交地图 &raquo;', ['/site/world'],['class' => ['btn btn-outline-secondary']]); ?></p>
+            </div>
+        </div>
+        <div class="row d-flex justify-content-between mt-5">
+            <div class = "col-lg card bg-light border-light p-5 me-4" style="border-radius: 50px;">
+                <h2>军事数据</h2>
+
+                <p>掌握战争中的军事数据，包括军事能力、军事投入、损失情况等。</p>
+
+                <!--<p><?= Html::a('查看军事能力的总体对比 &raquo;', ['/militar-compare-total/index'],['class' => ['btn btn-outline-secondary']]); ?>
+                <?= Html::a('查看军事能力的详细对比 &raquo;', ['/r-u-military-comparison/index'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <p><?= Html::a('查看俄罗斯设备损失数据 &raquo;', ['russia-loss/equipment'],['class' => ['btn btn-outline-secondary']]); ?>-->
+                <p><?= Html::a('查看俄罗斯损失源数据 &raquo;', ['/russia-loss/index'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <!--<p><?= Html::a('查看俄乌双方的军事投入 &raquo;', ['/ukraine-russia-military-expenditure/index'],['class' => ['btn btn-outline-secondary']]); ?>
+                <?= Html::a('查看乌克兰的往返的情况 &raquo;', ['/ukraine-round-trip/index'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <p><?= Html::a('查看乌克兰平民伤亡情况 &raquo;', ['/ukraine-civilian-casualties/index'],['class' => ['btn btn-outline-secondary']]); ?></p>-->
+            </div>
+            <div class = "col-lg card bg-light border-light p-5 ms-4" style="border-radius: 50px;">
+                <h2>外交数据</h2>
+
+                <p>掌握战争中的外交数据，包括援助数据与制裁数据。</p>
+                
+                <!--<h5>各国援助乌克兰数据</h5>-->
+                <p><?= Html::a('查看源数据 &raquo;', ['/aid/index'],['class' => ['btn btn-outline-secondary']]); ?>
+                <!--<?= Html::a('时间/价值 &raquo;', ['/aid/date'],['class' => ['btn btn-outline-secondary']]); ?>
+                <?= Html::a('类型/价值 &raquo;', ['/aid/type'],['class' => ['btn btn-outline-secondary']]); ?></p>
+
+                <h5>各国制裁俄罗斯数据</h5>-->
+                <!--<p><?= Html::a('各国对俄罗斯的制裁 &raquo;', ['/sanction-country/index'],['class' => ['btn btn-outline-secondary']]); ?></p>-->
+                <!--<?= Html::a('时间/价值 &raquo;', ['/sanction-date/index'],['class' => ['btn btn-outline-secondary']]); ?>
+                <?= Html::a('类型/价值 &raquo;', ['/sacntion-type/index'],['class' => ['btn btn-outline-secondary']]); ?></p>-->
             </div>
         </div>
 

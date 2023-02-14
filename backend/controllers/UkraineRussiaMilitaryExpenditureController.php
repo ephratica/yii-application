@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the controller class for UkraineRussiaMilitaryExpenditure model.
+*/
 namespace backend\controllers;
 
 use backend\models\UkraineRussiaMilitaryExpenditure;

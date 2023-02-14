@@ -90,6 +90,13 @@ AppAsset::register($this);
                 ]
             ]
         ],
+        [
+            'label' => '意见与反馈', 
+            'items' => [
+                ['label' => '网友评论', 'url' => ['/comment/index']],
+                ['label' => '提交反馈', 'url' => ['/comment/create']]
+            ]
+        ],
         ['label' => '关于我们', 'url' => ['/site/about']],
     ];
 

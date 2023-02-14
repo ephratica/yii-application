@@ -313,7 +313,8 @@ class SiteController extends Controller
     public function actionDownload($fileName)
     {
         // 通过index.php?r=site/download&fileName=xxx可以下载
-        $filePath = '..\\..\\uploads\\';
+        //$filePath = '..\\..\\uploads\\';
+        $filePath = '../../uploads/';
         $saveAsFileName = $fileName;
         $file = fopen($filePath . $fileName, "rb");
         Header("Content-type:  application/octet-stream ");

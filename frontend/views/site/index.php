@@ -43,8 +43,8 @@ $this->title = '俄乌动态';
                 <p><?= Html::a('查看外交地图 &raquo;', ['/site/world'],['class' => ['btn btn-outline-secondary']]); ?></p>
             </div>
         </div>
-        <div class="row d-flex justify-content-between">
-            <div class = "col-lg card bg-light border-light p-5 ms-4" style="border-radius: 50px;">
+        <div class="row d-flex justify-content-between mt-5">
+            <div class = "col-lg card bg-light border-light p-5 me-4" style="border-radius: 50px;">
                 <h2>军事数据</h2>
 
                 <p>掌握战争中的军事数据，包括军事能力、军事投入、损失情况等。</p>

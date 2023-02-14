@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "migration".
+*/
 namespace frontend\models;
 
 use yii\base\Model;

@@ -1,14 +1,20 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+*  This is the view for navbar.
+*/
 
 /** @var \yii\web\View $this */
 /** @var string $content */
 
 use common\widgets\Alert;
-use backend\assets\AppAsset;
+use frontend\assets\AppAsset;
 use yii\bootstrap5\Breadcrumbs;
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Nav;
 use yii\bootstrap5\NavBar;
+use kartik\bs5dropdown\Dropdown;
 
 AppAsset::register($this);
 ?>
@@ -36,13 +42,41 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
-        ['label' => '外交地图', 'url' => ['/site/world']],
-        ['label' => '经济数据', 'url' => ['/site/charts']],
-        ['label' => '关于', 'url' => ['/site/about']],
+        ['label' => '数据地图', 'url' => ['/site/world']],
+        [
+            'label' => '经济数据', 'url' => ['/se-status/index'],
+        ],
+        [
+            'label' => '军事数据',
+            'items' => [
+                ['label' => '军事能力总体对比', 'url' => ['/military-compare-total/index']],
+                ['label' => '军事能力详细对比', 'url' => ['/r-u-military-comparison/index']],
+                ['label' => '俄乌双方军事投入', 'url' => ['/ukraine-russia-military-expenditure/index']],
+                ['label' => '乌克兰平民伤亡情况', 'url' => ['/ukraine-civilian-casualties/index']],
+                ['label' => '乌克兰往返情况', 'url' => ['/ukraine-round-trip/index']],
+                ['label' => '俄罗斯损失','url' => ['/russia-loss/index']]
+            ]  
+        ],
+        [
+            'label' => '外交数据',
+            'items' => [
+                ['label' => '援助数据', 'url' => ['/aid/index']],
+                [
+                    'label' => '制裁数据',
+                    'items' => [
+                        ['label' => '各国对俄罗斯的制裁(国家)','url' => ['/sanction-country/index']],
+                        ['label' => '各国对俄罗斯的制裁(时间)','url' => ['/sanction-date/index']],
+                        ['label' => '各国对俄罗斯的制裁(类型)','url' => ['/sanction-type/index']]
+                    ]
+                ]
+            ]
+        ],
+        ['label' => '关于我们', 'url' => ['/site/about']],
     ];
 
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
+        'dropdownClass' => Dropdown::classname(), 
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {

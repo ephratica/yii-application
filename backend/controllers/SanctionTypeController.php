@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the controller class implementing the CRUD actions for SanctionType model.
+*/
 namespace backend\controllers;
 
 use backend\models\SanctionType;

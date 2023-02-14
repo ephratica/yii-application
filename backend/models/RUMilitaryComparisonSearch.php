@@ -1,5 +1,9 @@
 <?php
-
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the model class for table "r_u_military_comparison".
+*/
 namespace backend\models;
 
 use yii\base\Model;
