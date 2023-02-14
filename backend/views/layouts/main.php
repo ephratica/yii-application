@@ -42,7 +42,7 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => '主页', 'url' => ['/site/index']],
-        ['label' => '数据地图', 'url' => ['/site/world']],
+        ['label' => '数据地图', 'url' => ['/all-countries/index']],
         [
             'label' => '经济数据', 'url' => ['/se-status/index'],
         ],
