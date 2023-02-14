@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
       <div class="card-body">
         <h5 class="card-title">林巧莹</h5>
         <p class="card-text">
-        email: 2013743@mail.nankai.edu.cn
+        email: roslin_v@163.com
           <p>
             <?= Html::a('下载个人作业', ['/site/files'],['class' => ['btn btn-outline-secondary']]); ?>
           </p>

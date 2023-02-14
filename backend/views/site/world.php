@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = '外交地图';
+$this->title = '数据地图';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

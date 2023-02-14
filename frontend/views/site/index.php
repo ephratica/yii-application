@@ -40,7 +40,7 @@ $this->title = '俄乌动态';
 
                 <p>在世界地图上查看外交动态，了解制裁、援助、花费数额、难民去向。</p>
 
-                <p><?= Html::a('查看外交地图 &raquo;', ['/site/world'],['class' => ['btn btn-outline-secondary']]); ?></p>
+                <p><?= Html::a('查看数据地图 &raquo;', ['/site/world'],['class' => ['btn btn-outline-secondary']]); ?></p>
             </div>
         </div>
         <div class="row d-flex justify-content-between mt-5">
