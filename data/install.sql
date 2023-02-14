@@ -14,7 +14,7 @@
  Date: 14/02/2023 09:18:19
 */
 
-SET NAMES utf8mb4;
+SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
@@ -886,11 +886,11 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `indicator` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `indicator` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `russia` int NULL DEFAULT NULL,
   `ukraine` int NULL DEFAULT NULL,
   PRIMARY KEY (`indicator`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of r_u_military_comparison
@@ -942,7 +942,7 @@ CREATE TABLE `russia_loss`  (
   `personnel_total` int NULL DEFAULT NULL,
   `personnel_increase` int NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of russia_loss
@@ -1398,11 +1398,11 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `total` int NULL DEFAULT NULL,
   `children` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_civilian_casualties
@@ -1415,10 +1415,10 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round_trip`;
 CREATE TABLE `ukraine_round_trip`  (
-  `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `num` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_round_trip
@@ -1435,7 +1435,7 @@ CREATE TABLE `ukraine_russia_military_expenditure`  (
   `ukraine` double NULL DEFAULT NULL,
   `russia` double NULL DEFAULT NULL,
   PRIMARY KEY (`year`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_russia_military_expenditure
