@@ -13,7 +13,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
-use yii\filters\AccessControl;
 
 class SeStatusController extends Controller
 {
@@ -29,17 +28,6 @@ class SeStatusController extends Controller
                     'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
-                    ],
-                ],
-                'access' => [
-                    'class' => AccessControl::className(),
-                    'only' => ['download'],
-                    'rules' => [
-                        [
-                            'allow' => true,
-                            'actions' => ['download'],
-                            'roles' => ['@'],
-                        ],
                     ],
                 ],
             ]
