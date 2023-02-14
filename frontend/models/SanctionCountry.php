@@ -2,7 +2,7 @@
 /**
 *  Team: Untitled, NKU
 *  Coding by TephrocactusHC 2012026
-*  This is the model class for table "snction_countyr".
+*  This is the model class for table "sanction_country".
 */
 namespace frontend\models;
 

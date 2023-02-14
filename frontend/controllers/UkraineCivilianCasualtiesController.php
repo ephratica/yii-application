@@ -1,7 +1,7 @@
 <?php
 /**
 *  Team: Untitled, NKU
-*  Coding by TephrocactusHC 2012026
+*  Coding by TephrocactusHC 2012026 , little5 2011911
 *  This is the model class for table "UkraineCivilianCasualties".
 */
 namespace frontend\controllers;

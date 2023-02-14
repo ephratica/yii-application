@@ -2,7 +2,7 @@
 
 /**
 *  Team: Untitled, NKU
-*  Coding by Roslin 2013743
+*  Coding by Roslin 2013743 , little5 2011911
 *  This is the view showing equipment loss in table 'russia_loss'.
 */
 

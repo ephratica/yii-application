@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by little5 2011911
+*  This is the view showing personnel loss in table 'russia_loss'.
+*/
+
 use frontend\models\UkraineRoundTrip;
 use yii\helpers\Html;
 use yii\helpers\Url;

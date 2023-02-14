@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by
+*  This is the view showing personnel loss in table 'russia_loss'.
+*/
+
 /** @var yii\web\View $this */
 /** @var yii\bootstrap5\ActiveForm $form */
 /** @var \frontend\models\ContactForm $model */
