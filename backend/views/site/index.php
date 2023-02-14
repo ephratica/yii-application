@@ -15,13 +15,56 @@ $this->title = '俄乌动态';
 <link rel="stylesheet" href="/css/timeline.css">
 
 <div class="site-index">
-    <div class="p-5 mb-4 bg-transparent rounded-3">
-        <div class="container-fluid py-5">
-            <h1 class="display-4">俄乌动态新闻网</h1>
-            <p class="fs-5 fw-light">为您提供战争动态最好的网站</p>
-            <?= Html::tag('p', Html::a('成为会员 👋', ['/site/signup'],['class' => ['btn btn-outline-dark btn-lg']])); ?>
-        </div>
+<div id="carouselExampleCaptions" class="carousel slide m-5" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+</div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/slides/1.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>俄乌动态新闻网</h2>
+        <p>为您提供战争动态最好的网站</p>
+        <?= Html::tag('p', Html::a('成为会员 👋', ['/site/signup'],['class' => ['btn btn-light btn-lg']])); ?>
+      </div>
     </div>
+    <div class="carousel-item">
+      <img src="/slides/2.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>俄乌动态新闻网</h2>
+        <p>为您提供战争动态最好的网站</p>
+        <?= Html::tag('p', Html::a('成为会员 👋', ['/site/signup'],['class' => ['btn btn-light btn-lg']])); ?>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/slides/3.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>俄乌动态新闻网</h2>
+        <p>为您提供战争动态最好的网站</p>
+        <?= Html::tag('p', Html::a('成为会员 👋', ['/site/signup'],['class' => ['btn btn-light btn-lg']])); ?>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="/slides/4.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h2>俄乌动态新闻网</h2>
+        <p>为您提供战争动态最好的网站</p>
+        <?= Html::tag('p', Html::a('成为会员 👋', ['/site/signup'],['class' => ['btn btn-light btn-lg']])); ?>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
     <div class="body-content m-5">
         <div class="row d-flex justify-content-between">
