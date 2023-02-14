@@ -13,34 +13,34 @@ use yii\grid\GridView;
 $this->title = 'Comments';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<link rel="stylesheet" href="/css/timeline.css">
+
 <div class="comment-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Comment', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="row d-flex">
+        <div class="mt-5 card bg-light border-light p-5" style="border-radius: 50px;">
+            <h2>网友评论</h2>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'comment_id',
-            'username',
-            'discuss:ntext',
-            'comment_time',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Comment $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'comment_id' => $model->comment_id]);
-                 }
-            ],
-        ],
-    ]); ?>
-
+            <div class="timeline w-100">
+                <div class="timeline-outer">
+                    <?php foreach ($comments as $_model): ?>
+                    <div class="timeline-card">
+                        <div class="timeline-info">
+                            <h3 class="timeline-title">
+                            <?= Html::a("{$_model->username}  {$_model->comment_time}", ["/comment/view", 'comment_id' => $_model->comment_id], ['class' => ['text-decoration-none text-secondary']]); ?>
+                                
+                            </h3>
+                            <?= $_model->discuss ?>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>

@@ -55,12 +55,17 @@ class CommentController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CommentSearch();
-        $dataProvider = $searchModel->search($this->request->queryParams);
+        // $searchModel = new CommentSearch();
+        // $dataProvider = $searchModel->search($this->request->queryParams);
 
+        // return $this->render('index', [
+        //     'searchModel' => $searchModel,
+        //     'dataProvider' => $dataProvider,
+        // ]);
+        $query = Comment::find()->orderBy('comment_time');
+        $comments = array_reverse($query->all(), true);
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'comments' => $comments
         ]);
     }
 

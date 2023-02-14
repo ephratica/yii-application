@@ -1,4 +1,9 @@
 <?php
+/**
+*  Team: Untitled, NKU
+*  Coding by ephratica 2012885
+* This is the model class for table "articles".
+*/
 
 namespace common\models;
 
