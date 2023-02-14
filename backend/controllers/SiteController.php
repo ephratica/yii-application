@@ -1,5 +1,10 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the controller class for our main functions such as article line, upload, sign up, log in etc.
+*/
 
 namespace backend\controllers;
 

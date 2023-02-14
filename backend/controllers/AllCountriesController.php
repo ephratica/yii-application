@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is the implementing the CRUD actions for AllCountries model.
+*/
+
 namespace backend\controllers;
 
 use backend\models\AllCountries;
@@ -9,9 +15,6 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-/**
- * AllCountriesController implements the CRUD actions for AllCountries model.
- */
 class AllCountriesController extends Controller
 {
     /**

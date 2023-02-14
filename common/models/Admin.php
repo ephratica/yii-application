@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743
+*  This is the model for table admin.
+*/
+
 namespace common\models;
 
 use Yii;

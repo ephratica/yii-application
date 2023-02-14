@@ -1,14 +1,17 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This is represents the model behind the search form of `backend\models\AllCountries`.
+*/
+
 namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\AllCountries;
 
-/**
- * AllCountriesSearch represents the model behind the search form of `backend\models\AllCountries`.
- */
 class AllCountriesSearch extends AllCountries
 {
     /**

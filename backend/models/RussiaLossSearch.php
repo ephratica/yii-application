@@ -81,37 +81,4 @@ class RussiaLossSearch extends RussiaLoss
         return $dataProvider;
     }
 
-    public function searchEquipment()
-    {
-        $query = RussiaLoss::find();
-
-        // add conditions that should always apply here
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        $query->select('date, tank, bbm, artillery, multi_barrel_rocket_launcher, 
-            air_defense_system, fixed_wing_aircraft, helicopter, uav, cruise_missile,
-            ships, automobile_and_oil_tanker, special_equipment')
-            ->orderBy('date ASC');
-
-        return $dataProvider;
-    }
-
-    public function searchPersonnel()
-    {
-        $query = RussiaLoss::find();
-
-        // add conditions that should always apply here
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        $query->select('date, personnel_total, personnel_increase')
-            ->orderBy('date ASC');
-
-        return $dataProvider;
-    }
 }

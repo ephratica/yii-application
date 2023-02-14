@@ -1,5 +1,11 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by Roslin 2013743, TephrocactusHC 2012026
+*  This is the controller class implementing the CRUD actions for Comment model.
+*/
+
 namespace backend\controllers;
 
 use backend\models\Comment;
@@ -9,9 +15,6 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-/**
- * CommentController implements the CRUD actions for Comment model.
- */
 class CommentController extends Controller
 {
     /**

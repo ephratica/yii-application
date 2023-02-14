@@ -6,13 +6,14 @@
 *  This is the view of uploading files in backend.
 */
 
+use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
 
 <div class="p-5 mb-4 bg-transparent rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-4">文件上传界面📤</h1>
-</div>
+        </div>
         <div>
             <p class="fs-5 fw-light">操作步骤：“选择文件”→“Submit”</p>
             <p class="fs-5 fw-light">支持上传csv、xls、xlsx、zip、rar格式的文件。</p>
@@ -24,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'dataFiles[]')->fileInput(['multiple' => true, 'accept' => 'MIME_type']) ?>
 
-    <button>Submit</button>
+    <div class="form-group">
+        <?= Html::submitButton('Submit', ['class' => 'btn btn-success']) ?>
+    </div>
 
 <?php ActiveForm::end() ?>

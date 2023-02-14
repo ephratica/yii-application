@@ -1,14 +1,17 @@
 <?php
 
+/**
+*  Team: Untitled, NKU
+*  Coding by TephrocactusHC 2012026
+*  This represents the model behind the search form of `backend\models\Comment`.
+*/
+
 namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use backend\models\Comment;
 
-/**
- * CommentSearch represents the model behind the search form of `backend\models\Comment`.
- */
 class CommentSearch extends Comment
 {
     /**
