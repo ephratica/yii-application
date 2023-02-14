@@ -13,8 +13,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="comment-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+    
+    <?php $form = ActiveForm::begin(['options' => ['enctype' => 'application/x-www-form-urlencoded']]) ?>
+
+    <?= $form->field($model, 'discuss')->textarea(['rows' => 6]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Post', ['class' => 'btn btn-success']) ?>
+    </div>
+
+    <?php ActiveForm::end(); ?>
 
 </div>

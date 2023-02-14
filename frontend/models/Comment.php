@@ -18,6 +18,8 @@ use Yii;
  */
 class Comment extends \yii\db\ActiveRecord
 {
+    public $discuss;
+
     /**
      * {@inheritdoc}
      */
@@ -51,4 +53,10 @@ class Comment extends \yii\db\ActiveRecord
             'comment_time' => 'Comment Time',
         ];
     }
+
+    public function getContent()
+    {
+        return $this->discuss;
+    }
+
 }

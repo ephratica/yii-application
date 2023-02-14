@@ -6,11 +6,13 @@
 */
 namespace frontend\controllers;
 
+use Yii;
 use frontend\models\Comment;
 use frontend\models\CommentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * CommentController implements the CRUD actions for Comment model.
@@ -29,6 +31,17 @@ class CommentController extends Controller
                     'class' => VerbFilter::className(),
                     'actions' => [
                         'delete' => ['POST'],
+                    ],
+                ],
+                'access' => [
+                    'class' => AccessControl::className(),
+                    'only' => ['create'],
+                    'rules' => [
+                        [
+                            'allow' => true,
+                            'actions' => ['create'],
+                            'roles' => ['@'],
+                        ],
                     ],
                 ],
             ]
@@ -73,53 +86,22 @@ class CommentController extends Controller
     {
         $model = new Comment();
 
-        if ($this->request->isPost) {
-            $username =' . Yii::$app->user->identity->username . ';
-            $comment_time=time()-3600;
-            if ($model->load($this->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            // $mypost = isset($GLOBALS['HTTP_RAW_POST_DATA'])?$GLOBALS['HTTP_RAW_POST_DATA']:file_get_contents("php://input");
+            // $postdata = json_decode($mypost);
+            // $model->discuss = $postdata->Comment->discuss;
+            // $model->discuss = $_POST['Comment']['discuss'];
+            $model->discuss = $model->getContent();
+            $model->username = Yii::$app->user->identity->username;
+            $model->comment_time = date('Y-m-d H-i-s', time());
+            if ($model->save()) {
                 return $this->redirect([['view', 'comment_id' => $model->comment_id],['view', 'comment_id' => $model->comment_id]]);
             }
-        } else {
-            $model->loadDefaultValues();
         }
 
         return $this->render('create', [
             'model' => $model,
         ]);
-    }
-
-    /**
-     * Updates an existing Comment model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param int $comment_id Comment ID
-     * @return string|\yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($comment_id)
-    {
-        $model = $this->findModel($comment_id);
-
-        if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'comment_id' => $model->comment_id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Deletes an existing Comment model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param int $comment_id Comment ID
-     * @return \yii\web\Response
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($comment_id)
-    {
-        $this->findModel($comment_id)->delete();
-
-        return $this->redirect(['index']);
     }
 
     /**
