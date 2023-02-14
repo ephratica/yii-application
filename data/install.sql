@@ -11,11 +11,37 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 10/02/2023 11:15:03
+ Date: 14/02/2023 09:18:19
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admin
+-- ----------------------------
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `adminname` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `status` smallint NOT NULL DEFAULT 10,
+  `created_at` int NOT NULL,
+  `updated_at` int NOT NULL,
+  `verification_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  UNIQUE INDEX `username`(`adminname` ASC) USING BTREE,
+  UNIQUE INDEX `email`(`email` ASC) USING BTREE,
+  UNIQUE INDEX `password_reset_token`(`password_reset_token` ASC) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (1, 'admin', 'gN0hoZXDQJHP5dBrAgqzmsS47s2IVosz', '$2y$13$QgWv.FTdE2rf7ybylizHh.QFhFIPkx9xBANWPmd/6tkkUjnxmBJPi', NULL, 'admin@nankai.edu.cn', 10, 1676295493, 1676295493, 'c_yqu89iHSEN48X-VZkTo9bXWsltVZws_1676295493');
 
 -- ----------------------------
 -- Table structure for aid
@@ -763,7 +789,7 @@ CREATE TABLE `articles`  (
   `img_url` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `summary` varchar(1000) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`articleid`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of articles
@@ -779,6 +805,23 @@ INSERT INTO `articles` VALUES ('2022-12-25', 8, '教皇方济各呼吁停战', '
 INSERT INTO `articles` VALUES ('2023-01-23', 9, '欧盟追加援助', '据法新社布鲁塞尔1月23日报道，欧盟当天同意追加5亿欧元资金用于为乌克兰提供武装，并拨款4500万欧元用于在欧盟培训乌克兰军队。在布鲁塞尔开会的欧盟外长们在与乌克兰外长德米特里·库列巴举行视频会议后，同意发放这两笔由欧洲和平融资机制供资的拨款。报道称，这使得由欧洲和平融资机制供资的对乌克兰军事财政援助总额达到36亿欧元，此外还有成员国的双边资助。并非所有成员国都报告了供资情况。一位与会者解释说：“我们没有讨论主战坦克，因为我们没有资格这么做。”报道称，德国当局面临着交付自己的坦克并允许在部队中拥有“豹”式主战坦克的国家将坦克运往乌克兰的压力。德国外交部长安娜莱娜·贝尔伯克说：“申请应由各国提出，德国政府的决定是开放的。”', '/articlepages/9.jpg', '欧盟同意追加5亿欧元资金用于为乌克兰提供武装，并拨款4500万欧元用于在欧盟培训乌克兰军队。');
 
 -- ----------------------------
+-- Table structure for comment
+-- ----------------------------
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment`  (
+  `comment_id` int NOT NULL AUTO_INCREMENT,
+  `discuss` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `comment_time` datetime NULL DEFAULT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`comment_id`) USING BTREE
+) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of comment
+-- ----------------------------
+INSERT INTO `comment` VALUES (1, '哇！这个网站做的太好了！', '2023-02-01 19:25:01', 'myc');
+
+-- ----------------------------
 -- Table structure for files
 -- ----------------------------
 DROP TABLE IF EXISTS `files`;
@@ -791,7 +834,31 @@ CREATE TABLE `files`  (
 -- ----------------------------
 -- Records of files
 -- ----------------------------
-INSERT INTO `files` VALUES ('FreshSalt_ZH-CN12818759319_1920x1080.jpg', 1);
+INSERT INTO `files` VALUES ('aid.csv', 2);
+INSERT INTO `files` VALUES ('all_countries.csv', 0);
+INSERT INTO `files` VALUES ('articles.csv', 0);
+INSERT INTO `files` VALUES ('military_compare_total.csv', 0);
+INSERT INTO `files` VALUES ('russia_loss.csv', 0);
+INSERT INTO `files` VALUES ('r_u_military_comparison.csv', 0);
+INSERT INTO `files` VALUES ('sanction_country.csv', 0);
+INSERT INTO `files` VALUES ('sanction_date.csv', 1);
+INSERT INTO `files` VALUES ('sanction_type.csv', 0);
+INSERT INTO `files` VALUES ('se_status.csv', 1);
+INSERT INTO `files` VALUES ('ukraine_civilian_casualties.csv', 0);
+INSERT INTO `files` VALUES ('ukraine_round_trip.csv', 0);
+INSERT INTO `files` VALUES ('ukraine_russia_military_expenditure.csv', 0);
+INSERT INTO `files` VALUES ('作业1(2011911_果丁).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业1(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2011911_果丁).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业2(2013743_林巧莹).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2011911_果丁).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2012026_穆禹宸).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2012885_陈静怡).zip', 0);
+INSERT INTO `files` VALUES ('作业3(2013743_林巧莹).zip', 0);
 
 -- ----------------------------
 -- Table structure for military_compare_total
@@ -819,11 +886,11 @@ INSERT INTO `military_compare_total` VALUES ('Ukraine', 200000, 318, 12303, 38, 
 -- ----------------------------
 DROP TABLE IF EXISTS `r_u_military_comparison`;
 CREATE TABLE `r_u_military_comparison`  (
-  `indicator` varchar(30) CHARACTER SET utf8mb4 NOT NULL,
+  `indicator` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `russia` int NULL DEFAULT NULL,
   `ukraine` int NULL DEFAULT NULL,
   PRIMARY KEY (`indicator`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of r_u_military_comparison
@@ -875,7 +942,7 @@ CREATE TABLE `russia_loss`  (
   `personnel_total` int NULL DEFAULT NULL,
   `personnel_increase` int NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of russia_loss
@@ -912,12 +979,12 @@ INSERT INTO `russia_loss` VALUES ('2023-01-26', 3175, 6334, 2169, 452, 220, 292,
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_country`;
 CREATE TABLE `sanction_country`  (
-  `country` varchar(50) CHARACTER SET utf8 NOT NULL,
+  `country` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `since_2014` int NOT NULL,
   `since_202202` int NOT NULL,
   PRIMARY KEY (`country`) USING BTREE,
   CONSTRAINT `country2` FOREIGN KEY (`country`) REFERENCES `all_countries` (`country`) ON DELETE RESTRICT ON UPDATE CASCADE
-) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_country
@@ -939,7 +1006,7 @@ CREATE TABLE `sanction_date`  (
   `date` date NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_date
@@ -1048,10 +1115,10 @@ INSERT INTO `sanction_date` VALUES ('2022-12-22', 12634);
 -- ----------------------------
 DROP TABLE IF EXISTS `sanction_type`;
 CREATE TABLE `sanction_type`  (
-  `type` varchar(10) CHARACTER SET utf8 NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `value` int NOT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of sanction_type
@@ -1091,7 +1158,7 @@ CREATE TABLE `se_status`  (
   `hrw_wheat` double NULL DEFAULT NULL,
   `cotton` double NULL DEFAULT NULL,
   PRIMARY KEY (`date`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of se_status
@@ -1331,11 +1398,11 @@ INSERT INTO `se_status` VALUES ('2022-11-18', 6.355, 1759.7, 79.46, 87.42, 1429.
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_civilian_casualties`;
 CREATE TABLE `ukraine_civilian_casualties`  (
-  `type` varchar(10) CHARACTER SET utf8mb4 NOT NULL,
+  `type` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `total` int NULL DEFAULT NULL,
   `children` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_civilian_casualties
@@ -1348,10 +1415,10 @@ INSERT INTO `ukraine_civilian_casualties` VALUES ('Killed', 7068, 438);
 -- ----------------------------
 DROP TABLE IF EXISTS `ukraine_round_trip`;
 CREATE TABLE `ukraine_round_trip`  (
-  `type` varchar(20) CHARACTER SET utf8mb4 NOT NULL,
+  `type` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `num` int NULL DEFAULT NULL,
   PRIMARY KEY (`type`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_round_trip
@@ -1368,7 +1435,7 @@ CREATE TABLE `ukraine_russia_military_expenditure`  (
   `ukraine` double NULL DEFAULT NULL,
   `russia` double NULL DEFAULT NULL,
   PRIMARY KEY (`year`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of ukraine_russia_military_expenditure
@@ -1398,81 +1465,24 @@ INSERT INTO `ukraine_russia_military_expenditure` VALUES (2021, 5.94, 65.91);
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user`  (
   `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `auth_key` varchar(32) CHARACTER SET utf8 NOT NULL,
-  `password_hash` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `password_reset_token` varchar(255) CHARACTER SET utf8 NULL DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `auth_key` varchar(32) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password_reset_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` smallint NOT NULL DEFAULT 10,
   `created_at` int NOT NULL,
   `updated_at` int NOT NULL,
-  `verification_token` varchar(255) CHARACTER SET utf8 NULL DEFAULT NULL,
+  `verification_token` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username` ASC) USING BTREE,
   UNIQUE INDEX `email`(`email` ASC) USING BTREE,
   UNIQUE INDEX `password_reset_token`(`password_reset_token` ASC) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'Roslin', '1WdxXAgRPeWCOQ7cHpX6Yb_KhH1n95AS', '$2y$13$BjQVge8QY.8a8NxysWKkHO1SQ.sl.fRlGJBUap3QvgjM7f2DxistS', NULL, 'roslin_v@163.com', 10, 1675739013, 1675739013, 'LExR42OJqXb2kQGJH_C5UV6c7rUBpp3X_1675739013');
--- ----------------------------
-
--- Table structure for comment
--- ----------------------------
-DROP TABLE IF EXISTS `comment`;
-CREATE TABLE `comment`  (
-  `comment_id` int(11) NOT NULL AUTO_INCREMENT,
-  `comment` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  PRIMARY KEY (`comment_id`) USING BTREE
-) ENGINE = MyISAM AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of comment
--- ----------------------------
-INSERT INTO `comment` VALUES (1, '这个网站实在是太棒啦！');
-INSERT INTO `comment` VALUES (2, '太厉害啦！把网站做的这么好看！');
-INSERT INTO `comment` VALUES (3, '666！大佬求带飞！');
-
--- ----------------------------
--- Table structure for files
--- ----------------------------
-DROP TABLE IF EXISTS `files`;
-CREATE TABLE `files`  (
-  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `download_times` int NOT NULL DEFAULT 0,
-  PRIMARY KEY (`name`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of files
--- ----------------------------
-INSERT INTO `files` VALUES ('aid.csv', 1);
-INSERT INTO `files` VALUES ('all_countries.csv', 0);
-INSERT INTO `files` VALUES ('articles.csv', 0);
-INSERT INTO `files` VALUES ('military_compare_total.csv', 0);
-INSERT INTO `files` VALUES ('russia_loss.csv', 0);
-INSERT INTO `files` VALUES ('r_u_military_comparison.csv', 0);
-INSERT INTO `files` VALUES ('sanction_country.csv', 0);
-INSERT INTO `files` VALUES ('sanction_date.csv', 1);
-INSERT INTO `files` VALUES ('sanction_type.csv', 0);
-INSERT INTO `files` VALUES ('se_status.csv', 1);
-INSERT INTO `files` VALUES ('ukraine_civilian_casualties.csv', 0);
-INSERT INTO `files` VALUES ('ukraine_round_trip.csv', 0);
-INSERT INTO `files` VALUES ('ukraine_russia_military_expenditure.csv', 0);
-INSERT INTO `files` VALUES ('作业1(2012885_陈静怡).zip', 0);
-INSERT INTO `files` VALUES ('作业1(2013743_林巧莹).zip', 0);
-INSERT INTO `files` VALUES ('作业1(2012026_穆禹宸).zip', 0);
-INSERT INTO `files` VALUES ('作业1(2011911_果丁).zip', 0);
-INSERT INTO `files` VALUES ('作业2(2012885_陈静怡).zip', 0);
-INSERT INTO `files` VALUES ('作业2(2013743_林巧莹).zip', 0);
-INSERT INTO `files` VALUES ('作业2(2012026_穆禹宸).zip', 0);
-INSERT INTO `files` VALUES ('作业2(2011911_果丁).zip', 0);
-INSERT INTO `files` VALUES ('作业3(2012885_陈静怡).zip', 0);
-INSERT INTO `files` VALUES ('作业3(2013743_林巧莹).zip', 0);
-INSERT INTO `files` VALUES ('作业3(2012026_穆禹宸).zip', 0);
-INSERT INTO `files` VALUES ('作业3(2011911_果丁).zip', 0);
+INSERT INTO `user` VALUES (1, 'user', 'uBs18JvvjLVu5bwKT4C_EdUVRDCrcMuR', '$2y$13$PiGplCafrMBy4tHnQk6gOOnvSllXkYvIQ9OUy8wjep6nYYh8LFYYK', NULL, 'user@nankai.edu.cn', 10, 1676337290, 1676337290, 'ngkZ1GeCSSOItQ_2WZGnxrn66yBG3q6X_1676337290');
 
 SET FOREIGN_KEY_CHECKS = 1;
-
