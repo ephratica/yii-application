@@ -71,6 +71,8 @@ AppAsset::register($this);
                 ]
             ]
         ],
+        ['label' => '查看评论','url' => ['/comment/index']],
+        ['label' => '上传文件','url' => ['/site/upload']],
         ['label' => '关于我们', 'url' => ['/site/about']],
     ];
 
