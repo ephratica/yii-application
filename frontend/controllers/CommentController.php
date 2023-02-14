@@ -87,15 +87,11 @@ class CommentController extends Controller
         $model = new Comment();
 
         if ($model->load(Yii::$app->request->post())) {
-            // $mypost = isset($GLOBALS['HTTP_RAW_POST_DATA'])?$GLOBALS['HTTP_RAW_POST_DATA']:file_get_contents("php://input");
-            // $postdata = json_decode($mypost);
-            // $model->discuss = $postdata->Comment->discuss;
-            // $model->discuss = $_POST['Comment']['discuss'];
-            $model->discuss = $model->getContent();
+            $model->discuss = $_POST['Comment']['discuss'];
             $model->username = Yii::$app->user->identity->username;
             $model->comment_time = date('Y-m-d H-i-s', time());
             if ($model->save()) {
-                return $this->redirect([['view', 'comment_id' => $model->comment_id],['view', 'comment_id' => $model->comment_id]]);
+                return $this->redirect(['view', 'comment_id' => $model->comment_id]);
             }
         }
 
