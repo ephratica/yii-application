@@ -12,7 +12,11 @@ use yii\widgets\ActiveForm;
 <div class="p-5 mb-4 bg-transparent rounded-3">
         <div class="container-fluid py-5">
             <h1 class="display-4">文件上传界面📤</h1>
+</div>
+        <div>
             <p class="fs-5 fw-light">操作步骤：“选择文件”→“Submit”</p>
+            <p class="fs-5 fw-light">支持上传csv、xls、xlsx、zip、rar格式的文件。</p>
+            <p class="fs-5 fw-light">注意：默认文件大小不得超过2MB，可在php.ini文件中进行个人设置。</p>
         </div>
     </div>
 
