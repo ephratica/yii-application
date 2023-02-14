@@ -97,6 +97,7 @@ AppAsset::register($this);
                 ['label' => '提交反馈', 'url' => ['/comment/create']]
             ]
         ],
+        ['label' => '下载文件','url' => ['/site/files']],
         ['label' => '关于我们', 'url' => ['/site/about']],
     ];
 
